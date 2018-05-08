@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.0.0">
+<eagle version="9.0.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -308,7 +308,7 @@ package type OT</description>
 <circle x="0" y="0" radius="1.7" width="0.127" layer="21"/>
 <text x="-3.81" y="3.81" size="1.27" layer="21">&gt;NAME</text>
 </package>
-<package name="2X1.2" urn="urn:adsk.eagle:footprint:2669384/1" locally_modified="yes" library_version="68" library_locally_modified="yes">
+<package name="2X1.2" urn="urn:adsk.eagle:footprint:2669384/2" library_version="69">
 <smd name="1" x="-0.8" y="0" dx="0.8" dy="1.1" layer="1"/>
 <smd name="2" x="0.8" y="0" dx="0.8" dy="1.1" layer="1"/>
 <wire x1="-0.3" y1="0.6" x2="0.3" y2="0.6" width="0.127" layer="21"/>
@@ -377,7 +377,7 @@ package type OT</description>
 <rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
 <rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
 </package>
-<package name="NANOFIT-2-90" urn="urn:adsk.eagle:footprint:2885796/1" locally_modified="yes" library_version="68" library_locally_modified="yes">
+<package name="NANOFIT-2-90" urn="urn:adsk.eagle:footprint:2885796/2" library_version="69">
 <pad name="2" x="-1.25" y="10.37" drill="1.2" shape="square" rot="R180"/>
 <pad name="1" x="1.25" y="10.37" drill="1.2" shape="square" rot="R180"/>
 <hole x="-1.25" y="3.2" drill="1.7"/>
@@ -502,7 +502,7 @@ package type OT</description>
 <rectangle x1="-4.373" y1="2.1" x2="-3.373" y2="2.4" layer="51"/>
 <rectangle x1="-4.373" y1="2.6" x2="-3.373" y2="2.9" layer="51"/>
 </package>
-<package name="C_EEEFK-10X10" urn="urn:adsk.eagle:footprint:2885799/1" locally_modified="yes" library_version="68" library_locally_modified="yes">
+<package name="C_EEEFK-10X10" urn="urn:adsk.eagle:footprint:2885799/2" library_version="69">
 <wire x1="-5.2" y1="5.2" x2="4.1" y2="5.2" width="0.127" layer="21"/>
 <wire x1="4.1" y1="5.2" x2="5.2" y2="5.2" width="0.127" layer="21"/>
 <wire x1="5.2" y1="-5.2" x2="4.1" y2="-5.2" width="0.127" layer="21"/>
@@ -582,34 +582,6 @@ package type OT</description>
 <wire x1="-1.4" y1="-1.2" x2="-1.4" y2="1.2" width="0.127" layer="39"/>
 <text x="-3.1" y="1.6" size="1.27" layer="25">&gt;NAME</text>
 </package>
-<package name="2X02" urn="urn:adsk.eagle:footprint:22337/1" library_version="68" library_locally_modified="yes">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-2.54" y1="-1.905" x2="-1.905" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="-2.54" x2="0" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="0" y1="-1.905" x2="0.635" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="1.905" y1="-2.54" x2="2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="-1.905" x2="-2.54" y2="1.905" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="1.905" x2="-1.905" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="-1.905" y1="2.54" x2="-0.635" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="2.54" x2="0" y2="1.905" width="0.1524" layer="21"/>
-<wire x1="0" y1="1.905" x2="0.635" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="2.54" x2="1.905" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="1.905" y1="2.54" x2="2.54" y2="1.905" width="0.1524" layer="21"/>
-<wire x1="0" y1="1.905" x2="0" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="1.905" x2="2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="-2.54" x2="1.905" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="-1.905" y1="-2.54" x2="-0.635" y2="-2.54" width="0.1524" layer="21"/>
-<pad name="1" x="-1.27" y="-1.27" drill="1.016" shape="octagon"/>
-<pad name="2" x="-1.27" y="1.27" drill="1.016" shape="octagon"/>
-<pad name="3" x="1.27" y="-1.27" drill="1.016" shape="octagon"/>
-<pad name="4" x="1.27" y="1.27" drill="1.016" shape="octagon"/>
-<text x="-2.54" y="3.175" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-2.54" y="-4.445" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-1.524" y1="-1.524" x2="-1.016" y2="-1.016" layer="51"/>
-<rectangle x1="-1.524" y1="1.016" x2="-1.016" y2="1.524" layer="51"/>
-<rectangle x1="1.016" y1="1.016" x2="1.524" y2="1.524" layer="51"/>
-<rectangle x1="1.016" y1="-1.524" x2="1.524" y2="-1.016" layer="51"/>
-</package>
 </packages>
 <packages3d>
 <package3d name="TSSOP20" urn="urn:adsk.eagle:package:1670103/4" type="model" library_version="51">
@@ -659,7 +631,7 @@ reflow soldering</description>
 <packageinstance name="B3S"/>
 </packageinstances>
 </package3d>
-<package3d name="2X1.2" urn="urn:adsk.eagle:package:2669386/1" locally_modified="yes" type="box" library_version="68" library_locally_modified="yes">
+<package3d name="2X1.2" urn="urn:adsk.eagle:package:2669386/2" type="box" library_version="69">
 <packageinstances>
 <packageinstance name="2X1.2"/>
 </packageinstances>
@@ -691,7 +663,7 @@ reflow soldering</description>
 <packageinstance name="HCR2520"/>
 </packageinstances>
 </package3d>
-<package3d name="NANOFIT-2-90" urn="urn:adsk.eagle:package:2885802/1" locally_modified="yes" type="box" library_version="68" library_locally_modified="yes">
+<package3d name="NANOFIT-2-90" urn="urn:adsk.eagle:package:2885802/2" type="box" library_version="69">
 <packageinstances>
 <packageinstance name="NANOFIT-2-90"/>
 </packageinstances>
@@ -702,7 +674,7 @@ reflow soldering</description>
 <packageinstance name="TQFP48"/>
 </packageinstances>
 </package3d>
-<package3d name="C_EEEFK-10X10" urn="urn:adsk.eagle:package:2885805/1" locally_modified="yes" type="box" library_version="68" library_locally_modified="yes">
+<package3d name="C_EEEFK-10X10" urn="urn:adsk.eagle:package:2885805/2" type="box" library_version="69">
 <packageinstances>
 <packageinstance name="C_EEEFK-10X10"/>
 </packageinstances>
@@ -711,12 +683,6 @@ reflow soldering</description>
 <description>&lt;b&gt;SMALL OUTLINE TRANSISTOR&lt;/b&gt;</description>
 <packageinstances>
 <packageinstance name="SOT223"/>
-</packageinstances>
-</package3d>
-<package3d name="2X02" urn="urn:adsk.eagle:package:22455/2" type="model" library_version="68" library_locally_modified="yes">
-<description>PIN HEADER</description>
-<packageinstances>
-<packageinstance name="2X02"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -941,7 +907,7 @@ reflow soldering</description>
 <pin name="2" x="2.54" y="0" visible="off" length="point" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="1" x="-2.54" y="0" visible="off" length="point" direction="pas" swaplevel="1"/>
 </symbol>
-<symbol name="7P" urn="urn:adsk.eagle:symbol:1936274/1" locally_modified="yes" library_version="68" library_locally_modified="yes">
+<symbol name="7P" urn="urn:adsk.eagle:symbol:1936274/2" library_version="69">
 <wire x1="-10.16" y1="-10.16" x2="10.16" y2="-10.16" width="0.4064" layer="94"/>
 <wire x1="10.16" y1="10.16" x2="10.16" y2="-10.16" width="0.4064" layer="94"/>
 <wire x1="10.16" y1="10.16" x2="-10.16" y2="10.16" width="0.4064" layer="94"/>
@@ -1206,18 +1172,6 @@ reflow soldering</description>
 <text x="-7.62" y="5.842" size="1.778" layer="95">&gt;NAME</text>
 <text x="-12.7" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
-<symbol name="PINH2X2" library_version="68" library_locally_modified="yes">
-<wire x1="-8.89" y1="-2.54" x2="6.35" y2="-2.54" width="0.4064" layer="94"/>
-<wire x1="6.35" y1="-2.54" x2="6.35" y2="5.08" width="0.4064" layer="94"/>
-<wire x1="6.35" y1="5.08" x2="-8.89" y2="5.08" width="0.4064" layer="94"/>
-<wire x1="-8.89" y1="5.08" x2="-8.89" y2="-2.54" width="0.4064" layer="94"/>
-<text x="-8.89" y="5.715" size="1.778" layer="95">&gt;NAME</text>
-<text x="-8.89" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="1" x="-5.08" y="2.54" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="2" x="2.54" y="2.54" visible="pad" length="short" direction="pas" function="dot" rot="R180"/>
-<pin name="3" x="-5.08" y="0" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="4" x="2.54" y="0" visible="pad" length="short" direction="pas" function="dot" rot="R180"/>
-</symbol>
 <symbol name="LDO_GND_FIXED" urn="urn:adsk.eagle:symbol:2885793/1" library_version="68" library_locally_modified="yes">
 <pin name="EN" x="-10.16" y="-2.54" length="short"/>
 <pin name="IN" x="-10.16" y="2.54" length="short"/>
@@ -1382,7 +1336,7 @@ reflow soldering</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="9HT11" urn="urn:adsk.eagle:component:2669388/1" locally_modified="yes" prefix="Q" library_version="68" library_locally_modified="yes">
+<deviceset name="9HT11" urn="urn:adsk.eagle:component:2669388/2" prefix="Q" library_version="69">
 <gates>
 <gate name="G$1" symbol="Q" x="0" y="0"/>
 </gates>
@@ -1393,7 +1347,7 @@ reflow soldering</description>
 <connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:2669386/1"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2669386/2"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -1401,7 +1355,7 @@ reflow soldering</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="BINDER-IP40" urn="urn:adsk.eagle:component:1936279/2" locally_modified="yes" prefix="CON" library_version="68" library_locally_modified="yes">
+<deviceset name="BINDER-IP40" urn="urn:adsk.eagle:component:1936279/3" prefix="CON" library_version="69">
 <gates>
 <gate name="G$1" symbol="7P" x="0" y="0"/>
 </gates>
@@ -1503,7 +1457,7 @@ reflow soldering</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="PINHD-1X2" urn="urn:adsk.eagle:component:2754770/1" prefix="X" uservalue="yes" library_version="64" library_locally_modified="yes">
+<deviceset name="PINHD-1X2" urn="urn:adsk.eagle:component:2754770/2" prefix="X" library_version="69">
 <description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
 <gates>
 <gate name="G$1" symbol="PINHD2" x="0" y="0"/>
@@ -1523,7 +1477,7 @@ reflow soldering</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="NANOFIT-2" urn="urn:adsk.eagle:component:2885809/1" locally_modified="yes" prefix="X" library_version="68" library_locally_modified="yes">
+<deviceset name="NANOFIT-2" urn="urn:adsk.eagle:component:2885809/2" prefix="X" library_version="69">
 <gates>
 <gate name="G$1" symbol="CON-1X2" x="0" y="0"/>
 </gates>
@@ -1534,7 +1488,7 @@ reflow soldering</description>
 <connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:2885802/1"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2885802/2"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -1610,7 +1564,7 @@ reflow soldering</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="C-EEEFK" urn="urn:adsk.eagle:component:2885814/1" locally_modified="yes" prefix="C" uservalue="yes" library_version="68" library_locally_modified="yes">
+<deviceset name="C-EEEFK" urn="urn:adsk.eagle:component:2885814/2" prefix="C" uservalue="yes" library_version="69">
 <gates>
 <gate name="G$1" symbol="CPOL" x="0" y="0"/>
 </gates>
@@ -1621,7 +1575,7 @@ reflow soldering</description>
 <connect gate="G$1" pin="-" pad="-"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:2885805/1"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2885805/2"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -1699,29 +1653,7 @@ reflow soldering</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="PINHD-2X2" prefix="X" library_version="68" library_locally_modified="yes">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<gates>
-<gate name="A" symbol="PINH2X2" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="2X02">
-<connects>
-<connect gate="A" pin="1" pad="1"/>
-<connect gate="A" pin="2" pad="2"/>
-<connect gate="A" pin="3" pad="3"/>
-<connect gate="A" pin="4" pad="4"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:22455/2"/>
-</package3dinstances>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="MCP1802" prefix="IC" library_version="68" library_locally_modified="yes">
+<deviceset name="MCP1802" urn="urn:adsk.eagle:component:2900202/1" prefix="IC" library_version="69">
 <gates>
 <gate name="G$1" symbol="LDO_GND_FIXED" x="0" y="0"/>
 </gates>
@@ -9672,7 +9604,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <attribute name="OC_MOUSER" value="603-RC0603FR-072K2L"/>
 </part>
 <part name="GND21" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="Q2" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="9HT11" device="" package3d_urn="urn:adsk.eagle:package:2669386/1" value="32768kHz">
+<part name="Q2" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="9HT11" device="" package3d_urn="urn:adsk.eagle:package:2669386/2" value="32768kHz">
 <attribute name="OC_MOUSER" value="717-9HT11-32.7KDZC-T"/>
 </part>
 <part name="CON1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="BINDER-IP40" device=""/>
@@ -9993,7 +9925,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <attribute name="OC_MOUSER" value="603-RC0603FR-0710KL"/>
 </part>
 <part name="P+10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
-<part name="X1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="NANOFIT-2" device="" package3d_urn="urn:adsk.eagle:package:2885802/1">
+<part name="X1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="NANOFIT-2" device="" package3d_urn="urn:adsk.eagle:package:2885802/2">
 <attribute name="OC_MOUSER" value="538-105313-2102; 538-105325-1002; 538-105307-1202"/>
 </part>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -10004,7 +9936,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </part>
 <part name="P+9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
 <part name="P+7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
-<part name="C1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="C-EEEFK" device="" package3d_urn="urn:adsk.eagle:package:2885805/1" value="470µF">
+<part name="C1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="C-EEEFK" device="" package3d_urn="urn:adsk.eagle:package:2885805/2" value="470µF">
 <attribute name="OC_MOUSER" value="667-EEE-FK1E471P"/>
 </part>
 <part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10µF">
@@ -10090,14 +10022,12 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </spice>
 <attribute name="OC_MOUSER" value="81-GRM155R61C105MA2D"/>
 </part>
-<part name="P+18" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
-<part name="+3V1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="GND23" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+19" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
-<part name="X10" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="PINHD-2X2" device="" package3d_urn="urn:adsk.eagle:package:22455/2">
-<attribute name="OC_MOUSER" value="571-5-146254-2"/>
-</part>
 <part name="IC3" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="MCP1802" device="" package3d_urn="urn:adsk.eagle:package:1437676/7"/>
+<part name="X11" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2">
+<attribute name="OC_MOUSER" value="855-M20-9990246"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -10230,14 +10160,12 @@ as an Serial Com</text>
 <instance part="C24" gate="G$1" x="15.24" y="88.9">
 <attribute name="OC_MOUSER" x="15.24" y="88.9" size="0.889" layer="96" display="off"/>
 </instance>
-<instance part="P+18" gate="1" x="137.16" y="38.1"/>
-<instance part="+3V1" gate="G$1" x="144.78" y="38.1"/>
 <instance part="GND23" gate="1" x="114.3" y="17.78"/>
 <instance part="P+19" gate="1" x="114.3" y="35.56"/>
-<instance part="X10" gate="A" x="127" y="25.4">
-<attribute name="OC_MOUSER" x="127" y="25.4" size="0.889" layer="96" display="off"/>
-</instance>
 <instance part="IC3" gate="G$1" x="134.62" y="152.4"/>
+<instance part="X11" gate="G$1" x="124.46" y="25.4">
+<attribute name="OC_MOUSER" x="124.46" y="25.4" size="2.54" layer="96" display="off"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -10322,9 +10250,9 @@ as an Serial Com</text>
 </segment>
 <segment>
 <pinref part="GND23" gate="1" pin="GND"/>
-<wire x1="121.92" y1="25.4" x2="114.3" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="25.4" x2="114.3" y2="20.32" width="0.1524" layer="91"/>
-<pinref part="X10" gate="A" pin="3"/>
+<pinref part="X11" gate="G$1" pin="2"/>
+<wire x1="121.92" y1="25.4" x2="114.3" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -10386,10 +10314,10 @@ as an Serial Com</text>
 <junction x="27.94" y="93.98"/>
 </segment>
 <segment>
-<wire x1="121.92" y1="27.94" x2="114.3" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="P+19" gate="1" pin="+5V"/>
 <wire x1="114.3" y1="33.02" x2="114.3" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="X10" gate="A" pin="1"/>
+<pinref part="X11" gate="G$1" pin="1"/>
+<wire x1="121.92" y1="27.94" x2="114.3" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+12V" class="0">
@@ -10412,13 +10340,6 @@ as an Serial Com</text>
 <pinref part="P+2" gate="1" pin="+12V"/>
 <pinref part="C2" gate="G$1" pin="1"/>
 <pinref part="IC1" gate="G$1" pin="IN"/>
-</segment>
-<segment>
-<wire x1="129.54" y1="27.94" x2="134.62" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="P+18" gate="1" pin="+12V"/>
-<wire x1="134.62" y1="27.94" x2="137.16" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="137.16" y1="27.94" x2="137.16" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="X10" gate="A" pin="2"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
@@ -10452,13 +10373,6 @@ as an Serial Com</text>
 <wire x1="142.24" y1="86.36" x2="142.24" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="X3" gate="G$1" pin="9"/>
 <wire x1="157.48" y1="71.12" x2="142.24" y2="71.12" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<wire x1="129.54" y1="25.4" x2="134.62" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="+3V1" gate="G$1" pin="+3V3"/>
-<wire x1="144.78" y1="35.56" x2="144.78" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="144.78" y1="25.4" x2="134.62" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="X10" gate="A" pin="4"/>
 </segment>
 </net>
 <net name="EXT_SDA" class="0">
@@ -11973,9 +11887,6 @@ input
 <approved hash="106,1,29.718,27.94,2_HEATER_PI,,,,,"/>
 <approved hash="106,1,21.082,27.94,5_SDA_YE,,,,,"/>
 <approved hash="106,1,25.4,27.94,7_GND_BL,,,,,"/>
-<approved hash="113,1,134.62,150.632,IC3,,,,,"/>
-<approved hash="113,1,228.837,114.526,X4,,,,,"/>
-<approved hash="113,2,142.477,106.906,X6,,,,,"/>
 </errors>
 </schematic>
 </drawing>

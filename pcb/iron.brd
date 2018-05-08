@@ -8,7 +8,7 @@
 </settings>
 <grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="0.05" altunitdist="mm" altunit="mm"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
@@ -23,15 +23,15 @@
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
@@ -57,8 +57,8 @@
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="no" active="no"/>
 <layer number="89" name="SimProbes" color="9" fill="1" visible="no" active="no"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="no" active="no"/>
@@ -1567,9 +1567,9 @@ design rules under a new name.</description>
 <attribute name="NAME" x="6.884" y="41.138" size="0.8128" layer="25" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="6.3" y="40.4" size="0.0254" layer="27"/>
 </element>
-<element name="GND" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" package="1,6/0,8" package3d_urn="urn:adsk.eagle:package:1581957/6" value="" x="6.55" y="37.6" smashed="yes">
-<attribute name="NAME" x="5.638" y="35.566" size="0.8128" layer="25" ratio="10"/>
-<attribute name="VALUE" x="6.55" y="38.2" size="0.0254" layer="27"/>
+<element name="GND" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" package="1,6/0,8" package3d_urn="urn:adsk.eagle:package:1581957/6" value="" x="6.45" y="37.6" smashed="yes">
+<attribute name="NAME" x="5.538" y="35.566" size="0.8128" layer="25" ratio="10"/>
+<attribute name="VALUE" x="6.45" y="38.2" size="0.0254" layer="27"/>
 </element>
 <element name="SCL" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" package="1,6/0,8" package3d_urn="urn:adsk.eagle:package:1581957/6" value="" x="1.25" y="22.05" smashed="yes">
 <attribute name="NAME" x="0.588" y="20.216" size="0.8128" layer="25" ratio="10"/>
@@ -1603,7 +1603,6 @@ design rules under a new name.</description>
 <contactref element="IC2" pad="5"/>
 <contactref element="C2" pad="2"/>
 <contactref element="GND" pad="1"/>
-<wire x1="6.55" y1="37.6" x2="6.55" y2="32.55" width="0.254" layer="16"/>
 <wire x1="6.55" y1="32.55" x2="5.4486375" y2="32.55" width="0.254" layer="16"/>
 <wire x1="4.8" y1="32.315" x2="3.0597375" y2="32.315" width="0.254" layer="16"/>
 <wire x1="4.8" y1="29.95" x2="4.3" y2="29.45" width="0.254" layer="16"/>
@@ -1630,20 +1629,10 @@ design rules under a new name.</description>
 <wire x1="5.05" y1="15.85" x2="5.75" y2="15.85" width="0.254" layer="1"/>
 <wire x1="6.1" y1="16.2" x2="6.1" y2="17.05" width="0.254" layer="1"/>
 <wire x1="5.75" y1="15.85" x2="6.1" y2="16.2" width="0.254" layer="1"/>
-<via x="5.35" y="20.4" extent="1-16" drill="0.35"/>
-<wire x1="5.35" y1="20.4" x2="4.7564" y2="20.9936" width="0.254" layer="1"/>
-<wire x1="4.7564" y1="22.8564" x2="4.95" y2="23.05" width="0.254" layer="1"/>
-<via x="4.95" y="23.05" extent="1-16" drill="0.35"/>
-<wire x1="4.7564" y1="20.9936" x2="4.7564" y2="22.8564" width="0.254" layer="1"/>
-<wire x1="4.95" y1="23.05" x2="6.25" y2="24.35" width="0.254" layer="16"/>
-<wire x1="6.25" y1="24.35" x2="6.25" y2="24.8" width="0.254" layer="16"/>
 <wire x1="6.25" y1="24.8" x2="6.95" y2="25.5" width="0.254" layer="16"/>
 <wire x1="6.95" y1="25.5" x2="6.95" y2="27.05" width="0.254" layer="16"/>
 <via x="6.95" y="27.05" extent="1-16" drill="0.35"/>
-<wire x1="6.95" y1="27.05" x2="6.95" y2="28.65" width="0.254" layer="1"/>
-<wire x1="6.95" y1="28.65" x2="6.55" y2="29.05" width="0.254" layer="1"/>
-<wire x1="6.55" y1="29.05" x2="6.55" y2="37.6" width="0.254" layer="1"/>
-<wire x1="6.55" y1="37.6" x2="5.45" y2="37.6" width="1.8" layer="1"/>
+<wire x1="6.45" y1="37.6" x2="5.45" y2="37.6" width="1.8" layer="1"/>
 <wire x1="4" y1="39.05" x2="4" y2="44.15" width="1.8" layer="1"/>
 <wire x1="5.45" y1="37.6" x2="4" y2="39.05" width="1.8" layer="1"/>
 <wire x1="5.35" y1="31.15" x2="4.8" y2="31.7" width="0.254" layer="1"/>
@@ -1654,7 +1643,7 @@ design rules under a new name.</description>
 <wire x1="2.65" y1="29.45" x2="3.5" y2="29.45" width="0.254" layer="1"/>
 <wire x1="3.5" y1="29.45" x2="4.45" y2="30.4" width="0.254" layer="1"/>
 <wire x1="4.45" y1="30.4" x2="5.35" y2="30.4" width="0.254" layer="1"/>
-<polygon width="0.2" layer="16" isolate="0.3048">
+<polygon width="0.2" layer="16" isolate="0.3048" rank="2">
 <vertex x="0" y="48"/>
 <vertex x="8" y="48"/>
 <vertex x="8" y="0"/>
@@ -1665,8 +1654,20 @@ design rules under a new name.</description>
 <wire x1="2.65" y1="18.25" x2="3.35" y2="18.25" width="0.254" layer="16"/>
 <wire x1="3.35" y1="18.25" x2="4.05" y2="18.95" width="0.254" layer="16"/>
 <wire x1="4.05" y1="18.95" x2="4.05" y2="19.95" width="0.254" layer="16"/>
-<wire x1="4.5" y1="20.4" x2="5.35" y2="20.4" width="0.254" layer="16"/>
 <wire x1="4.05" y1="19.95" x2="4.5" y2="20.4" width="0.254" layer="16"/>
+<polygon width="0.2" layer="1" isolate="0.3048" thermals="no">
+<vertex x="0" y="48"/>
+<vertex x="8" y="48"/>
+<vertex x="8" y="37.45"/>
+<vertex x="0" y="37.45"/>
+</polygon>
+<wire x1="6.95" y1="27.05" x2="6.95" y2="35.75" width="0.6" layer="1"/>
+<wire x1="4.5" y1="20.4" x2="4.5" y2="22.55" width="0.254" layer="16"/>
+<wire x1="6.45" y1="37.6" x2="6.55" y2="37.5" width="0.254" layer="16"/>
+<wire x1="6.55" y1="37.5" x2="6.55" y2="36" width="0.254" layer="16"/>
+<wire x1="6.55" y1="36" x2="6.55" y2="32.55" width="0.254" layer="16"/>
+<wire x1="6.45" y1="36.25" x2="6.45" y2="37.6" width="0.6" layer="1"/>
+<wire x1="6.95" y1="35.75" x2="6.45" y2="36.25" width="0.6" layer="1"/>
 </signal>
 <signal name="AD_COMP">
 <contactref element="R2" pad="2"/>
@@ -1720,7 +1721,7 @@ design rules under a new name.</description>
 <contactref element="IC1" pad="4"/>
 <wire x1="4.25" y1="28.5" x2="5.35" y2="28.5" width="0.254" layer="1"/>
 <wire x1="5.35" y1="27.55" x2="5.35" y2="28.5" width="0.254" layer="1"/>
-<polygon width="0.1524" layer="1" isolate="0.3048">
+<polygon width="0.1524" layer="1" isolate="0.3048" rank="2">
 <vertex x="0" y="48"/>
 <vertex x="8" y="48"/>
 <vertex x="8" y="0"/>
@@ -1859,6 +1860,13 @@ design rules under a new name.</description>
 <contactref element="X1" pad="1"/>
 <contactref element="HEATER" pad="1"/>
 <wire x1="6.3" y1="45.65" x2="6.3" y2="39.8" width="1.8" layer="16"/>
+<polygon width="0.2" layer="16" isolate="0.3048" thermals="no">
+<vertex x="4" y="48"/>
+<vertex x="8" y="48"/>
+<vertex x="8" y="39"/>
+<vertex x="5" y="39"/>
+<vertex x="4" y="39"/>
+</polygon>
 </signal>
 </signals>
 </board>

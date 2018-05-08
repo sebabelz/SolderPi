@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.6.0">
+<eagle version="9.0.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -7794,7 +7794,7 @@ Source: AVX .. aphvc.pdf</description>
 <classes>
 <class number="0" name="default" width="0.254" drill="0">
 </class>
-<class number="1" name="+12v" width="1.016" drill="0">
+<class number="1" name="+12v" width="0.254" drill="0">
 <clearance class="1" value="0.3048"/>
 </class>
 </classes>
