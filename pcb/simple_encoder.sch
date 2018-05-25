@@ -7795,7 +7795,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </library>
 <library name="solderpi" urn="urn:adsk.eagle:library:1437534">
 <packages>
-<package name="PEC11R" urn="urn:adsk.eagle:footprint:27082/1" locally_modified="yes" library_version="69" library_locally_modified="yes">
+<package name="PEC11R" urn="urn:adsk.eagle:footprint:3057192/1" library_version="72">
 <description>ALPS rotary encoder&lt;br&gt;
 EC12E series with push-on switch</description>
 <wire x1="-6.2" y1="-6.6" x2="6.2" y2="-6.6" width="0.127" layer="21"/>
@@ -7815,6 +7815,15 @@ EC12E series with push-on switch</description>
 <text x="3.5" y="-9" size="1.27" layer="27" rot="R180">&gt;VALUE</text>
 </package>
 </packages>
+<packages3d>
+<package3d name="PEC11R" urn="urn:adsk.eagle:package:3057193/4" type="model" library_version="72">
+<description>ALPS rotary encoder&lt;br&gt;
+EC12E series with push-on switch</description>
+<packageinstances>
+<packageinstance name="PEC11R"/>
+</packageinstances>
+</package3d>
+</packages3d>
 <symbols>
 <symbol name="TASTER" urn="urn:adsk.eagle:symbol:1581943/1" library_version="69" library_locally_modified="yes">
 <wire x1="-2.54" y1="0" x2="-1.5875" y2="0" width="0.3048" layer="94"/>
@@ -7856,7 +7865,7 @@ EC12E series with push-on switch</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="PEC11R" prefix="X" library_version="69" library_locally_modified="yes">
+<deviceset name="PEC11R" urn="urn:adsk.eagle:component:3057194/3" prefix="X" library_version="72">
 <gates>
 <gate name="G$1" symbol="TASTER" x="0" y="0"/>
 <gate name="G$2" symbol="ENCODER" x="-17.78" y="-2.54"/>
@@ -7874,6 +7883,9 @@ EC12E series with push-on switch</description>
 <connect gate="G$3" pin="G" pad="GND1"/>
 <connect gate="G$4" pin="G" pad="GND2"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:3057193/4"/>
+</package3dinstances>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -8186,7 +8198,7 @@ EC12E series with push-on switch</description>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device=""/>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10nF"/>
 <part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
-<part name="X1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="PEC11R" device=""/>
+<part name="X1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="PEC11R" device="" package3d_urn="urn:adsk.eagle:package:3057193/4"/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -8300,9 +8312,10 @@ EC12E series with push-on switch</description>
 <wire x1="134.62" y1="109.22" x2="134.62" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="2"/>
-<wire x1="190.5" y1="121.92" x2="177.8" y2="121.92" width="0.1524" layer="91"/>
-<label x="180.34" y="121.92" size="1.778" layer="95"/>
+<pinref part="JP1" gate="A" pin="3"/>
+<wire x1="190.5" y1="119.38" x2="177.8" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="119.38" x2="172.72" y2="119.38" width="0.1524" layer="91"/>
+<label x="175.26" y="119.38" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="B_UNFIL" class="0">
@@ -8338,9 +8351,10 @@ EC12E series with push-on switch</description>
 <label x="91.44" y="124.46" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="4"/>
-<wire x1="190.5" y1="116.84" x2="177.8" y2="116.84" width="0.1524" layer="91"/>
-<label x="180.34" y="116.84" size="1.778" layer="95"/>
+<pinref part="JP1" gate="A" pin="2"/>
+<wire x1="190.5" y1="121.92" x2="177.8" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="121.92" x2="172.72" y2="121.92" width="0.1524" layer="91"/>
+<label x="175.26" y="121.92" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="A" class="0">
@@ -8354,9 +8368,10 @@ EC12E series with push-on switch</description>
 <label x="48.26" y="124.46" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="3"/>
-<wire x1="190.5" y1="119.38" x2="177.8" y2="119.38" width="0.1524" layer="91"/>
-<label x="180.34" y="119.38" size="1.778" layer="95"/>
+<pinref part="JP1" gate="A" pin="4"/>
+<wire x1="190.5" y1="116.84" x2="177.8" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="116.84" x2="172.72" y2="116.84" width="0.1524" layer="91"/>
+<label x="175.26" y="116.84" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -8379,7 +8394,8 @@ EC12E series with push-on switch</description>
 <segment>
 <pinref part="JP1" gate="A" pin="1"/>
 <wire x1="190.5" y1="124.46" x2="177.8" y2="124.46" width="0.1524" layer="91"/>
-<label x="180.34" y="124.46" size="1.778" layer="95"/>
+<label x="175.26" y="124.46" size="1.778" layer="95"/>
+<wire x1="177.8" y1="124.46" x2="172.72" y2="124.46" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="BUTTON_UNFIL" class="0">
@@ -8406,7 +8422,8 @@ EC12E series with push-on switch</description>
 <segment>
 <pinref part="JP1" gate="A" pin="5"/>
 <wire x1="190.5" y1="114.3" x2="177.8" y2="114.3" width="0.1524" layer="91"/>
-<label x="180.34" y="114.3" size="1.778" layer="95"/>
+<label x="175.26" y="114.3" size="1.778" layer="95"/>
+<wire x1="177.8" y1="114.3" x2="172.72" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
