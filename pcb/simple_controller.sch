@@ -663,23 +663,23 @@ reflow soldering</description>
 <packageinstance name="HCR2520"/>
 </packageinstances>
 </package3d>
-<package3d name="NANOFIT-2-90" urn="urn:adsk.eagle:package:2885802/2" type="box" library_version="69">
+<package3d name="NANOFIT-2-90" urn="urn:adsk.eagle:package:2885802/3" type="model" library_version="72">
 <packageinstances>
 <packageinstance name="NANOFIT-2-90"/>
 </packageinstances>
 </package3d>
-<package3d name="TQFP48" urn="urn:adsk.eagle:package:2885803/1" type="box" library_version="68" library_locally_modified="yes">
+<package3d name="TQFP48" urn="urn:adsk.eagle:package:2885803/2" type="model" library_version="72">
 <description>&lt;b&gt;Thin Quad Flat Pack&lt;/b&gt;</description>
 <packageinstances>
 <packageinstance name="TQFP48"/>
 </packageinstances>
 </package3d>
-<package3d name="C_EEEFK-10X10" urn="urn:adsk.eagle:package:2885805/2" type="box" library_version="69">
+<package3d name="C_EEEFK-10X10" urn="urn:adsk.eagle:package:2885805/3" type="model" library_version="72">
 <packageinstances>
 <packageinstance name="C_EEEFK-10X10"/>
 </packageinstances>
 </package3d>
-<package3d name="SOT223" urn="urn:adsk.eagle:package:2885806/1" type="box" library_version="68" library_locally_modified="yes">
+<package3d name="SOT223" urn="urn:adsk.eagle:package:2885806/2" type="model" library_version="72">
 <description>&lt;b&gt;SMALL OUTLINE TRANSISTOR&lt;/b&gt;</description>
 <packageinstances>
 <packageinstance name="SOT223"/>
@@ -1477,7 +1477,7 @@ reflow soldering</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="NANOFIT-2" urn="urn:adsk.eagle:component:2885809/2" prefix="X" library_version="69">
+<deviceset name="NANOFIT-2" urn="urn:adsk.eagle:component:2885809/3" prefix="X" library_version="72">
 <gates>
 <gate name="G$1" symbol="CON-1X2" x="0" y="0"/>
 </gates>
@@ -1488,7 +1488,7 @@ reflow soldering</description>
 <connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:2885802/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2885802/3"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -1496,7 +1496,7 @@ reflow soldering</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="ATSAMC21G" urn="urn:adsk.eagle:component:2885810/1" prefix="IC" library_version="68" library_locally_modified="yes">
+<deviceset name="ATSAMC21G" urn="urn:adsk.eagle:component:2885810/2" prefix="IC" library_version="72">
 <gates>
 <gate name="G$1" symbol="ATSAMC21G-IO-1" x="-15.24" y="27.94"/>
 <gate name="G$2" symbol="ATSAMC21G-IO-2" x="-15.24" y="-25.4"/>
@@ -1556,7 +1556,7 @@ reflow soldering</description>
 <connect gate="G$4" pin="XOUT32" pad="2"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:2885803/1"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2885803/2"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -1564,7 +1564,7 @@ reflow soldering</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="C-EEEFK" urn="urn:adsk.eagle:component:2885814/2" prefix="C" uservalue="yes" library_version="69">
+<deviceset name="C-EEEFK" urn="urn:adsk.eagle:component:2885814/3" prefix="C" uservalue="yes" library_version="72">
 <gates>
 <gate name="G$1" symbol="CPOL" x="0" y="0"/>
 </gates>
@@ -1575,7 +1575,7 @@ reflow soldering</description>
 <connect gate="G$1" pin="-" pad="-"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:2885805/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2885805/3"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -1614,7 +1614,7 @@ reflow soldering</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="LD1117S50C" urn="urn:adsk.eagle:component:2885816/1" prefix="IC" library_version="68" library_locally_modified="yes">
+<deviceset name="LD1117S50C" urn="urn:adsk.eagle:component:2885816/2" prefix="IC" library_version="72">
 <gates>
 <gate name="G$1" symbol="LDO_GND_FIXED_2" x="0" y="0"/>
 </gates>
@@ -1626,7 +1626,7 @@ reflow soldering</description>
 <connect gate="G$1" pin="OUT" pad="2 4"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:2885806/1"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:2885806/2"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -9925,18 +9925,18 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <attribute name="OC_MOUSER" value="603-RC0603FR-0710KL"/>
 </part>
 <part name="P+10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
-<part name="X1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="NANOFIT-2" device="" package3d_urn="urn:adsk.eagle:package:2885802/2">
+<part name="X1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="NANOFIT-2" device="" package3d_urn="urn:adsk.eagle:package:2885802/3">
 <attribute name="OC_MOUSER" value="538-105313-2102; 538-105325-1002; 538-105307-1202"/>
 </part>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
-<part name="IC6" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="ATSAMC21G" device="" package3d_urn="urn:adsk.eagle:package:2885803/1">
+<part name="IC6" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="ATSAMC21G" device="" package3d_urn="urn:adsk.eagle:package:2885803/2">
 <attribute name="OC_MOUSER" value="556-ATSAMC21G18A-AUT"/>
 </part>
 <part name="P+9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
 <part name="P+7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
-<part name="C1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="C-EEEFK" device="" package3d_urn="urn:adsk.eagle:package:2885805/2" value="470µF">
+<part name="C1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="C-EEEFK" device="" package3d_urn="urn:adsk.eagle:package:2885805/3" value="470µF">
 <attribute name="OC_MOUSER" value="667-EEE-FK1E471P"/>
 </part>
 <part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10µF">
@@ -9988,7 +9988,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <part name="X6" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2">
 <attribute name="OC_MOUSER" value="855-M20-9990246"/>
 </part>
-<part name="IC1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="LD1117S50C" device="" package3d_urn="urn:adsk.eagle:package:2885806/1">
+<part name="IC1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="LD1117S50C" device="" package3d_urn="urn:adsk.eagle:package:2885806/2">
 <attribute name="OC_MOUSER" value="511-LD1117S50C-TR"/>
 </part>
 <part name="Q1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="XRCHA_F_A" device="" package3d_urn="urn:adsk.eagle:package:2885807/1" value="24MHz">
