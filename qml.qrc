@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Views/HomePage.qml</file>
+        <file>Views/Console/ConsolePage.qml</file>
+        <file>Views/Console/SerialSettings.qml</file>
+        <file>qtquickcontrols2.conf</file>
+    </qresource>
+</RCC>
