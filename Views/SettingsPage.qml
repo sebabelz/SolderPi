@@ -31,7 +31,6 @@ Page
                 Material.foreground: terminalSelect.currentIndex === index ? terminalSelect.Material.accent : terminalSelect.Material.foreground
                 highlighted: terminalSelect.highlightedIndex === index
                 hoverEnabled: terminalSelect.hoverEnabled
-                height: parent.height * 1.20
                 font.pointSize: 30
                 }
             }

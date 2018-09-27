@@ -20,8 +20,8 @@ class SerialPort : public QObject
 
 public:
     explicit SerialPort(QObject *parent = nullptr);
-    Q_INVOKABLE void connect();
-    Q_INVOKABLE void disconnect();
+    Q_INVOKABLE void connectTerminal();
+    Q_INVOKABLE void disconnectTerminal();
     Q_INVOKABLE QVariant getSerialPortInfo() const;
     Q_INVOKABLE bool isConnected() const;
 
@@ -36,10 +36,10 @@ private slots:
 signals:
     void dataReceived(QByteArray data);
 private:
-    QSerialPort *serialPort = nullptr;
+    QSerialPort *m_serialPort = nullptr;
     QList<QSerialPortInfo> m_serialPortsInfo;
-    QByteArray readData;
-    QTimer timer;
+    QByteArray m_readData;
+    QTimer m_timer;
 
     qint32 m_baudRate;
     qint32 m_dataBits;
