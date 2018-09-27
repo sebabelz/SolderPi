@@ -8,15 +8,16 @@ ApplicationWindow {
     visible: true
     width: 1024
     height: 600
-    title: qsTr("Stack")
+    title: qsTr("SolderPi")
 
     header: ToolBar {
-        contentHeight: toolButton.implicitHeight
+        contentHeight: toolButton.implicitHeight + 20
 
         ToolButton {
             id: toolButton
+            height: parent.height
             text: stackView.depth > 1 ? "\u25C0" : "\u2630"
-            font.pixelSize: Qt.application.font.pixelSize * 1.6
+            font.pixelSize: Qt.application.font.pixelSize * 3
             onClicked: {
                 if (stackView.depth > 1) {
                     stackView.pop()
@@ -29,12 +30,13 @@ ApplicationWindow {
         Label {
             text: stackView.currentItem.title
             anchors.centerIn: parent
+            font.pixelSize: Qt.application.font.pixelSize * 3
         }
     }
 
     Drawer {
         id: drawer
-        width: window.width * 0.33
+        width: window.width * 0.30
         height: window.height
 
         Column {
@@ -43,16 +45,18 @@ ApplicationWindow {
             ItemDelegate {
                 text: qsTr("Console")
                 width: parent.width
+                font.pointSize: 26
                 onClicked: {
-                    stackView.push("Views/Console/ConsolePage.qml")
+                    stackView.push("Views/ConsolePage.qml")
                     drawer.close()
                 }
             }
             ItemDelegate {
-                text: qsTr("Page 2")
+                text: qsTr("Settings")
                 width: parent.width
+                font.pointSize: 26
                 onClicked: {
-                    //stackView.push("Page2Form.ui.qml")
+                    stackView.push("Views/SettingsPage.qml")
                     drawer.close()
                 }
             }
@@ -61,7 +65,9 @@ ApplicationWindow {
 
     StackView {
         id: stackView
-        initialItem: "Views/Console/ConsolePage.qml"
+        initialItem: "Views/HomePage.qml"
+        //initialItem: "Views/SettingsPage.qml"
+        //initialItem: "Views/Console/ConsolePage.qml"
         anchors.fill: parent
     }
 }

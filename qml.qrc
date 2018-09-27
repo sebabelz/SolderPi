@@ -2,8 +2,10 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>Views/HomePage.qml</file>
-        <file>Views/Console/ConsolePage.qml</file>
-        <file>Views/Console/SerialSettings.qml</file>
         <file>qtquickcontrols2.conf</file>
+        <file>Icons/Icon.js</file>
+        <file>Icons/materialdesignicons-webfont.ttf</file>
+        <file>Views/SettingsPage.qml</file>
+        <file>Views/ConsolePage.qml</file>
     </qresource>
 </RCC>

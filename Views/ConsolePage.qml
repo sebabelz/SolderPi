@@ -1,6 +1,6 @@
 import QtQuick 2.9
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.2
+import QtQuick.Controls 2.4
 import QtQuick.Controls.Material 2.2
 
 Page {
@@ -12,10 +12,10 @@ Page {
         anchors.fill: parent
         visible: true
 
-        SerialSettings {
-            id: serialSettings
+        ListView {
+            id: consoleList
 
-            Layout.preferredWidth: 40
+            Layout.preferredWidth: 20
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
@@ -23,7 +23,7 @@ Page {
         ScrollView {
             id: scrollView
 
-            Layout.preferredWidth: 60
+            Layout.preferredWidth: 80
             Layout.fillHeight: true
             Layout.fillWidth: true
 

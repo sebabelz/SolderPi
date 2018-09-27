@@ -1,10 +1,10 @@
-#include "serialportreader.h"
+#include "serialport.h"
 
-SerialPortReader::SerialPortReader(QObject* parent) : QObject (parent)
+SerialPort::SerialPort(QObject* parent) : QObject (parent)
 {
-    auto serialList = QSerialPortInfo::availablePorts();
+    m_serialPortsInfo = QSerialPortInfo::availablePorts();
 
-    for(const auto& port : serialList)
+    for(const auto& port : m_serialPortsInfo)
     {
         qDebug() << QObject::tr("%1").arg(port.portName());
     }
@@ -16,17 +16,33 @@ SerialPortReader::SerialPortReader(QObject* parent) : QObject (parent)
     timer.start(5000);
 }
 
-void SerialPortReader::connect()
+void SerialPort::connect()
 {
 
 }
 
-void SerialPortReader::disconnect()
+void SerialPort::disconnect()
 {
 
 }
 
-void SerialPortReader::handleReadyRead()
+QVariant SerialPort::getSerialPortInfo() const
+{
+    if(m_serialPortsInfo.isEmpty())
+    {
+        return QVariant();
+    }
+
+    QStringList list;
+    for(auto item: m_serialPortsInfo)
+    {
+        list.append(item.portName());
+    }
+
+    return QVariant::fromValue(list);
+}
+
+void SerialPort::handleReadyRead()
 {
     readData.append(serialPort->readAll());
 
@@ -35,7 +51,7 @@ void SerialPortReader::handleReadyRead()
     emit dataReceived(readData);
 }
 
-void SerialPortReader::handleTimeout()
+void SerialPort::handleTimeout()
 {
     if (readData.isEmpty())
     {
@@ -51,7 +67,7 @@ void SerialPortReader::handleTimeout()
     }
 }
 
-void SerialPortReader::handleError(const QSerialPort::SerialPortError serialPortError)
+void SerialPort::handleError(const QSerialPort::SerialPortError serialPortError)
 {
     if (serialPortError == QSerialPort::ReadError)
     {
@@ -63,12 +79,17 @@ void SerialPortReader::handleError(const QSerialPort::SerialPortError serialPort
     }
 }
 
-qint32 SerialPortReader::baudRate() const
+qint32 SerialPort::baudRate() const
 {
     return m_baudRate;
 }
 
-void SerialPortReader::setBaudRate(const qint32& value)
+void SerialPort::setBaudRate(const qint32& value)
 {
     m_baudRate = value;
+}
+
+bool SerialPort::isConnected() const
+{
+    return m_connected;
 }

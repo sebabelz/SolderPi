@@ -13,14 +13,17 @@ QT_BEGIN_NAMESPACE
 
 QT_END_NAMESPACE
 
-class SerialPortReader : public QObject
+class SerialPort : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(qint32 baudRate READ baudRate WRITE setBaudRate)
+
 public:
-    explicit SerialPortReader(QObject *parent = nullptr);
+    explicit SerialPort(QObject *parent = nullptr);
     Q_INVOKABLE void connect();
     Q_INVOKABLE void disconnect();
+    Q_INVOKABLE QVariant getSerialPortInfo() const;
+    Q_INVOKABLE bool isConnected() const;
 
     qint32 baudRate() const;
     void setBaudRate(const qint32& value);
@@ -34,7 +37,7 @@ signals:
     void dataReceived(QByteArray data);
 private:
     QSerialPort *serialPort = nullptr;
-    QList<QSerialPortInfo> serialPortsInfo;
+    QList<QSerialPortInfo> m_serialPortsInfo;
     QByteArray readData;
     QTimer timer;
 
@@ -43,6 +46,8 @@ private:
     qint32 m_parityBits;
     qint32 m_stopBits;
     qint32 m_flowControl;
+
+    bool m_connected;
 };
 
 #endif // SERIALPORTREADER_H

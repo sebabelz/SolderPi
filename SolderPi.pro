@@ -1,4 +1,4 @@
-QT += quick
+QT += quick serialport core
 CONFIG += c++14 qml_debug
 
 # The following define makes your compiler emit warnings if you use
@@ -13,9 +13,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+    serialport.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += \
+    qml.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -26,3 +28,8 @@ QML_DESIGNER_IMPORT_PATH =
 # Default rules for deployment.
 target.path = /home/arghfu
 !isEmpty(target.path): INSTALLS += target
+
+HEADERS += \
+    serialport.h
+
+DISTFILES +=
