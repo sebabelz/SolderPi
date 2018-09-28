@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     SerialPort serialPort;
 
-    engine.rootContext()->setContextProperty("SerialPort",&serialPort);
+    engine.rootContext()->setContextProperty("serialPort",&serialPort);
 
     QFontDatabase::addApplicationFont(":/Icons/materialdesignicons-webfont.ttf");
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));

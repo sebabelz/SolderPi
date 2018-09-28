@@ -18,7 +18,7 @@ SerialPort::SerialPort(QObject* parent) : QObject (parent)
 
     for (auto i = 0; i < m_serialPortsInfo.count(); ++i)
     {
-        if (m_serialPortsInfo.at(i).portName() == "ttyAMA0")
+        if (m_serialPortsInfo.at(i).portName() == "COM3")
         {
             m_serialPort = new QSerialPort(m_serialPortsInfo.at(i));
             m_serialPort->setBaudRate(QSerialPort::Baud115200);
@@ -26,27 +26,37 @@ SerialPort::SerialPort(QObject* parent) : QObject (parent)
             m_serialPort->setFlowControl(QSerialPort::HardwareControl);
             m_serialPort->setParity(QSerialPort::NoParity);
             m_serialPort->setStopBits(QSerialPort::OneStop);
-            qDebug() << "ttyAMA0 connected" << endl;
             connectTerminal();
             break;
         }
     }
-
-    connect(m_serialPort, &QSerialPort::readyRead, this, &SerialPort::handleReadyRead);
-    connect(m_serialPort, &QSerialPort::errorOccurred, this, &SerialPort::handleError);
-    connect(&m_timer, &QTimer::timeout, this, &SerialPort::handleTimeout);
-
-    m_timer.start(5000);
 }
 
 void SerialPort::connectTerminal()
 {
-    m_serialPort->open(QIODevice::ReadWrite);
+    if (m_serialPort)
+    {
+        connect(m_serialPort, &QSerialPort::readyRead, this, &SerialPort::handleReadyRead);
+        connect(m_serialPort, &QSerialPort::errorOccurred, this, &SerialPort::handleError);
+        connect(&m_timer, &QTimer::timeout, this, &SerialPort::handleTimeout);
+        m_timer.start(5000);
+        m_serialPort->open(QIODevice::ReadWrite);
+
+        qDebug () << m_serialPort->portName() << " connected";
+        emit onConnectionChanged(m_serialPort->isOpen());
+    }
 }
 
 void SerialPort::disconnectTerminal()
 {
+    m_serialPort->close();
+    m_timer.stop();
+    disconnect(m_serialPort, &QSerialPort::readyRead, this, &SerialPort::handleReadyRead);
+    disconnect(m_serialPort, &QSerialPort::errorOccurred, this, &SerialPort::handleError);
+    disconnect(&m_timer, &QTimer::timeout, this, &SerialPort::handleTimeout);
 
+    qDebug () << m_serialPort->portName() << "disconnected";
+    emit onConnectionChanged(m_serialPort->isOpen());
 }
 
 QVariant SerialPort::getSerialPortInfo() const
@@ -104,15 +114,57 @@ void SerialPort::handleError(const QSerialPort::SerialPortError serialPortError)
 
 qint32 SerialPort::baudRate() const
 {
-    return m_baudRate;
+    qDebug() << "Baudrate: GET " << m_serialPort->baudRate();
+    return m_serialPort->baudRate();
 }
 
 void SerialPort::setBaudRate(const qint32& value)
 {
-    m_baudRate = value;
+    m_serialPort->setBaudRate(value);
+    qDebug() << "Baudrate: SET " << m_serialPort->baudRate();
+}
+
+qint32 SerialPort::dataBits() const
+{
+    return m_serialPort->dataBits();
+}
+
+void SerialPort::setDataBits(const qint32 &value)
+{
+    m_serialPort->setDataBits(static_cast<QSerialPort::DataBits>(value));
+}
+
+qint32 SerialPort::parity() const
+{
+    return m_serialPort->parity();
+}
+
+void SerialPort::setParity(const qint32 &value)
+{
+    m_serialPort->setParity(static_cast<QSerialPort::Parity>(value));
+}
+
+qint32 SerialPort::stopBits() const
+{
+    return m_serialPort->stopBits();
+}
+
+void SerialPort::setStopBits(const qint32 &value)
+{
+    m_serialPort->setStopBits(static_cast<QSerialPort::StopBits>(value));
+}
+
+qint32 SerialPort::flowControl() const
+{
+    return m_serialPort->flowControl();
+}
+
+void SerialPort::setFlowControl(const qint32 &value)
+{
+    m_serialPort->setFlowControl(static_cast<QSerialPort::FlowControl>(value));
 }
 
 bool SerialPort::isConnected() const
 {
-    return m_connected;
+    return m_serialPort->isOpen();
 }

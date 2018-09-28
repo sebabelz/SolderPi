@@ -20,7 +20,8 @@ Page
             font.pixelSize: 24
             Layout.fillWidth: true
 
-            model: SerialPort.getSerialPortInfo()
+            enabled: !serialPort.connected
+            model: serialPort.getSerialPortInfo()
 
             delegate: Component
             {
@@ -34,20 +35,6 @@ Page
                 font.pointSize: 30
                 }
             }
-
-            Component.onCompleted:
-            {
-                if (SerialPort.getSerialPortInfo())
-                {
-
-                }
-                else
-                {
-//                   gridLayout.enabled = false
-//                   conButton.enabled = false
-//                   discoButton.enabled = false
-                }
-            }
         }
 
         RowLayout
@@ -56,8 +43,11 @@ Page
             Layout.fillWidth: true
             Button
             {
-                implicitHeight: 80
-                implicitWidth: 80
+                id: settingsButton
+
+                enabled: !serialPort.connected
+                implicitHeight: 96
+                implicitWidth: 96
                 font.pointSize: 48
                 font.family: "Material Design Icons"
 
@@ -72,8 +62,9 @@ Page
             Button
             {
                 id: connectButton
-                implicitHeight: 80
-                implicitWidth: 80
+
+                implicitHeight: 96
+                implicitWidth: 96
                 font.pointSize: 48
                 font.family: "Material Design Icons"
 
@@ -81,19 +72,21 @@ Page
 
                 checkable: true
 
-                text: MdiFont.Icon.lanConnect
-                //text: MdiFont.Icon.lanDisconnect
+                checked: serialPort.connected
+                text: serialPort.connected ? MdiFont.Icon.lanConnect : MdiFont.Icon.lanDisconnect
+
                 onToggled:
                 {
-                    if(connectButton.text === MdiFont.Icon.lanConnect)
+                    if (serialPort.connected)
                     {
-                        connectButton.text = MdiFont.Icon.lanDisconnect
+                        serialPort.disconnectTerminal()
                     }
                     else
                     {
-                        connectButton.text = MdiFont.Icon.lanConnect
+                        serialPort.connectTerminal()
                     }
                 }
+
             }
         }
     }
@@ -102,6 +95,7 @@ Page
     {
         width: parent.width * 0.4
         height: parent.height * 0.7
+        title: "Terminal configuration"
         id: consoleSettingsDialog
 
         property int baudRate: 115200
@@ -169,6 +163,7 @@ Page
                 onCurrentIndexChanged:
                 {
                     console.log("log: Baudrate:", baudItems.get(currentIndex).value)
+                    //serialPort.baudRate = baudItems.get(currentIndex).value
                 }
             }
 
@@ -185,7 +180,8 @@ Page
                 Layout.fillWidth: true
             }
 
-            ComboBox {
+            ComboBox
+            {
                 id: dataBitsSelect
                 font.pointSize: 18
 
@@ -350,8 +346,10 @@ Page
                 }
             }
         }
-
-
         standardButtons:  Dialog.Ok | Dialog.Cancel
+
+        onAccepted: {
+            console.log("accepted")
+        }
     }
 }
