@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.0.1">
+<eagle version="9.2.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.4" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="0.05" altunitdist="mm" altunit="mm"/>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="0.05" altunitdist="mm" altunit="mm"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
@@ -28,9 +28,9 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
@@ -46,8 +46,8 @@
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
@@ -58,7 +58,7 @@
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="no" active="no"/>
 <layer number="89" name="SimProbes" color="9" fill="1" visible="no" active="no"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="no" active="no"/>
@@ -73,7 +73,7 @@
 <layer number="99" name="SpiceOrder" color="5" fill="1" visible="no" active="no"/>
 </layers>
 <board>
-<fusionsync huburn="a.cGVyc29uYWw6dWUyYThkY2Fm" projecturn="a.cGVyc29uYWw6dWUyYThkY2FmIzIwMTcxMDMxMTAxNDg4NTgx" f3durn="urn:adsk.wipprod:dm.lineage:xpmCgQNlRP2w1A9tTBjBZA" pcbguid="e4242dd4-15f1-4edd-b10d-0ed575900696" lastpulledtime="" lastsyncedchangeguid="63041404-160f-30fb-dfd7-2946297e9dd8"/>
+<fusionsync huburn="a.cGVyc29uYWw6dWUyYThkY2Fm" projecturn="a.cGVyc29uYWw6dWUyYThkY2FmIzIwMTcxMDMxMTAxNDg4NTgx" f3durn="urn:adsk.wipprod:dm.lineage:xpmCgQNlRP2w1A9tTBjBZA" pcbguid="e4242dd4-15f1-4edd-b10d-0ed575900696" lastpulledtime="" lastsyncedchangeguid="e7d7f908-ea81-4d88-a1de-504b537adafa"/>
 <plain>
 <wire x1="3" y1="0" x2="37" y2="0" width="0" layer="20"/>
 <wire x1="37" y1="0" x2="40" y2="3" width="0" layer="20" curve="90"/>
@@ -1914,8 +1914,9 @@ Metric Code Size 1005</description>
 <packageinstance name="C0402K"/>
 </packageinstances>
 </package3d>
-<package3d name="C0402" urn="urn:adsk.eagle:package:23626/1" type="box" library_version="3">
-<description>CAPACITOR</description>
+<package3d name="CAPC1005X60" urn="urn:adsk.eagle:package:23626/2" type="model" library_version="7">
+<description>Chip, 1.00 X 0.50 X 0.60 mm body
+&lt;p&gt;Chip package with body size 1.00 X 0.50 X 0.60 mm&lt;/p&gt;</description>
 <packageinstances>
 <packageinstance name="C0402"/>
 </packageinstances>
@@ -2030,6 +2031,9 @@ design rules under a new name.</description>
 <param name="checkRestrict" value="1"/>
 <param name="checkStop" value="0"/>
 <param name="checkValues" value="1"/>
+<param name="checkNames" value="1"/>
+<param name="checkWireStubs" value="1"/>
+<param name="checkPolygonWidth" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -2191,25 +2195,25 @@ design rules under a new name.</description>
 <attribute name="NAME" x="21.15251875" y="29.4905" size="0.8128" layer="25"/>
 <attribute name="OC_MOUSER" value="717-9HT11-32.7KDZC-T" x="21.75" y="28.7" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C19" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/1" value="22pF" x="23.5" y="29.35" smashed="yes" rot="R90">
+<element name="C19" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="22pF" x="23.5" y="29.35" smashed="yes" rot="R90">
 <attribute name="NAME" x="23.9314" y="26.02275" size="0.8128" layer="25" rot="R90"/>
 <attribute name="OC_MOUSER" value="710-885012005027" x="23.5" y="29.35" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="23.5" y="29.35" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="25.405" y="28.715" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="C21" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/1" value="22pF" x="19.95" y="29.35" smashed="yes" rot="R90">
+<element name="C21" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="22pF" x="19.95" y="29.35" smashed="yes" rot="R90">
 <attribute name="NAME" x="20.3814" y="26.02275" size="0.8128" layer="25" rot="R90"/>
 <attribute name="OC_MOUSER" value="710-885012005027" x="19.95" y="29.35" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="19.95" y="29.35" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="21.855" y="28.715" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="C17" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/1" value="12pF" x="15.15" y="33.45" smashed="yes">
+<element name="C17" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="12pF" x="15.15" y="33.45" smashed="yes">
 <attribute name="NAME" x="16.6484" y="33.0436" size="0.8128" layer="25"/>
 <attribute name="OC_MOUSER" value="77-VJ0402A120JXAPBC" x="15.15" y="33.45" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="15.15" y="33.45" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="14.515" y="31.545" size="1.27" layer="27"/>
 </element>
-<element name="C18" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/1" value="12pF" x="15.15" y="37.65" smashed="yes">
+<element name="C18" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="12pF" x="15.15" y="37.65" smashed="yes">
 <attribute name="NAME" x="16.6484" y="37.2436" size="0.8128" layer="25"/>
 <attribute name="OC_MOUSER" value="77-VJ0402A120JXAPBC" x="15.15" y="37.65" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="15.15" y="37.65" size="1.778" layer="27" display="off"/>
@@ -2251,31 +2255,31 @@ design rules under a new name.</description>
 <attribute name="SPICEPREFIX" value="R" x="28.15" y="15.2" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="26.707846875" y="11.2706" size="1.27" layer="27"/>
 </element>
-<element name="C11" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/1" value="100nF" x="23.45" y="35.3" smashed="yes" rot="R180">
+<element name="C11" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF" x="23.45" y="35.3" smashed="yes" rot="R180">
 <attribute name="NAME" x="24.9484" y="34.8936" size="0.8128" layer="25"/>
 <attribute name="OC_MOUSER" value="710-885012105016" x="23.45" y="35.3" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="23.45" y="35.3" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="24.085" y="37.205" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="C10" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/1" value="1µF" x="23.45" y="34.175" smashed="yes" rot="R180">
+<element name="C10" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="1µF" x="23.45" y="34.175" smashed="yes" rot="R180">
 <attribute name="NAME" x="24.9484" y="33.7686" size="0.8128" layer="25"/>
 <attribute name="OC_MOUSER" value="81-GRM155R61C105MA2D" x="23.45" y="34.175" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="23.45" y="34.175" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="24.085" y="36.08" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="C14" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/1" value="100nF" x="23.45" y="33.05" smashed="yes" rot="R180">
+<element name="C14" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF" x="23.45" y="33.05" smashed="yes" rot="R180">
 <attribute name="NAME" x="24.9484" y="32.6436" size="0.8128" layer="25"/>
 <attribute name="OC_MOUSER" value="710-885012105016" x="23.45" y="33.05" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="23.45" y="33.05" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="24.085" y="34.955" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="C15" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/1" value="100nF" x="21.5" y="37.35" smashed="yes" rot="R270">
+<element name="C15" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF" x="21.5" y="37.35" smashed="yes" rot="R270">
 <attribute name="NAME" x="22.9482" y="36.435575" size="0.8128" layer="25" rot="R90"/>
 <attribute name="OC_MOUSER" value="710-885012105016" x="21.5" y="37.35" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="21.5" y="37.35" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="19.595" y="37.985" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="C16" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/1" value="100nF" x="15.15" y="32.3" smashed="yes">
+<element name="C16" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF" x="15.15" y="32.3" smashed="yes">
 <attribute name="NAME" x="16.6484" y="31.8936" size="0.8128" layer="25"/>
 <attribute name="OC_MOUSER" value="710-885012105016" x="15.15" y="32.3" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="15.15" y="32.3" size="1.778" layer="27" display="off"/>
@@ -2292,7 +2296,7 @@ design rules under a new name.</description>
 <attribute name="SPICEPREFIX" value="C" x="12.75" y="21.25" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="VALUE" x="14.77606875" y="16.3306" size="1.27" layer="28" rot="MR0"/>
 </element>
-<element name="C12" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/1" value="100nF" x="18.85" y="29" smashed="yes" rot="R270">
+<element name="C12" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF" x="18.85" y="29" smashed="yes" rot="R270">
 <attribute name="NAME" x="18.0814" y="28.07275" size="0.8128" layer="25" rot="R90"/>
 <attribute name="OC_MOUSER" value="710-885012105016" x="18.85" y="29" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="18.85" y="29" size="1.778" layer="27" rot="R270" display="off"/>
@@ -2465,25 +2469,28 @@ design rules under a new name.</description>
 <attribute name="NAME" x="16.3135" y="35.1436" size="0.8128" layer="25"/>
 <attribute name="OC_MOUSER" value="81-XRCHA24M000F0A1R0" x="15.05" y="35.55" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="C22" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/1" value="100nF" x="27.25" y="50.2" smashed="yes" rot="MR0">
+<element name="C22" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF" x="27.25" y="50.2" smashed="yes" rot="MR0">
 <attribute name="NAME" x="25.7516" y="49.7936" size="0.8128" layer="26" rot="MR0"/>
 <attribute name="OC_MOUSER" value="710-885012105016" x="27.25" y="50.2" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="27.25" y="50.2" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="VALUE" x="27.885" y="48.295" size="1.27" layer="28" rot="MR0"/>
 </element>
-<element name="C23" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/1" value="100nF" x="28.7" y="41.8" smashed="yes" rot="MR270">
+<element name="C23" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="100nF" x="28.7" y="41.8" smashed="yes" rot="MR270">
 <attribute name="NAME" x="28.2686" y="38.47275" size="0.8128" layer="26" rot="MR90"/>
 <attribute name="OC_MOUSER" value="710-885012105016" x="28.7" y="41.8" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="28.7" y="41.8" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="VALUE" x="30.605" y="42.435" size="1.27" layer="28" rot="MR270"/>
 </element>
-<element name="C24" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/1" value="1µF" x="29.75" y="41.8" smashed="yes" rot="MR270">
+<element name="C24" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="1µF" x="29.75" y="41.8" smashed="yes" rot="MR270">
 <attribute name="NAME" x="29.3186" y="38.47275" size="0.8128" layer="26" rot="MR90"/>
 <attribute name="OC_MOUSER" value="81-GRM155R61C105MA2D" x="29.75" y="41.8" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="29.75" y="41.8" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="VALUE" x="31.655" y="42.435" size="1.27" layer="28" rot="MR270"/>
 </element>
-<element name="IC3" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" package="SOT23-5L" package3d_urn="urn:adsk.eagle:package:1437676/7" value="MCP1802" x="2.85" y="17.25" rot="MR180"/>
+<element name="IC3" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" package="SOT23-5L" package3d_urn="urn:adsk.eagle:package:1437676/7" value="MCP1802" x="2.85" y="17.25" smashed="yes" rot="MR180">
+<attribute name="NAME" x="0.945" y="15.345" size="1.27" layer="26" rot="MR180"/>
+<attribute name="VALUE" x="0.945" y="20.679" size="1.27" layer="28" rot="MR180"/>
+</element>
 <element name="X11" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" package="1X02" package3d_urn="urn:adsk.eagle:package:22435/2" value="PINHD-1X2" x="2.85" y="9.1" smashed="yes" rot="R90">
 <attribute name="NAME" x="1.199" y="8.105309375" size="0.8128" layer="25" ratio="10" rot="R90"/>
 <attribute name="OC_MOUSER" value="855-M20-9990246" x="2.85" y="9.1" size="1.778" layer="27" rot="R90" display="off"/>
@@ -3787,6 +3794,13 @@ design rules under a new name.</description>
 <wire x1="25.025" y1="43.5" x2="26.425" y2="44.9" width="0.2" layer="16"/>
 </signal>
 </signals>
+<mfgpreviewcolors>
+<mfgpreviewcolor name="soldermaskcolor" color="0xC8008000"/>
+<mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
+<mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
+<mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
+<mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
+</mfgpreviewcolors>
 </board>
 </drawing>
 <compatibility>
