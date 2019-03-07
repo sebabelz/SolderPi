@@ -1,7 +1,7 @@
-import QtQuick 2.9
+import QtQuick 2.11
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.2
-import QtQuick.Controls.Material 2.2
+import QtQuick.Controls 2.4
+import QtQuick.Controls.Material 2.3
 import "../Icons/Icon.js" as MdiFont
 
 Page {
@@ -53,6 +53,8 @@ Page {
             onClicked:
             {
                 comboDialog.open()
+                comboDialog.x = 20
+                comboDialog.y = 300
             }
         }
 

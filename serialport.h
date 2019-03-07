@@ -25,9 +25,12 @@ class SerialPort : public QObject
 
 public:
     explicit SerialPort(QObject *parent = nullptr);
+    ~SerialPort();
     Q_INVOKABLE void connectTerminal();
     Q_INVOKABLE void disconnectTerminal();
     Q_INVOKABLE QVariant getSerialPortInfo() const;
+    Q_INVOKABLE void setSerialPort(const int index);
+    Q_INVOKABLE void setSerialPort(const QString &s);
     Q_INVOKABLE bool isConnected() const;
 
     qint32 baudRate() const;
@@ -51,6 +54,7 @@ private slots:
 signals:
     void dataReceived(QByteArray data);
     void onConnectionChanged(bool connected);
+
 private:
     QSerialPort *m_serialPort = nullptr;
     QList<QSerialPortInfo> m_serialPortsInfo;

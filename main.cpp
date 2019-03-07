@@ -15,6 +15,8 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
     SerialPort serialPort;
+    serialPort.setSerialPort("COM3");
+    serialPort.connectTerminal();
 
     engine.rootContext()->setContextProperty("serialPort",&serialPort);
 

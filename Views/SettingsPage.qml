@@ -1,7 +1,7 @@
-import QtQuick 2.9
+import QtQuick 2.11
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.2
-import QtQuick.Controls.Material 2.2
+import QtQuick.Controls 2.4
+import QtQuick.Controls.Material 2.3
 import "../Icons/Icon.js" as MdiFont
 
 Page
@@ -35,6 +35,10 @@ Page
                 font.pointSize: 30
                 }
             }
+            onCurrentIndexChanged:
+            {
+                serialPort.setSerialPort(currentIndex)
+            }
         }
 
         RowLayout
@@ -55,7 +59,7 @@ Page
 
                 onClicked:
                 {
-                    consoleSettingsDialog.open()
+                    settingsDialog.open()
                 }
             }
 
@@ -73,7 +77,7 @@ Page
                 checkable: true
 
                 checked: serialPort.connected
-                text: serialPort.connected ? MdiFont.Icon.lanConnect : MdiFont.Icon.lanDisconnect
+                text: serialPort.connected ? MdiFont.Icon.lanDisconnect : MdiFont.Icon.lanConnect
 
                 onToggled:
                 {
@@ -96,7 +100,7 @@ Page
         width: parent.width * 0.4
         height: parent.height * 0.7
         title: "Terminal configuration"
-        id: consoleSettingsDialog
+        id: settingsDialog
 
         property int baudRate: 115200
         property int dataBits: 8
@@ -162,8 +166,7 @@ Page
 
                 onCurrentIndexChanged:
                 {
-                    console.log("log: Baudrate:", baudItems.get(currentIndex).value)
-                    //serialPort.baudRate = baudItems.get(currentIndex).value
+                    settingsDialog.baudRate = baudItems.get(currentIndex).value
                 }
             }
 
@@ -212,6 +215,11 @@ Page
                     font.pointSize: 24
                     }
                 }
+
+                onCurrentIndexChanged:
+                {
+                    settingsDialog.dataBits = dataItems.get(currentIndex).value
+                }
             }
 
             Label {
@@ -258,6 +266,11 @@ Page
                     font.pointSize: 24
                     }
                 }
+
+                onCurrentIndexChanged:
+                {
+                    settingsDialog.parity = parityItems.get(currentIndex).value
+                }
             }
 
             Label {
@@ -300,6 +313,11 @@ Page
                     height: 60
                     font.pointSize: 24
                     }
+                }
+
+                onCurrentIndexChanged:
+                {
+                    settingsDialog.stopBits = stopItems.get(currentIndex).value
                 }
             }
 
@@ -344,12 +362,27 @@ Page
                     font.pointSize: 24
                     }
                 }
+
+                onCurrentIndexChanged:
+                {
+                    settingsDialog.flowControl = flowItems.get(currentIndex).value
+                }
             }
         }
         standardButtons:  Dialog.Ok | Dialog.Cancel
 
-        onAccepted: {
-            console.log("accepted")
+        Component.onCompleted:
+        {
+
+        }
+
+        onAccepted:
+        {
+            serialPort.baudRate = baudRate
+            serialPort.dataBits = dataBits
+            serialPort.flowControl = flowControl
+            serialPort.stopBits = stopBits
+            serialPort.parity = parity
         }
     }
 }

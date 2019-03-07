@@ -16,6 +16,9 @@ SOURCES += \
         main.cpp \
     serialport.cpp
 
+HEADERS += \
+    serialport.h
+
 RESOURCES += \
     qml.qrc
 
@@ -28,8 +31,5 @@ QML_DESIGNER_IMPORT_PATH =
 # Default rules for deployment.
 target.path = /home/arghfu
 !isEmpty(target.path): INSTALLS += target
-
-HEADERS += \
-    serialport.h
 
 DISTFILES +=
