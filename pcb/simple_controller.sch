@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.2.2">
+<eagle version="9.3.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -11419,9 +11419,9 @@ input
 <text x="109.22" y="59.69" size="1.4224" layer="97">SERCOM3/PAD[2] \\ EXINT[12]</text>
 <text x="109.22" y="57.15" size="1.4224" layer="97">SERCOM3/PAD[3] \\ EXINT[13]</text>
 <text x="109.22" y="74.93" size="1.4224" layer="97">TCC0/WO[2]</text>
-<text x="53.34" y="72.39" size="1.4224" layer="97">EXINT[3]</text>
-<text x="53.34" y="74.93" size="1.4224" layer="97">EXINT[2]</text>
-<text x="53.34" y="77.47" size="1.4224" layer="97">EXINT[1]</text>
+<text x="53.34" y="72.39" size="1.4224" layer="97">EXINT[9]</text>
+<text x="53.34" y="74.93" size="1.4224" layer="97">EXINT[8]</text>
+<text x="53.34" y="77.47" size="1.4224" layer="97">EXINT[3]</text>
 <text x="53.34" y="80.01" size="1.4224" layer="97">EXINT[0]</text>
 <text x="109.22" y="46.99" size="1.4224" layer="97">EXINT[8]</text>
 <text x="109.22" y="49.53" size="1.4224" layer="97">EXINT[15]</text>
