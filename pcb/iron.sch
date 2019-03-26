@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.3.0">
+<eagle version="9.3.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -1161,7 +1161,7 @@ package type OT</description>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="IC3" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="AD7995" device="" package3d_urn="urn:adsk.eagle:package:1581956/2">
-<attribute name="OC_DIGIKEY" value="	AD7995YRJZ-0500RL7CT-ND"/>
+<attribute name="OC_DIGIKEY" value=" AD7995YRJZ-0500RL7CT-ND"/>
 </part>
 <part name="R3" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="MVS0608.02" device="" package3d_urn="urn:adsk.eagle:package:1581952/2"/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -1248,7 +1248,7 @@ package type OT</description>
 <part name="SDA" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="1,6/0,8" device="" package3d_urn="urn:adsk.eagle:package:1581957/6"/>
 <part name="+5V" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="1,6/0,8" device="" package3d_urn="urn:adsk.eagle:package:1581957/6"/>
 <part name="IC1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="AT24CS04-SOT23" device="" package3d_urn="urn:adsk.eagle:package:1437676/7">
-<attribute name="OC_DIGIKEY" value="	AT24CS04-STUM-TCT-ND"/>
+<attribute name="OC_DIGIKEY" value=" AT24CS04-STUM-TCT-ND"/>
 </part>
 <part name="IC4" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="ESDA6V1SC5" device="" package3d_urn="urn:adsk.eagle:package:1437676/7">
 <attribute name="OC_DIGIKEY" value="497-7748-1-ND"/>
@@ -1349,8 +1349,8 @@ package type OT</description>
 <attribute name="NAME" x="62.484" y="112.141" size="1.778" layer="95"/>
 <attribute name="VALUE" x="62.484" y="107.061" size="1.778" layer="96"/>
 </instance>
-<instance part="P+3" gate="1" x="22.86" y="81.28" smashed="yes">
-<attribute name="VALUE" x="20.32" y="76.2" size="1.778" layer="96" rot="R90"/>
+<instance part="P+3" gate="1" x="22.86" y="93.98" smashed="yes">
+<attribute name="VALUE" x="20.32" y="88.9" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="GND5" gate="1" x="22.86" y="10.16" smashed="yes">
 <attribute name="VALUE" x="20.32" y="7.62" size="1.778" layer="96"/>
@@ -1548,7 +1548,7 @@ package type OT</description>
 <wire x1="12.7" y1="73.66" x2="22.86" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="73.66" x2="22.86" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="P+3" gate="1" pin="+5V"/>
-<wire x1="22.86" y1="73.66" x2="22.86" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="73.66" x2="22.86" y2="91.44" width="0.1524" layer="91"/>
 <junction x="22.86" y="73.66"/>
 </segment>
 <segment>
