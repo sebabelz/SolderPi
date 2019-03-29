@@ -3,15 +3,10 @@
 #define ADC_ADDR  0x28
 #define TESTPIN 4
 #define PWMPIN 3
-#define BUTTON 2
 
 uint16_t sensorData[2] = {0};
 
-bool isActive = false;
-int enabled = 0;
-bool readState = false;
-volatile bool buttonPressed = false;
-volatile int prevButtonState = LOW;
+volatile bool readState = false;
 
 void sensorInit()
 {
@@ -37,11 +32,6 @@ void sensorRead(uint16_t *data)
   }
 }
 
-void buttonIntput()
-{
-  buttonPressed = true;
-}
-
 void pwmOff()
 {
   readState = true;
@@ -52,22 +42,17 @@ void setup()
 {
   Serial.begin(115200);
   while (!Serial);        // wait for Serial port to connect
-  Serial.println("Started");
 
   sensorInit();
   Serial.println("I2C Initialised");
 
+  pinMode(TESTPIN, OUTPUT);
   pinMode(PWMPIN, OUTPUT);
   TCCR2A = bit(COM2B1) | bit(WGM20);
   TCCR2B = bit(WGM22) | bit(CS22);
   OCR2A = 124;
   OCR2B = 0;
 
-  pinMode(BUTTON, INPUT);
-
-  pinMode(TESTPIN, OUTPUT);
-
-  attachInterrupt(digitalPinToInterrupt(BUTTON), buttonIntput , FALLING);
   attachInterrupt(digitalPinToInterrupt(PWMPIN), pwmOff , FALLING);
 }
 
@@ -75,19 +60,18 @@ void loop()
 {
   char c = Serial.read();
 
-  if(c == 'X')
-  {
-    Serial.println("Leck mich");
-    OCR2B = 0;
-  }
-  
-  if(buttonPressed) 
+  if(c == 'R')
   {
     OCR2B = 99;
-    Serial.print("R");
-    buttonPressed = false;
+    return;
   }
-  
+
+  if(c == 'X')
+  {
+    OCR2B = 0;
+    return;
+  }
+   
   if (readState)
   {
     digitalWrite(TESTPIN, HIGH);
@@ -100,6 +84,5 @@ void loop()
   
     readState = false;
   }
-
 
 }

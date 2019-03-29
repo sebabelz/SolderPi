@@ -1,108 +1,74 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Globalization;
+using System.IO.Ports;
 using System.Threading;
+using System.Timers;
 using USBTC08Imports;
 
 namespace stepResponse
 {
     internal class StepResponse
     {
-        private readonly short _handle;
-        public const int USBTC08_MAX_CHANNELS = 8;
-        public const char TC_TYPE_K = 'K';
-        public const int PICO_OK = 1;
-             
+        private static System.Timers.Timer timer;
+        private static SerialPort serialPort;
+        private static Stopwatch stopwatch;
+        private static NumberFormatInfo nfi;
+        
         public static void Main(string[] args)
         {
-            Console.WriteLine("USB TC-08 Driver Example Program");
-            Console.WriteLine("Version 1.2\n");
+            nfi = new NumberFormatInfo();
+            nfi.NumberDecimalSeparator = ".";
+            
+            stopwatch = new Stopwatch();
+            
+            serialPort = new SerialPort {BaudRate = 115200, PortName = "COM3"};
+            serialPort.Open();
 
-            // Open connection to device
-            Console.WriteLine("\nOpening the device...");
+       
 
-            short handle = Imports.TC08OpenUnit();
-            Console.WriteLine("Handle: {0}", handle);
-
-            if (handle == 0)
+            Console.WriteLine("Press 'A' to start recording.");
+            
+            while (true)
             {
-                Console.WriteLine("Unable to open device");
-                Console.WriteLine("Error code : {0}", handle);
-                //WaitForKey();
+                var input = Console.ReadKey();
+                
+                switch (input.Key) //Switch on Key enum
+                {
+                    case ConsoleKey.R:
+                        SetTimer();
+                        serialPort.DataReceived += new SerialDataReceivedEventHandler(SerialDataReceivedEventHandler);
+                        serialPort.WriteLine("R"); 
+                        stopwatch.Start();
+                        break;
+                }
             }
-            else
-            {
-                Console.WriteLine("Device opened successfully\n");
+        }
 
-                //ConsoleExample consoleExample = new ConsoleExample(handle);
-                //consoleExample.Run();
-
-                Imports.TC08CloseUnit(handle);
-            }
+        private static void SerialDataReceivedEventHandler(object sender, SerialDataReceivedEventArgs e)
+        {
+            var reading = ((SerialPort)sender).ReadLine();
+            
+            var dataSet = stopwatch.Elapsed.TotalMilliseconds.ToString(nfi)+ ", " + reading + "\n"; 
+            Console.Write(dataSet);
         }
         
-        /****************************************************************************
-        * Read temperature information from the unit
-        ****************************************************************************/
-        unsafe void GetValues()
+        private static void OnTimedEvent(object source, ElapsedEventArgs e) 
         {
-            short status;
-            short chan;
-            float[] tempbuffer = new float[9]; 
-            short overflow;
-            int lines=0;
-
-            Console.Write("\n");
-
-            Console.WriteLine("Temperatures are in °C\n");
-            Console.WriteLine("Chan0 is the Cold Junction Temperature\n");
-
-            // Label the columns
-            for (chan = 0; chan <= USBTC08_MAX_CHANNELS; chan++)
-            {
-                Console.Write("Chan{0}:    ", chan);
-            }
-            Console.Write("\n");
-
-            do
-            { 
-                status = Imports.TC08GetSingle(_handle, tempbuffer, &overflow, Imports.TempUnit.USBTC08_UNITS_CENTIGRADE);
-            
-                if (status == PICO_OK)
-                {
-                    for (chan = 0; chan <= USBTC08_MAX_CHANNELS; chan++)
-                    {
-                        Console.Write("{0:0.0000}   ", tempbuffer[chan]);
-                    }
-
-                    Console.Write("\n");
-                    Thread.Sleep(1000);
-                }
-
-                if (++lines > 9)
-                {
-                    Console.WriteLine("Temperatures are in °C\n");
-                    Console.WriteLine("Chan0 is the Cold Junction Temperature\n");
-                    Console.WriteLine("Press any key to stop....\n");
-
-                    lines = 0;
-
-                    for (chan = 0; chan <= USBTC08_MAX_CHANNELS; chan++)
-                    {
-                        Console.Write("Chan{0}:    ", chan);
-                    }
-
-                    Console.Write("\n");
-                }
-            } while (!Console.KeyAvailable);
-
-            char ch = (Console.ReadKey().KeyChar);       // use up keypress
-            status = Imports.TC08Stop(_handle);
-
-            Console.WriteLine();
+        
+            serialPort.WriteLine("X");
+            stopwatch.Stop();
+            serialPort.DataReceived -= new SerialDataReceivedEventHandler(SerialDataReceivedEventHandler);
+            serialPort.DiscardInBuffer();
+            Console.WriteLine("Stopped");
         }
-
-        void OpenTc()
+        
+        private static void SetTimer()
         {
-    
+            timer = new System.Timers.Timer(5000);
+            timer.AutoReset = false;
+            timer.Elapsed += OnTimedEvent;
+            timer.Enabled = true;
         }
     }
 }
