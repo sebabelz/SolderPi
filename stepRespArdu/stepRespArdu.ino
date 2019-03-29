@@ -4,16 +4,14 @@
 #define TESTPIN 4
 #define PWMPIN 3
 #define BUTTON 2
-#define PERIOD_TIME 10
-#define DUTY_CYCLE 0.90
 
 uint16_t sensorData[2] = {0};
-unsigned long previousMillis;
-unsigned long onInterval = DUTY_CYCLE * PERIOD_TIME;
-unsigned long offInterval = PERIOD_TIME - onInterval;
-bool offState = true;
-bool enabled = false;
+
+bool isActive = false;
+int enabled = 0;
 bool readState = false;
+volatile bool buttonPressed = false;
+volatile int prevButtonState = LOW;
 
 void sensorInit()
 {
@@ -41,23 +39,18 @@ void sensorRead(uint16_t *data)
 
 void buttonIntput()
 {
-  digitalWrite(PWMPIN, LOW);
-  if (enabled)
-  {
-    Serial.println("START");
-  }
-  enabled = !enabled;
+  buttonPressed = true;
 }
 
-void testing()
+void pwmOff()
 {
   readState = true;
+  
 }
 
 void setup()
 {
-  sei();
-  Serial.begin(500000);
+  Serial.begin(115200);
   while (!Serial);        // wait for Serial port to connect
   Serial.println("Started");
 
@@ -68,18 +61,33 @@ void setup()
   TCCR2A = bit(COM2B1) | bit(WGM20);
   TCCR2B = bit(WGM22) | bit(CS22);
   OCR2A = 124;
-  OCR2B = 99;
+  OCR2B = 0;
 
   pinMode(BUTTON, INPUT);
 
   pinMode(TESTPIN, OUTPUT);
 
   attachInterrupt(digitalPinToInterrupt(BUTTON), buttonIntput , FALLING);
-  attachInterrupt(digitalPinToInterrupt(PWMPIN), testing , FALLING);
+  attachInterrupt(digitalPinToInterrupt(PWMPIN), pwmOff , FALLING);
 }
 
 void loop()
 {
+  char c = Serial.read();
+
+  if(c == 'X')
+  {
+    Serial.println("Leck mich");
+    OCR2B = 0;
+  }
+  
+  if(buttonPressed) 
+  {
+    OCR2B = 99;
+    Serial.print("R");
+    buttonPressed = false;
+  }
+  
   if (readState)
   {
     digitalWrite(TESTPIN, HIGH);
@@ -91,6 +99,7 @@ void loop()
     Serial.print("\n");
   
     readState = false;
-    
   }
+
+
 }
