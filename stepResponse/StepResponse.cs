@@ -3,6 +3,8 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.IO.Ports;
+using System.Net;
+using System.Threading;
 using USBTC08Imports;
 
 namespace stepResponse
@@ -13,14 +15,20 @@ namespace stepResponse
         
         private readonly Stopwatch _stopwatch;
         private readonly SerialPort _serialPort;
-        private string _fileName;
-        
+        private Thread _thread;
+        private Thermocouple _tc;
 
-        public StepResponse()
+        private float _temperature = 0;
+        private string _fileName;
+
+        private int _state;
+        
+        public StepResponse(short handle)
         {
             _serialPort = new SerialPort {BaudRate = 115200, PortName = "COM3"};
             _serialPort.Open();
             _stopwatch = new Stopwatch();
+            _tc =new Thermocouple(handle);
             
         }
 
@@ -30,28 +38,66 @@ namespace stepResponse
         
             while (true)
             {
-                var input = Console.ReadKey();
+                if (Console.KeyAvailable)  
+                {  
+                    var input = Console.ReadKey(true); 
+                    
+                    switch (input.Key)
+                    {
+                        case ConsoleKey.R:
+                            _state = 1;
+                            break;
 
-                switch (input.Key) //Switch on Key enum
+                        case ConsoleKey.X:
+                            _state = 2;
+                            break;
+                    
+                        case ConsoleKey.Escape:
+                            return;                 
+                    }
+                }  
+                
+                if (_temperature > 100.0)
+                {               
+                    _state = 3;
+                } 
+
+                switch (_state)
                 {
-                    case ConsoleKey.R:
+                    case 0:
+                        break;
+                    
+                    case 1:
+                        _temperature = _tc.ReadTemperature();
+                        _thread = new Thread(_tc.Run);
+                        _thread.Start();
+                        _tc.OnTemperatureReceived += TemperatureDataReceivedEventHandler;
                         _serialPort.WriteLine("R");
                         _stopwatch.Start();
                         _fileName = "step_" + DateTime.Now.ToString("MM_dd_yyyy_HH_mm_ss") + ".csv";
                         _serialPort.DataReceived += SerialDataReceivedEventHandler;
-                        File.Create(_fileName);
-                        break;
-
-                    case ConsoleKey.X:
-                        _serialPort.WriteLine("X");
-                        _serialPort.DataReceived -= SerialDataReceivedEventHandler;
-                        _serialPort.DiscardInBuffer();
-                        Console.WriteLine("ESC");
+                        File.Create(_fileName).Close();    
+                        _state = 0;
                         break;
                     
-                    case ConsoleKey.Escape:
-                        return;                 
+                    case 2:
+                        _thread.Abort();
+                        _tc.OnTemperatureReceived -= TemperatureDataReceivedEventHandler;
+                        
+                        _serialPort.DataReceived -= SerialDataReceivedEventHandler;
+                        _serialPort.DiscardInBuffer();
+                        _stopwatch.Stop();
+                        _stopwatch.Reset();
+                        Console.WriteLine("END"); 
+                        _state = 0;
+                        break;
+                    case 3:
+                        _serialPort.WriteLine("X");
+                        Environment.Exit(0);
+                        break;
                 }
+
+                
             }
         }
         
@@ -59,9 +105,20 @@ namespace stepResponse
         {        
             var reading = ((SerialPort)sender).ReadLine();
 
-            var dataSet = _stopwatch.Elapsed.TotalMilliseconds.ToString(_nfi)+ ", " + reading + ", " +  "\n";     
-            Console.Write(dataSet);  
-        }    
+            var dataSet = _stopwatch.Elapsed.TotalMilliseconds.ToString(_nfi)+ ", " + reading + ", " + _temperature.ToString(_nfi) +  "\n";     
+            Console.Write(dataSet);          
+            
+            using (var file = new StreamWriter(_fileName, true))
+            {
+                file.WriteLine(dataSet);
+                file.Close();
+            }
+        }
+
+        private void TemperatureDataReceivedEventHandler(object sender, TemperatureDataReceivedEventArgs e)
+        {
+           _temperature = e.GetTemperature();
+        }
         
     }
 }

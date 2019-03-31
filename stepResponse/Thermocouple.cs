@@ -8,12 +8,12 @@ namespace stepResponse
              
     public class TemperatureDataReceivedEventArgs : EventArgs
     {
-        private readonly string _temperature;
-        public TemperatureDataReceivedEventArgs(string text)
+        private readonly float _temperature;
+        public TemperatureDataReceivedEventArgs(float temperature)
         {
-            _temperature = text;
+            _temperature = temperature;
         }
-        public string GetTemperature()
+        public float GetTemperature()
         {
             return _temperature;
         }
@@ -44,19 +44,26 @@ namespace stepResponse
                 Imports.TC08SetChannel(_handle, 1, TC_TYPE_K);
             }
             
-            Console.WriteLine(Imports.TC08GetMinIntervalMS(_handle));
+            //Console.WriteLine(Imports.TC08GetMinIntervalMS(_handle));
             
             Imports.TC08SetMains(_handle, Imports.MainsFrequency.USBTC08_MAINS_FIFTY_HERTZ);
         }
 
-        public unsafe void Run()
+        public unsafe float ReadTemperature()
         {
             var tempBuffer = new float[MAX_CHANNELS]; 
             short overflow;
             
             var status = Imports.TC08GetSingle(_handle, tempBuffer, &overflow, Imports.TempUnit.USBTC08_UNITS_CENTIGRADE);
+            return tempBuffer[1];
+        }
 
-            OnTemperatureReceived?.Invoke(this, new TemperatureDataReceivedEventArgs(tempBuffer[1].ToString(_nfi)));            
+        public unsafe void Run()
+        {
+            while (true)
+            {               
+                OnTemperatureReceived?.Invoke(this, new TemperatureDataReceivedEventArgs(ReadTemperature()));   
+            }                
         }
     }
 }

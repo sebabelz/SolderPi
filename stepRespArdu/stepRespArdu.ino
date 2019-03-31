@@ -49,9 +49,9 @@ void setup()
   pinMode(TESTPIN, OUTPUT);
   pinMode(PWMPIN, OUTPUT);
   TCCR2A = bit(COM2B1) | bit(WGM20);
-  TCCR2B = bit(WGM22) | bit(CS22)| bit(CS21) | bit(CS20);
-  OCR2A = 255;
-  OCR2B = 99;
+  TCCR2B = bit(WGM22) | bit(CS22) | bit(CS21);
+  OCR2A = 156;
+  OCR2B = 0; 
 
   attachInterrupt(digitalPinToInterrupt(PWMPIN), pwmOff , FALLING);
 }
@@ -62,7 +62,7 @@ void loop()
 
   if(c == 'R')
   {
-    OCR2B = 99;
+    OCR2B = 78; // 50% = 78 10% = 16
     return;
   }
 
