@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a100cc6-4954-42f0-addf-b45020aeca76" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Thermocouple.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../stepRespArdu/stepRespArdu.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../stepRespArdu/stepRespArdu.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.stepResponse/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.stepResponse/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.stepResponse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.stepResponse/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StepResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StepResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stepResponse.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/stepResponse.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thermocouple.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thermocouple.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/stepResponse.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/stepResponse.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/stepResponse.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/stepResponse.pdb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,53 +16,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Program.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
+            <state relative-caret-position="389">
+              <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
               <folding>
-                <marker date="1553968539737" expanded="false" signature="6:75" ph="..." />
-                <marker date="1553968539737" expanded="true" signature="99:928" ph="{...}" />
-                <marker date="1553968539737" expanded="true" signature="135:926" ph="{...}" />
-                <marker date="1553968539737" expanded="true" signature="246:915" ph="{...}" />
-                <marker date="1553968539737" expanded="true" signature="503:654" ph="{...}" />
-                <marker date="1553968539737" expanded="true" signature="671:905" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/StepResponse.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="763">
-              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-              <folding>
-                <marker date="1553979945584" expanded="false" signature="6:129" ph="..." />
-                <marker date="1553979945584" expanded="true" signature="153:3210" ph="{...}" />
-                <marker date="1553979945584" expanded="true" signature="185:3208" ph="{...}" />
-                <marker date="1553979945584" expanded="true" signature="639:885" ph="{...}" />
-                <marker date="1553979945584" expanded="true" signature="912:2095" ph="{...}" />
-                <marker date="1553979945584" expanded="true" signature="1020:2085" ph="{...}" />
-                <marker date="1553979945584" expanded="true" signature="1138:2071" ph="{...}" />
-                <marker date="1553979945584" expanded="true" signature="2132:2503" ph="{...}" />
-                <marker date="1553979945584" expanded="true" signature="2213:2304" ph="{...}" />
-                <marker date="1553979945584" expanded="true" signature="2552:2841" ph="{...}" />
-                <marker date="1553979945584" expanded="true" signature="2948:3189" ph="{...}" />
+                <marker date="1554031109724" expanded="true" signature="6:113" ph="..." />
+                <marker date="1554031109724" expanded="true" signature="137:1381" ph="{...}" />
+                <marker date="1554031109724" expanded="true" signature="173:1379" ph="{...}" />
+                <marker date="1554031109724" expanded="true" signature="234:1173" ph="{...}" />
+                <marker date="1554031109724" expanded="true" signature="489:640" ph="{...}" />
+                <marker date="1554031109724" expanded="true" signature="657:1163" ph="{...}" />
+                <marker date="1554031109724" expanded="true" signature="1019:1085" ph="{...}" />
+                <marker date="1554031109724" expanded="true" signature="1289:1373" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Thermocouple.cs">
+        <entry file="file://$PROJECT_DIR$/StepResponse.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+            <state relative-caret-position="285">
+              <caret line="48" column="49" lean-forward="true" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
               <folding>
-                <marker date="1554027368591" expanded="true" signature="22:77" ph="{...}" />
-                <marker date="1554027368591" expanded="true" signature="54:75" ph="{...}" />
+                <marker date="1554029516292" expanded="false" signature="6:129" ph="..." />
+                <marker date="1554029516292" expanded="true" signature="153:2167" ph="{...}" />
+                <marker date="1554029516292" expanded="true" signature="185:2165" ph="{...}" />
+                <marker date="1554029516292" expanded="true" signature="472:660" ph="{...}" />
+                <marker date="1554029516292" expanded="true" signature="687:1798" ph="{...}" />
+                <marker date="1554029516292" expanded="true" signature="795:1788" ph="{...}" />
+                <marker date="1554029516292" expanded="true" signature="913:1774" ph="{...}" />
+                <marker date="1554029516292" expanded="true" signature="1905:2146" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -73,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/USBTC08Imports.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="65" column="63" selection-start-line="65" selection-start-column="63" selection-end-line="65" selection-end-column="63" />
+            <state>
+              <caret column="9" selection-start-column="9" selection-end-column="9" />
               <folding>
                 <marker date="1553966822418" expanded="true" signature="0:476" ph="/* Filename: USBTC08Imports.cs ... */" />
                 <marker date="1553966822418" expanded="false" signature="484:534" ph="..." />
@@ -85,6 +69,28 @@
                 <marker date="1553966822418" expanded="true" signature="741:896" ph="{...}" />
                 <marker date="1553966822418" expanded="true" signature="940:1046" ph="{...}" />
                 <marker date="1553966822418" expanded="true" signature="1076:4043" ph="Driver Imports" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Thermocouple.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="389">
+              <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+              <folding>
+                <marker date="1554030982420" expanded="false" signature="6:63" ph="..." />
+                <marker date="1554030982420" expanded="true" signature="87:1958" ph="{...}" />
+                <marker date="1554030982420" expanded="true" signature="278:542" ph="{...}" />
+                <marker date="1554030982420" expanded="true" signature="391:444" ph="{...}" />
+                <marker date="1554030982420" expanded="true" signature="483:536" ph="{...}" />
+                <marker date="1554030982420" expanded="true" signature="577:1956" ph="{...}" />
+                <marker date="1554030982420" expanded="true" signature="992:1068" ph="{...}" />
+                <marker date="1554030982420" expanded="true" signature="1102:1473" ph="{...}" />
+                <marker date="1554030982420" expanded="true" signature="1183:1274" ph="{...}" />
+                <marker date="1554030982420" expanded="true" signature="1507:1950" ph="{...}" />
+                <marker date="1554030982420" expanded="true" signature="1542:1927" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -107,9 +113,9 @@
       <list>
         <option value="$PROJECT_DIR$/SerialPortInterface.cs" />
         <option value="$PROJECT_DIR$/USBTC08Imports.cs" />
-        <option value="$PROJECT_DIR$/Program.cs" />
         <option value="$PROJECT_DIR$/StepResponse.cs" />
         <option value="$PROJECT_DIR$/Thermocouple.cs" />
+        <option value="$PROJECT_DIR$/Program.cs" />
       </list>
     </option>
   </component>
@@ -204,12 +210,12 @@
       <workItem from="1553934215856" duration="11784000" />
       <workItem from="1553963741702" duration="5169000" />
       <workItem from="1553974586062" duration="3093000" />
-      <workItem from="1554016457138" duration="728000" />
+      <workItem from="1554016457138" duration="4151000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39586000" />
+    <option name="totallyTimeSpent" value="43009000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -224,14 +230,14 @@
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17377399" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17377399" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32981783" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32981783" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39980826" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -264,6 +270,19 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Thermocouple.cs</url>
+          <line>58</line>
+          <properties documentPath="$PROJECT_DIR$/Thermocouple.cs" initialLine="57">
+            <startOffsets>
+              <option value="1681" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1791" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -303,36 +322,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-          <folding>
-            <marker date="1553968539737" expanded="false" signature="6:75" ph="..." />
-            <marker date="1553968539737" expanded="true" signature="99:928" ph="{...}" />
-            <marker date="1553968539737" expanded="true" signature="135:926" ph="{...}" />
-            <marker date="1553968539737" expanded="true" signature="246:915" ph="{...}" />
-            <marker date="1553968539737" expanded="true" signature="503:654" ph="{...}" />
-            <marker date="1553968539737" expanded="true" signature="671:905" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Thermocouple.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-          <folding>
-            <marker date="1554027368591" expanded="true" signature="22:77" ph="{...}" />
-            <marker date="1554027368591" expanded="true" signature="54:75" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/USBTC08Imports.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="65" column="63" selection-start-line="65" selection-start-column="63" selection-end-line="65" selection-end-column="63" />
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
           <folding>
             <marker date="1553966822418" expanded="true" signature="0:476" ph="/* Filename: USBTC08Imports.cs ... */" />
             <marker date="1553966822418" expanded="false" signature="484:534" ph="..." />
@@ -347,22 +340,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Thermocouple.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+          <folding>
+            <marker date="1554030982420" expanded="false" signature="6:63" ph="..." />
+            <marker date="1554030982420" expanded="true" signature="87:1958" ph="{...}" />
+            <marker date="1554030982420" expanded="true" signature="278:542" ph="{...}" />
+            <marker date="1554030982420" expanded="true" signature="391:444" ph="{...}" />
+            <marker date="1554030982420" expanded="true" signature="483:536" ph="{...}" />
+            <marker date="1554030982420" expanded="true" signature="577:1956" ph="{...}" />
+            <marker date="1554030982420" expanded="true" signature="992:1068" ph="{...}" />
+            <marker date="1554030982420" expanded="true" signature="1102:1473" ph="{...}" />
+            <marker date="1554030982420" expanded="true" signature="1183:1274" ph="{...}" />
+            <marker date="1554030982420" expanded="true" signature="1507:1950" ph="{...}" />
+            <marker date="1554030982420" expanded="true" signature="1542:1927" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/StepResponse.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="763">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        <state relative-caret-position="285">
+          <caret line="48" column="49" lean-forward="true" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
           <folding>
-            <marker date="1553979945584" expanded="false" signature="6:129" ph="..." />
-            <marker date="1553979945584" expanded="true" signature="153:3210" ph="{...}" />
-            <marker date="1553979945584" expanded="true" signature="185:3208" ph="{...}" />
-            <marker date="1553979945584" expanded="true" signature="639:885" ph="{...}" />
-            <marker date="1553979945584" expanded="true" signature="912:2095" ph="{...}" />
-            <marker date="1553979945584" expanded="true" signature="1020:2085" ph="{...}" />
-            <marker date="1553979945584" expanded="true" signature="1138:2071" ph="{...}" />
-            <marker date="1553979945584" expanded="true" signature="2132:2503" ph="{...}" />
-            <marker date="1553979945584" expanded="true" signature="2213:2304" ph="{...}" />
-            <marker date="1553979945584" expanded="true" signature="2552:2841" ph="{...}" />
-            <marker date="1553979945584" expanded="true" signature="2948:3189" ph="{...}" />
+            <marker date="1554029516292" expanded="false" signature="6:129" ph="..." />
+            <marker date="1554029516292" expanded="true" signature="153:2167" ph="{...}" />
+            <marker date="1554029516292" expanded="true" signature="185:2165" ph="{...}" />
+            <marker date="1554029516292" expanded="true" signature="472:660" ph="{...}" />
+            <marker date="1554029516292" expanded="true" signature="687:1798" ph="{...}" />
+            <marker date="1554029516292" expanded="true" signature="795:1788" ph="{...}" />
+            <marker date="1554029516292" expanded="true" signature="913:1774" ph="{...}" />
+            <marker date="1554029516292" expanded="true" signature="1905:2146" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+          <folding>
+            <marker date="1554031109724" expanded="true" signature="6:113" ph="..." />
+            <marker date="1554031109724" expanded="true" signature="137:1381" ph="{...}" />
+            <marker date="1554031109724" expanded="true" signature="173:1379" ph="{...}" />
+            <marker date="1554031109724" expanded="true" signature="234:1173" ph="{...}" />
+            <marker date="1554031109724" expanded="true" signature="489:640" ph="{...}" />
+            <marker date="1554031109724" expanded="true" signature="657:1163" ph="{...}" />
+            <marker date="1554031109724" expanded="true" signature="1019:1085" ph="{...}" />
+            <marker date="1554031109724" expanded="true" signature="1289:1373" ph="{...}" />
           </folding>
         </state>
       </provider>

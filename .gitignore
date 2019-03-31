@@ -2,3 +2,5 @@
 *.csv
 
 stepResponse/obj/Debug/
+
+stepResponse/bin/Debug/
