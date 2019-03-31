@@ -28,6 +28,14 @@ namespace stepResponse
         
         private readonly short _handle;
 
+        private bool _shutdown = false;
+
+        public bool Shutdown
+        {
+            get { return _shutdown; }
+            set { _shutdown = value; }
+        }
+
         public event TemperatureDataReceivedEventHandler OnTemperatureReceived;
 
 
@@ -60,10 +68,12 @@ namespace stepResponse
 
         public unsafe void Run()
         {
-            while (true)
+            while (!_shutdown)
             {               
                 OnTemperatureReceived?.Invoke(this, new TemperatureDataReceivedEventArgs(ReadTemperature()));   
-            }                
+            }
+
+            _shutdown = false;
         }
     }
 }

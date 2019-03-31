@@ -62,7 +62,7 @@ void loop()
 
   if(c == 'R')
   {
-    OCR2B = 78; // 50% = 78 10% = 16
+    OCR2B = 32; // 50% = 78 10% = 16
     return;
   }
 
@@ -74,6 +74,8 @@ void loop()
    
   if (readState)
   {
+    delayMicroseconds(100);
+    sensorInit();
     digitalWrite(TESTPIN, HIGH);
     sensorRead(sensorData);
     digitalWrite(TESTPIN, LOW);

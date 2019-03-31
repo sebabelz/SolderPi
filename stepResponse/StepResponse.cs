@@ -55,12 +55,7 @@ namespace stepResponse
                         case ConsoleKey.Escape:
                             return;                 
                     }
-                }  
-                
-                if (_temperature > 100.0)
-                {               
-                    _state = 3;
-                } 
+                }         
 
                 switch (_state)
                 {
@@ -77,13 +72,14 @@ namespace stepResponse
                         _fileName = "step_" + DateTime.Now.ToString("MM_dd_yyyy_HH_mm_ss") + ".csv";
                         _serialPort.DataReceived += SerialDataReceivedEventHandler;
                         File.Create(_fileName).Close();    
+                        Console.WriteLine("START"); 
                         _state = 0;
                         break;
                     
                     case 2:
-                        _thread.Abort();
+                        _tc.Shutdown = true;
                         _tc.OnTemperatureReceived -= TemperatureDataReceivedEventHandler;
-                        
+                        _serialPort.WriteLine("X");
                         _serialPort.DataReceived -= SerialDataReceivedEventHandler;
                         _serialPort.DiscardInBuffer();
                         _stopwatch.Stop();
@@ -105,8 +101,8 @@ namespace stepResponse
         {        
             var reading = ((SerialPort)sender).ReadLine();
 
-            var dataSet = _stopwatch.Elapsed.TotalMilliseconds.ToString(_nfi)+ ", " + reading + ", " + _temperature.ToString(_nfi) +  "\n";     
-            Console.Write(dataSet);          
+            var dataSet = _stopwatch.Elapsed.TotalMilliseconds.ToString(_nfi)+ ", " + reading + ", " + _temperature.ToString(_nfi);     
+            //Console.WriteLine(dataSet);          
             
             using (var file = new StreamWriter(_fileName, true))
             {

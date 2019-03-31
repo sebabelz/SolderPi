@@ -1,0 +1,5 @@
+C:\workspace\SolderPi\stepResponse\bin\Release\stepResponse.exe
+C:\workspace\SolderPi\stepResponse\bin\Release\stepResponse.pdb
+C:\workspace\SolderPi\stepResponse\obj\Release\stepResponse.csprojResolveAssemblyReference.cache
+C:\workspace\SolderPi\stepResponse\obj\Release\stepResponse.exe
+C:\workspace\SolderPi\stepResponse\obj\Release\stepResponse.pdb
