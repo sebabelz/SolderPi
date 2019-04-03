@@ -49,7 +49,7 @@ namespace stepResponse
         {
             for (short channel = 0; channel < MAX_CHANNELS; ++channel)
             {
-                Imports.TC08SetChannel(_handle, 1, TC_TYPE_K);
+                Imports.TC08SetChannel(_handle, channel, TC_TYPE_K);
             }
             
             //Console.WriteLine(Imports.TC08GetMinIntervalMS(_handle));

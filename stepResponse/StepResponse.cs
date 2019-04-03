@@ -19,7 +19,7 @@ namespace stepResponse
         private Thermocouple _tc;
 
         private float _temperature = 0;
-        private string _fileName;
+        private StreamWriter _streamWriter;
 
         private int _state;
         
@@ -52,13 +52,14 @@ namespace stepResponse
                             _state = 2;
                             break;
                     
-                        case ConsoleKey.Escape:
-                            return;                 
+                        case ConsoleKey.Q:
+                            _state = 3;
+                            break;                
                     }
                 }         
 
                 switch (_state)
-                {
+                {                 
                     case 0:
                         break;
                     
@@ -69,9 +70,10 @@ namespace stepResponse
                         _tc.OnTemperatureReceived += TemperatureDataReceivedEventHandler;
                         _serialPort.WriteLine("R");
                         _stopwatch.Start();
-                        _fileName = "step_" + DateTime.Now.ToString("MM_dd_yyyy_HH_mm_ss") + ".csv";
+                        var _fileName = "step_" + DateTime.Now.ToString("MM_dd_yyyy_HH_mm_ss") + ".csv";
                         _serialPort.DataReceived += SerialDataReceivedEventHandler;
-                        File.Create(_fileName).Close();    
+                        var fileStream = File.Create(_fileName);    
+                        _streamWriter = new StreamWriter(fileStream);
                         Console.WriteLine("START"); 
                         _state = 0;
                         break;
@@ -85,15 +87,14 @@ namespace stepResponse
                         _stopwatch.Stop();
                         _stopwatch.Reset();
                         Console.WriteLine("END"); 
+                        _streamWriter.Close();                     
                         _state = 0;
                         break;
                     case 3:
                         _serialPort.WriteLine("X");
                         Environment.Exit(0);
                         break;
-                }
-
-                
+                }        
             }
         }
         
@@ -104,11 +105,7 @@ namespace stepResponse
             var dataSet = _stopwatch.Elapsed.TotalMilliseconds.ToString(_nfi)+ ", " + reading + ", " + _temperature.ToString(_nfi);     
             //Console.WriteLine(dataSet);          
             
-            using (var file = new StreamWriter(_fileName, true))
-            {
-                file.WriteLine(dataSet);
-                file.Close();
-            }
+            _streamWriter.WriteLine(dataSet);         
         }
 
         private void TemperatureDataReceivedEventHandler(object sender, TemperatureDataReceivedEventArgs e)
