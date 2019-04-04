@@ -51,10 +51,9 @@ namespace stepResponse
             {
                 Imports.TC08SetChannel(_handle, channel, TC_TYPE_K);
             }
+            Imports.TC08SetMains(_handle, Imports.MainsFrequency.USBTC08_MAINS_FIFTY_HERTZ);
             
             //Console.WriteLine(Imports.TC08GetMinIntervalMS(_handle));
-            
-            Imports.TC08SetMains(_handle, Imports.MainsFrequency.USBTC08_MAINS_FIFTY_HERTZ);
         }
 
         public unsafe float ReadTemperature()
@@ -63,7 +62,7 @@ namespace stepResponse
             short overflow;
             
             var status = Imports.TC08GetSingle(_handle, tempBuffer, &overflow, Imports.TempUnit.USBTC08_UNITS_CENTIGRADE);
-            return tempBuffer[1];
+            return tempBuffer[0];
         }
 
         public unsafe void Run()

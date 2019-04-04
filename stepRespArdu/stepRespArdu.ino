@@ -7,13 +7,14 @@
 uint16_t sensorData[2] = {0};
 
 volatile bool readState = false;
+volatile bool enableRead = false;
 
 void sensorInit()
 {
   uint8_t configMask = 0x68;       //enable CH1, CH0      B11110000
 
   Wire.begin();
-  Wire.setClock(600000);
+  Wire.setClock(400000);
   Wire.beginTransmission(ADC_ADDR);
   Wire.write(configMask);
   Wire.endTransmission();
@@ -34,8 +35,42 @@ void sensorRead(uint16_t *data)
 
 void pwmOff()
 {
+  if(enableRead)
+  {
+    readState = true;
+  }
   readState = true;
-  
+}
+
+void setPwmFrequency(int pin, int divisor) {
+  byte mode;
+  if(pin == 5 || pin == 6 || pin == 9 || pin == 10) {
+    switch(divisor) {
+      case 1: mode = 0x01; break;
+      case 8: mode = 0x02; break;
+      case 64: mode = 0x03; break;
+      case 256: mode = 0x04; break;
+      case 1024: mode = 0x05; break;
+      default: return;
+    }
+    if(pin == 5 || pin == 6) {
+      TCCR0B = TCCR0B & 0b11111000 | mode;
+    } else {
+      TCCR1B = TCCR1B & 0b11111000 | mode;
+    }
+  } else if(pin == 3 || pin == 11) {
+    switch(divisor) {
+      case 1: mode = 0x01; break;
+      case 8: mode = 0x02; break;
+      case 32: mode = 0x03; break;
+      case 64: mode = 0x04; break;
+      case 128: mode = 0x05; break;
+      case 256: mode = 0x06; break;
+      case 1024: mode = 0x7; break;
+      default: return;
+    }
+    TCCR2B = TCCR2B & 0b11111000 | mode;
+  }
 }
 
 void setup()
@@ -48,10 +83,7 @@ void setup()
 
   pinMode(TESTPIN, OUTPUT);
   pinMode(PWMPIN, OUTPUT);
-  TCCR2A = bit(COM2B1) | bit(WGM20);
-  TCCR2B = bit(WGM22) | bit(CS22) | bit(CS21);
-  OCR2A = 156;
-  OCR2B = 0; 
+  setPwmFrequency(PWMPIN, 256);
 
   attachInterrupt(digitalPinToInterrupt(PWMPIN), pwmOff , FALLING);
 }
@@ -60,21 +92,26 @@ void loop()
 {
   char c = Serial.read();
 
-  if(c == 'R')
+  if(c == 'E')
   {
-    OCR2B = 32; // 50% = 78 10% = 16
+    analogWrite(PWMPIN, 51);
     return;
   }
 
   if(c == 'X')
   {
-    OCR2B = 0;
+    analogWrite(PWMPIN, 0);
+    return;
+  }
+  if (c == 'R')
+  {
+    enableRead = true;
     return;
   }
    
   if (readState)
   {
-    delayMicroseconds(100);
+    delayMicroseconds(1000);
     sensorInit();
     digitalWrite(TESTPIN, HIGH);
     sensorRead(sensorData);
@@ -85,6 +122,7 @@ void loop()
     Serial.print("\n");
   
     readState = false;
+    enableRead = false;
   }
 
 }

@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.IO.Ports;
 using System.Net;
+using System.Text;
 using System.Threading;
 using USBTC08Imports;
 
@@ -22,6 +23,8 @@ namespace stepResponse
         private StreamWriter _streamWriter;
 
         private int _state;
+        private bool _overTemp = false;
+        private int _count = 0;
         
         public StepResponse(short handle)
         {
@@ -36,8 +39,14 @@ namespace stepResponse
         {
             Console.WriteLine("Press 'R' to start recording.");
         
-            while (true)
+            while (true) 
             {
+                if (_temperature > 350 && _overTemp == false)
+                {
+                    _state = 2;
+                    _overTemp = true;
+                }
+                
                 if (Console.KeyAvailable)  
                 {  
                     var input = Console.ReadKey(true); 
@@ -63,19 +72,21 @@ namespace stepResponse
                     case 0:
                         break;
                     
-                    case 1:
+                    case 1:  
+                        _overTemp = false;
                         _temperature = _tc.ReadTemperature();
                         _thread = new Thread(_tc.Run);
                         _thread.Start();
                         _tc.OnTemperatureReceived += TemperatureDataReceivedEventHandler;
                         _serialPort.WriteLine("R");
                         _stopwatch.Start();
-                        var _fileName = "step_" + DateTime.Now.ToString("MM_dd_yyyy_HH_mm_ss") + ".csv";
+                        var fileName = "step_" + DateTime.Now.ToString("MM_dd_yyyy_HH_mm_ss") + ".csv";
                         _serialPort.DataReceived += SerialDataReceivedEventHandler;
-                        var fileStream = File.Create(_fileName);    
+                        var fileStream = File.Create(fileName);    
                         _streamWriter = new StreamWriter(fileStream);
                         Console.WriteLine("START"); 
                         _state = 0;
+                        ++_count;
                         break;
                     
                     case 2:
@@ -86,9 +97,10 @@ namespace stepResponse
                         _serialPort.DiscardInBuffer();
                         _stopwatch.Stop();
                         _stopwatch.Reset();
-                        Console.WriteLine("END"); 
+                        Console.WriteLine("END");                      
                         _streamWriter.Close();                     
                         _state = 0;
+                        
                         break;
                     case 3:
                         _serialPort.WriteLine("X");
