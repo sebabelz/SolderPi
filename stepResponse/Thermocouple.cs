@@ -62,7 +62,7 @@ namespace stepResponse
             short overflow;
             
             var status = Imports.TC08GetSingle(_handle, tempBuffer, &overflow, Imports.TempUnit.USBTC08_UNITS_CENTIGRADE);
-            return tempBuffer[0];
+            return tempBuffer[1];
         }
 
         public unsafe void Run()

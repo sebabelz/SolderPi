@@ -16,7 +16,7 @@ namespace stepResponse
         
         private readonly Stopwatch _stopwatch;
         private readonly SerialPort _serialPort;
-        private Thread _thread;
+        //private Thread _thread;
         private Thermocouple _tc;
 
         private float _temperature = 0;
@@ -24,6 +24,7 @@ namespace stepResponse
 
         private int _state;
         private bool _overTemp = false;
+        private bool _enabled = false;
         private int _count = 0;
         
         public StepResponse(short handle)
@@ -37,7 +38,7 @@ namespace stepResponse
 
         public void Run()
         {
-            Console.WriteLine("Press 'R' to start recording.");
+            Console.WriteLine("Press 'E' to start recording.");
         
             while (true) 
             {
@@ -53,7 +54,7 @@ namespace stepResponse
                     
                     switch (input.Key)
                     {
-                        case ConsoleKey.R:
+                        case ConsoleKey.E:
                             _state = 1;
                             break;
 
@@ -74,31 +75,33 @@ namespace stepResponse
                     
                     case 1:  
                         _overTemp = false;
-                        _temperature = _tc.ReadTemperature();
-                        _thread = new Thread(_tc.Run);
-                        _thread.Start();
+                        _enabled = true;
+                        //_thread = new Thread(_tc.Run);
+                        //_thread.Start();
                         _tc.OnTemperatureReceived += TemperatureDataReceivedEventHandler;
-                        _serialPort.WriteLine("R");
+                        _serialPort.WriteLine("E");
                         _stopwatch.Start();
                         var fileName = "step_" + DateTime.Now.ToString("MM_dd_yyyy_HH_mm_ss") + ".csv";
                         _serialPort.DataReceived += SerialDataReceivedEventHandler;
                         var fileStream = File.Create(fileName);    
                         _streamWriter = new StreamWriter(fileStream);
                         Console.WriteLine("START"); 
+                        _serialPort.DiscardInBuffer();
                         _state = 0;
                         ++_count;
                         break;
                     
                     case 2:
-                        _tc.Shutdown = true;
-                        _tc.OnTemperatureReceived -= TemperatureDataReceivedEventHandler;
+                        //_tc.Shutdown = true;
+                        //_tc.OnTemperatureReceived -= TemperatureDataReceivedEventHandler;
                         _serialPort.WriteLine("X");
                         _serialPort.DataReceived -= SerialDataReceivedEventHandler;
                         _serialPort.DiscardInBuffer();
                         _stopwatch.Stop();
                         _stopwatch.Reset();
                         Console.WriteLine("END");                      
-                        _streamWriter.Close();                     
+                        _streamWriter.Close();
+                        _enabled = false;
                         _state = 0;
                         
                         break;
@@ -106,7 +109,13 @@ namespace stepResponse
                         _serialPort.WriteLine("X");
                         Environment.Exit(0);
                         break;
-                }        
+                }
+
+                if (_enabled)
+                {
+                    _temperature = _tc.ReadTemperature();
+                    _serialPort.WriteLine("R");
+                }
             }
         }
         
@@ -122,7 +131,7 @@ namespace stepResponse
 
         private void TemperatureDataReceivedEventHandler(object sender, TemperatureDataReceivedEventArgs e)
         {
-           _temperature = e.GetTemperature();
+           _temperature = e.GetTemperature();        
         }
         
     }

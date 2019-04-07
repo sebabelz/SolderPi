@@ -39,7 +39,6 @@ void pwmOff()
   {
     readState = true;
   }
-  readState = true;
 }
 
 void setPwmFrequency(int pin, int divisor) {
