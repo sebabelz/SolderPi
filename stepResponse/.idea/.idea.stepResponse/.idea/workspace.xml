@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7a100cc6-4954-42f0-addf-b45020aeca76" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../stepRespArdu/stepRespArdu.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../stepRespArdu/stepRespArdu.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.stepResponse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.stepResponse/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StepResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StepResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Thermocouple.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Thermocouple.cs" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+              <folding>
+                <marker date="1554402583536" expanded="false" signature="6:61" ph="..." />
+                <marker date="1554402583536" expanded="true" signature="85:897" ph="{...}" />
+                <marker date="1554402583536" expanded="true" signature="121:895" ph="{...}" />
+                <marker date="1554402583536" expanded="true" signature="175:889" ph="{...}" />
+                <marker date="1554402583536" expanded="true" signature="441:592" ph="{...}" />
+                <marker date="1554402583536" expanded="true" signature="609:879" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/StepResponse.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="372">
+              <caret line="57" column="39" lean-forward="true" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
+              <folding>
+                <marker date="1554481453256" expanded="false" signature="6:190" ph="..." />
+                <marker date="1554481453256" expanded="true" signature="214:4837" ph="{...}" />
+                <marker date="1554481453256" expanded="true" signature="246:4835" ph="{...}" />
+                <marker date="1554481453256" expanded="true" signature="803:1034" ph="{...}" />
+                <marker date="1554481453256" expanded="true" signature="1061:4185" ph="{...}" />
+                <marker date="1554481453256" expanded="true" signature="1170:4175" ph="{...}" />
+                <marker date="1554481453256" expanded="true" signature="1246:1352" ph="{...}" />
+                <marker date="1554481453256" expanded="true" signature="1413:2003" ph="{...}" />
+                <marker date="1554481453256" expanded="true" signature="1549:1985" ph="{...}" />
+                <marker date="1554481453256" expanded="true" signature="2045:3988" ph="{...}" />
+                <marker date="1554481453256" expanded="true" signature="2299:2374" ph="/* _thread = new Thread(_tc.Run); ... */" />
+                <marker date="1554481453256" expanded="true" signature="3169:3283" ph="/* _tc.Shutdown = true; ... */" />
+                <marker date="1554481453256" expanded="true" signature="4019:4161" ph="{...}" />
+                <marker date="1554481453256" expanded="true" signature="4292:4637" ph="{...}" />
+                <marker date="1554481453256" expanded="true" signature="4746:4820" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Thermocouple.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+              <folding>
+                <marker date="1554455103168" expanded="false" signature="6:63" ph="..." />
+                <marker date="1554455103168" expanded="true" signature="87:2248" ph="{...}" />
+                <marker date="1554455103168" expanded="true" signature="278:553" ph="{...}" />
+                <marker date="1554455103168" expanded="true" signature="396:456" ph="{...}" />
+                <marker date="1554455103168" expanded="true" signature="494:547" ph="{...}" />
+                <marker date="1554455103168" expanded="true" signature="588:2246" ph="{...}" />
+                <marker date="1554455103168" expanded="true" signature="949:1046" ph="{...}" />
+                <marker date="1554455103168" expanded="true" signature="1171:1247" ph="{...}" />
+                <marker date="1554455103168" expanded="true" signature="1281:1647" ph="{...}" />
+                <marker date="1554455103168" expanded="true" signature="1362:1459" ph="{...}" />
+                <marker date="1554455103168" expanded="true" signature="1694:1967" ph="{...}" />
+                <marker date="1554455103168" expanded="true" signature="2001:2240" ph="{...}" />
+                <marker date="1554455103168" expanded="true" signature="2042:2198" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/USBTC08Imports.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="65" column="49" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="49" />
+              <folding>
+                <marker date="1554402583524" expanded="true" signature="0:476" ph="/* Filename: USBTC08Imports.cs ... */" />
+                <marker date="1554402583524" expanded="false" signature="484:534" ph="..." />
+                <marker date="1554402583524" expanded="true" signature="560:4051" ph="{...}" />
+                <marker date="1554402583524" expanded="true" signature="584:4049" ph="{...}" />
+                <marker date="1554402583524" expanded="false" signature="590:678" ph="Constants" />
+                <marker date="1554402583524" expanded="false" signature="682:1066" ph="Driver Enums" />
+                <marker date="1554402583524" expanded="true" signature="741:896" ph="{...}" />
+                <marker date="1554402583524" expanded="true" signature="940:1046" ph="{...}" />
+                <marker date="1554402583524" expanded="true" signature="1076:4043" ph="Driver Imports" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>file</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24D852EC-3AC3-4D89-9BB0-79CFB1FCBE45/01/94afa6b5/__Error.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Thermocouple.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24D852EC-3AC3-4D89-9BB0-79CFB1FCBE45/e2/a3450089/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24D852EC-3AC3-4D89-9BB0-79CFB1FCBE45/59/062f14a6/StreamWriter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/StepResponse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24D852EC-3AC3-4D89-9BB0-79CFB1FCBE45/7c/27c1a504/ThreadHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/USBTC08Imports.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/SerialPortInterface.cs" />
+        <option value="$PROJECT_DIR$/USBTC08Imports.cs" />
+        <option value="$PROJECT_DIR$/Program.cs" />
+        <option value="$PROJECT_DIR$/Thermocouple.cs" />
+        <option value="$PROJECT_DIR$/StepResponse.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1928" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1176" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="stepResponse" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-all-files" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/usbtc08/USBTC08Imports.cs" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Debug/stepResponse.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bin/Debug" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/stepResponse.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.7.2" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a100cc6-4954-42f0-addf-b45020aeca76" name="Default Changelist" comment="" />
+      <created>1553619205105</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1553619205105</updated>
+      <workItem from="1553619207873" duration="3757000" />
+      <workItem from="1553861460689" duration="10857000" />
+      <workItem from="1553884888483" duration="4198000" />
+      <workItem from="1553934215856" duration="11784000" />
+      <workItem from="1553963741702" duration="5169000" />
+      <workItem from="1553974586062" duration="3093000" />
+      <workItem from="1554016457138" duration="4151000" />
+      <workItem from="1554058683809" duration="48000" />
+      <workItem from="1554058828021" duration="679000" />
+      <workItem from="1554059538118" duration="4352000" />
+      <workItem from="1554064091702" duration="4024000" />
+      <workItem from="1554135344898" duration="5572000" />
+      <workItem from="1554145007981" duration="600000" />
+      <workItem from="1554302732034" duration="1777000" />
+      <workItem from="1554305537439" duration="1169000" />
+      <workItem from="1554306753680" duration="24000" />
+      <workItem from="1554306895452" duration="731000" />
+      <workItem from="1554307881981" duration="748000" />
+      <workItem from="1554314028712" duration="3585000" />
+      <workItem from="1554319051015" duration="1187000" />
+      <workItem from="1554390543271" duration="1534000" />
+      <workItem from="1554476383697" duration="7014000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="88964000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1928" y="-8" width="1936" height="1176" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20682302" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34611696" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39980826" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32981783" />
+      <window_info anchor="bottom" id="NuGet" order="7" />
+      <window_info anchor="bottom" id="Performance Profiler" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Unit Tests" order="12" weight="0.32981783" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.32981783" />
+      <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="15" weight="0.32981783" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Errors In Solution" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="6" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18176973" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34611696" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39980826" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32981783" />
+      <window_info anchor="bottom" id="NuGet" order="7" />
+      <window_info anchor="bottom" id="Performance Profiler" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Unit Tests" order="12" weight="0.32981783" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.32981783" />
+      <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="15" weight="0.32981783" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Errors In Solution" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="6" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="DotNetProject">
+        <watch expression="serialPort" language="C#" custom="RiderImportsList:" />
+        <watch expression="dataSet" />
+        <watch expression="file" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>serialPort</expression-string>
+        <language-id>C#</language-id>
+        <custom-info>RiderImportsList:</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/stepResponse.csproj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SerialPortInterface.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24D852EC-3AC3-4D89-9BB0-79CFB1FCBE45/59/062f14a6/StreamWriter.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="231" column="50" selection-start-line="231" selection-start-column="50" selection-end-line="231" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24D852EC-3AC3-4D89-9BB0-79CFB1FCBE45/7c/27c1a504/ThreadHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+          <folding>
+            <marker date="1554038518745" expanded="true" signature="0:329" ph="/* Decompiled with JetBrains decompiler ... */" />
+            <marker date="1554038518745" expanded="true" signature="381:1798" ph="{...}" />
+            <marker date="1554038518745" expanded="true" signature="413:1796" ph="{...}" />
+            <marker date="1554038518745" expanded="true" signature="699:711" ph="{...}" />
+            <marker date="1554038518745" expanded="true" signature="754:793" ph="{...}" />
+            <marker date="1554038518745" expanded="true" signature="859:906" ph="{...}" />
+            <marker date="1554038518745" expanded="true" signature="988:1242" ph="{...}" />
+            <marker date="1554038518745" expanded="true" signature="1308:1544" ph="{...}" />
+            <marker date="1554038518745" expanded="true" signature="1600:1792" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24D852EC-3AC3-4D89-9BB0-79CFB1FCBE45/e2/a3450089/ExecutionContext.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="278" column="6" selection-start-line="278" selection-start-column="6" selection-end-line="278" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/MSBuild/14.0/Bin/Microsoft.Common.CurrentVersion.targets">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="3811" column="4" selection-start-line="3811" selection-start-column="4" selection-end-line="3811" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24D852EC-3AC3-4D89-9BB0-79CFB1FCBE45/01/94afa6b5/__Error.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="128" column="42" lean-forward="true" selection-start-line="128" selection-start-column="42" selection-end-line="128" selection-end-column="42" />
+          <folding>
+            <marker date="1554057154447" expanded="true" signature="0:317" ph="/* Decompiled with JetBrains decompiler ... */" />
+            <marker date="1554057154447" expanded="true" signature="458:6939" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="492:6937" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="733:838" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="878:1006" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="1049:1179" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="1233:1354" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="1395:1525" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="1570:1685" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="1730:1845" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="1890:1992" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="2039:2159" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="2207:2328" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="2431:3192" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="2648:2833" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="2684:2825" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="2868:2884" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="2919:2935" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="2974:2990" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="3258:3339" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="3436:6066" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="3621:5937" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="6153:6279" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="6377:6601" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="6647:6762" ph="{...}" />
+            <marker date="1554057154447" expanded="true" signature="6803:6933" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <marker date="1554402583536" expanded="false" signature="6:61" ph="..." />
+            <marker date="1554402583536" expanded="true" signature="85:897" ph="{...}" />
+            <marker date="1554402583536" expanded="true" signature="121:895" ph="{...}" />
+            <marker date="1554402583536" expanded="true" signature="175:889" ph="{...}" />
+            <marker date="1554402583536" expanded="true" signature="441:592" ph="{...}" />
+            <marker date="1554402583536" expanded="true" signature="609:879" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Thermocouple.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding>
+            <marker date="1554455103168" expanded="false" signature="6:63" ph="..." />
+            <marker date="1554455103168" expanded="true" signature="87:2248" ph="{...}" />
+            <marker date="1554455103168" expanded="true" signature="278:553" ph="{...}" />
+            <marker date="1554455103168" expanded="true" signature="396:456" ph="{...}" />
+            <marker date="1554455103168" expanded="true" signature="494:547" ph="{...}" />
+            <marker date="1554455103168" expanded="true" signature="588:2246" ph="{...}" />
+            <marker date="1554455103168" expanded="true" signature="949:1046" ph="{...}" />
+            <marker date="1554455103168" expanded="true" signature="1171:1247" ph="{...}" />
+            <marker date="1554455103168" expanded="true" signature="1281:1647" ph="{...}" />
+            <marker date="1554455103168" expanded="true" signature="1362:1459" ph="{...}" />
+            <marker date="1554455103168" expanded="true" signature="1694:1967" ph="{...}" />
+            <marker date="1554455103168" expanded="true" signature="2001:2240" ph="{...}" />
+            <marker date="1554455103168" expanded="true" signature="2042:2198" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/USBTC08Imports.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="65" column="49" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="49" />
+          <folding>
+            <marker date="1554402583524" expanded="true" signature="0:476" ph="/* Filename: USBTC08Imports.cs ... */" />
+            <marker date="1554402583524" expanded="false" signature="484:534" ph="..." />
+            <marker date="1554402583524" expanded="true" signature="560:4051" ph="{...}" />
+            <marker date="1554402583524" expanded="true" signature="584:4049" ph="{...}" />
+            <marker date="1554402583524" expanded="false" signature="590:678" ph="Constants" />
+            <marker date="1554402583524" expanded="false" signature="682:1066" ph="Driver Enums" />
+            <marker date="1554402583524" expanded="true" signature="741:896" ph="{...}" />
+            <marker date="1554402583524" expanded="true" signature="940:1046" ph="{...}" />
+            <marker date="1554402583524" expanded="true" signature="1076:4043" ph="Driver Imports" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StepResponse.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="57" column="39" lean-forward="true" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
+          <folding>
+            <marker date="1554481453256" expanded="false" signature="6:190" ph="..." />
+            <marker date="1554481453256" expanded="true" signature="214:4837" ph="{...}" />
+            <marker date="1554481453256" expanded="true" signature="246:4835" ph="{...}" />
+            <marker date="1554481453256" expanded="true" signature="803:1034" ph="{...}" />
+            <marker date="1554481453256" expanded="true" signature="1061:4185" ph="{...}" />
+            <marker date="1554481453256" expanded="true" signature="1170:4175" ph="{...}" />
+            <marker date="1554481453256" expanded="true" signature="1246:1352" ph="{...}" />
+            <marker date="1554481453256" expanded="true" signature="1413:2003" ph="{...}" />
+            <marker date="1554481453256" expanded="true" signature="1549:1985" ph="{...}" />
+            <marker date="1554481453256" expanded="true" signature="2045:3988" ph="{...}" />
+            <marker date="1554481453256" expanded="true" signature="2299:2374" ph="/* _thread = new Thread(_tc.Run); ... */" />
+            <marker date="1554481453256" expanded="true" signature="3169:3283" ph="/* _tc.Shutdown = true; ... */" />
+            <marker date="1554481453256" expanded="true" signature="4019:4161" ph="{...}" />
+            <marker date="1554481453256" expanded="true" signature="4292:4637" ph="{...}" />
+            <marker date="1554481453256" expanded="true" signature="4746:4820" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
