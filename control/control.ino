@@ -1,15 +1,37 @@
+#include <AutoPID.h>
 #include <Wire.h>
 
 #define ADC_ADDR  0x28
+#define ADC_RES 0.0048828125
+#define ADC_REF 5
+#define ADC_GAIN 0.54
 #define TESTPIN 4
 #define PWMPIN 3
 
+#define OUTPUT_MIN 2
+#define OUTPUT_MAX 128
+
+#define KP .5
+#define KI .003
+#define KD 1
+
+#define BETA 3940
+#define INV_BETA 0.00025316455
+#define REFTEMP 298.15
+#define INV_REFTEMP 0.00335401643
+#define KELVIN 273.15
+
 uint16_t sensorData[2] = {0};
-
+double refTemperature;
+double temperature;
+double setPoint = 350;
+double outputVal = 0;
+bool enabled = false;
 volatile bool readState = false;
-volatile bool enableRead = false;
 
-void sensorInit()
+AutoPID myPID(&temperature, &setPoint, &outputVal, OUTPUT_MIN, OUTPUT_MAX, KP, KI, KD);
+
+void initSensor()
 {
   uint8_t configMask = 0x68;       //enable CH1, CH0      B11110000
 
@@ -20,8 +42,22 @@ void sensorInit()
   Wire.endTransmission();
 }
 
-void sensorRead(uint16_t *data)
+double getRefTemperature(uint16_t rawData)
 {
+  double u_t = ADC_RES * rawData;
+  double invTemp = INV_REFTEMP + INV_BETA * log(u_t / (ADC_REF - u_t)); 
+  refTemperature = 1/invTemp - KELVIN;
+  return refTemperature;
+}
+
+double getTemperature(uint16_t rawData)
+{
+  return double(ADC_GAIN * rawData) + refTemperature;
+}
+
+void readSensor(uint16_t *data)
+{
+
   uint8_t rxByte[2];
   Wire.requestFrom(ADC_ADDR, 4);
 
@@ -36,10 +72,6 @@ void sensorRead(uint16_t *data)
 void pwmOff()
 {
   readState = true;
-  if(enableRead)
-  {
-    
-  }
 }
 
 void setPwmFrequency(int pin, int divisor) {
@@ -78,7 +110,7 @@ void setup()
   Serial.begin(115200);
   while (!Serial);        // wait for Serial port to connect
 
-  sensorInit();
+  initSensor();
   Serial.println("I2C Initialised");
 
   pinMode(TESTPIN, OUTPUT);
@@ -86,44 +118,48 @@ void setup()
   setPwmFrequency(PWMPIN, 256);
 
   attachInterrupt(digitalPinToInterrupt(PWMPIN), pwmOff , FALLING);
+
+  myPID.setTimeStep(100);
 }
 
-void loop()
+void loop() 
 {
   char c = Serial.read();
 
-  if(c == 'E')
+  if(enabled)
   {
-    
-    return;
+    myPID.run();
   }
 
+  if(c == 'E')
+  {
+    analogWrite(PWMPIN, outputVal);
+    enabled = true;
+    return;
+  }
   if(c == 'X')
   {
     analogWrite(PWMPIN, 0);
-    return;
-  }
-  if (c == 'R')
-  {
-    enableRead = true;
-    analogWrite(PWMPIN, 26);
+    enabled = false;
     return;
   }
    
   if (readState)
   {
-    delayMicroseconds(1000);
-    sensorInit();
+    analogWrite(PWMPIN, outputVal);
+    delayMicroseconds(50);
+    initSensor();
     digitalWrite(TESTPIN, HIGH);
-    sensorRead(sensorData);
+    readSensor(sensorData);
     digitalWrite(TESTPIN, LOW);
-    Serial.print(sensorData[0]);
-    Serial.print(", ");
-    Serial.print(sensorData[1]);
+    refTemperature = getRefTemperature(sensorData[0]);
+    temperature = getTemperature(sensorData[1]);
+    Serial.print(refTemperature);
+    Serial.print("\t");
+    Serial.print(temperature);
+    Serial.print("\t");
+    Serial.print(outputVal);
     Serial.print("\n");
-  
     readState = false;
-    enableRead = false;
   }
-
 }

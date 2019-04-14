@@ -6,6 +6,7 @@ using System.IO.Ports;
 using System.Net;
 using System.Text;
 using System.Threading;
+using System.Timers;
 using USBTC08Imports;
 
 namespace stepResponse
@@ -16,6 +17,7 @@ namespace stepResponse
         
         private readonly Stopwatch _stopwatch;
         private readonly SerialPort _serialPort;
+        private System.Timers.Timer _shutdownTimer;
         //private Thread _thread;
         private Thermocouple _tc;
 
@@ -42,7 +44,7 @@ namespace stepResponse
         
             while (true) 
             {
-                if (_temperature > 350 && _overTemp == false)
+                if (_temperature > 400 && _overTemp == false)
                 {
                     _state = 2;
                     _overTemp = true;
@@ -88,6 +90,7 @@ namespace stepResponse
                         Console.WriteLine("START"); 
                         _serialPort.DiscardInBuffer();
                         _state = 0;
+                        SetTimer();
                         ++_count;
                         break;
                     
@@ -119,6 +122,16 @@ namespace stepResponse
             }
         }
         
+        private void SetTimer()
+        {
+            // Create a timer with a two second interval.
+            _shutdownTimer = new System.Timers.Timer(150000);
+            // Hook up the Elapsed event for the timer. 
+            _shutdownTimer.Elapsed += OnTimedEvent;
+            _shutdownTimer.AutoReset = true;
+            _shutdownTimer.Enabled = true;
+        }
+        
         private void SerialDataReceivedEventHandler(object sender, SerialDataReceivedEventArgs e)
         {        
             var reading = ((SerialPort)sender).ReadLine();
@@ -134,5 +147,11 @@ namespace stepResponse
            _temperature = e.GetTemperature();        
         }
         
+        private void OnTimedEvent(Object source, ElapsedEventArgs e)
+        {
+            _state = 2;
+            _shutdownTimer.Enabled = false;
+            Console.WriteLine("TIMED OUT");
+        }
     }
 }
