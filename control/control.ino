@@ -11,9 +11,9 @@
 #define OUTPUT_MIN 2
 #define OUTPUT_MAX 128
 
-#define KP .5
-#define KI .003
-#define KD 1
+#define KP 7.8
+#define KI .13
+#define KD 1.5
 
 #define BETA 3940
 #define INV_BETA 0.00025316455
