@@ -8,3 +8,7 @@ stepResponse/bin/Debug/
 stepResponse/bin/Release/
 
 stepResponse/obj/Release/
+
+solder_nucleo/\.idea/
+
+solder_nucleo/cmake-build-debug/
