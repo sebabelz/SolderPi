@@ -50,13 +50,12 @@ int main()
     MX_FMPI2C1_Init();
     MX_TIM3_Init();
     MX_TIM5_Init();
-    MX_TIM7_Init();
+
     ssd1306_Init();
     HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_1 | TIM_CHANNEL_2);
     HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_2);
     HAL_TIM_OC_Start_IT(&htim5, TIM_CHANNEL_3);
-    HAL_TIM_Base_Start_IT(&htim7);
 
 
     AD7995 adConverter(&hfmpi2c1);
@@ -69,7 +68,7 @@ int main()
     while (true)
     {
         HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-
+        printf("Hallo\n");
 //        adConverter.ReadData();
         HAL_Delay(1000);
 
@@ -157,11 +156,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     if (htim->Instance == TIM1)
     {
         HAL_IncTick();
-    }
-
-    if (htim->Instance == TIM7)
-    {
-        ssd1306_PrintValues(TIM3->CNT, 250);
     }
 }
 
