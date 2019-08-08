@@ -17,7 +17,7 @@ extern "C" {
 }
 #endif
 
- enum Channel: uint8_t
+enum Channel: uint8_t
 {
     One = 0x10,
     Two = 0x20,
@@ -31,16 +31,15 @@ private:
     uint8_t address = (0x28 << 1); // NOLINT(hicpp-signed-bitwise)
     uint8_t config = 0x00;
     uint8_t channelCount = 0;
+    uint16_t rawData[4] = {0};
     FMPI2C_HandleTypeDef *handle = nullptr;
-
-    std::vector<uint8_t> rawData;
 
     void SetConfig(uint8_t position, uint8_t value);
     void ClearConfig(uint8_t position);
     void CountChannels();
 
 public:
-    AD7995() = delete;
+    AD7995();
     explicit AD7995(uint8_t ch);
     explicit AD7995(FMPI2C_HandleTypeDef *handle);
     ~AD7995();
