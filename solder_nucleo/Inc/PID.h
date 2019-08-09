@@ -25,13 +25,15 @@ private:
     float setPoint = 0;
 
 public:
+    PID();
     PID(float proportionalGain, float *input, float *output);
     PID(float proportionalGain, float integralGain, float *input, float *output);
     PID(float proportionalGain, float integralGain, float derivativeGain, float *input, float *output);
     virtual ~PID();
 
     void processData(float actualTime);
-
+    float getSetPoint() const;
+    void setSetPoint(float setPoint);
     void setProportionalGain(float proportionalGain);
     void setIntegralGain(float integralGain);
     void setDerivativeGain(float derivativeGain);

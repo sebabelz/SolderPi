@@ -17,8 +17,12 @@
   ******************************************************************************
   */
 
-#include <AD7995.h>
+#include <iostream>
+#include "SolderingIron.h"
 #include "main.h"
+
+SolderingIron solderingIron;
+uint16_t setPoint = 300;
 
 #ifdef __cplusplus
 extern "C" {
@@ -26,8 +30,6 @@ extern "C" {
 
 #include "ssd1306.h"
 #include <cstdio>
-AD7995 adConverter;
-uint32_t setPoint = 0;
 
 void SystemClock_Config();
 int __io_putchar(int ch);
@@ -62,20 +64,15 @@ int main()
 
     HAL_TIM_Base_Start_IT(&htim7);
 
-    adConverter.SetI2CHandle(&hfmpi2c1);
-
-    adConverter.SetChannels(Channel::One | Channel::Two | Channel::Three);
-    adConverter.SetExternalReference();
+    solderingIron.setI2CHandle(&hfmpi2c1);
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
     while (true)
     {
         HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-
-//        ssd1306_PrintValues(setPoint, 250);
-        printf("Hallo\n");
-        HAL_Delay(1000);
+        ssd1306_PrintValues(setPoint, static_cast<int>(solderingIron.getIronTemperature()));
+        HAL_Delay(25);
     }
 #pragma clang diagnostic pop
 }
@@ -144,7 +141,7 @@ void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
     if (htim->Instance == TIM5)
     {
         HAL_GPIO_TogglePin(CMP_GPIO_Port, CMP_Pin);
-        adConverter.ReadData();
+        solderingIron.processControl();
     }
 }
 
@@ -152,7 +149,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
     if (htim->Instance == TIM3)
     {
-        ++setPoint;
+        solderingIron.setSetPoint(++setPoint);
     }
 }
 

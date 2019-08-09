@@ -5,53 +5,45 @@
 #ifndef AD7995_H
 #define AD7995_H
 
-#include <vector>
+#include <array>
+#include "ADChannel.h"
+
 #ifdef __cplusplus
 extern "C" {
-#endif
 
 #include <cstdint>
 #include "stm32f4xx_hal.h"
 
-#ifdef __cplusplus
 }
 #endif
 
-enum Channel: uint8_t
-{
-    One = 0x10,
-    Two = 0x20,
-    Three = 0x40,
-    Four = 0x80,
-};
+#define AD7995_MAXCHANNELS 4
 
 class AD7995 final
 {
 private:
+    const uint16_t resolution = 1024;
     uint8_t address = (0x28 << 1); // NOLINT(hicpp-signed-bitwise)
     uint8_t config = 0x00;
     uint8_t channelCount = 0;
-    uint16_t rawData[4] = {0};
+    std::array<ADChannel, AD7995_MAXCHANNELS> channels;
     FMPI2C_HandleTypeDef *handle = nullptr;
 
-    void SetConfig(uint8_t position, uint8_t value);
-    void ClearConfig(uint8_t position);
-    void CountChannels();
+    void setConfig(uint8_t position, uint8_t value);
+    void clearConfig(uint8_t position);
+    void countChannels();
 
 public:
     AD7995();
-    explicit AD7995(uint8_t ch);
-    explicit AD7995(FMPI2C_HandleTypeDef *handle);
-    ~AD7995();
+    ~AD7995() = default;
 
-    void SetI2CHandle(FMPI2C_HandleTypeDef *handle);
-    void SetChannels(uint8_t ch);
-    void SetExternalReference();
-    void ClearExternalReference();
+    void setI2CHandle(FMPI2C_HandleTypeDef *handle);
+    void setChannels(Channel ch);
+    void setExternalReference();
+    void clearExternalReference();
+    uint32_t getRawData(Channel ch);
+    uint16_t getResolution() const;
 
-    void ReadData();
-
+    void readData();
 };
-
-
 #endif //AD7995_H
