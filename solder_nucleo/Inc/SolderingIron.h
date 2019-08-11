@@ -30,9 +30,9 @@ private:
     const float tipGain = 0.54;
 
     AD7995 adConverter;
-    PID control;
+    PID<int, uint32_t> control;
 
-    float ironTemperature = 0;
+    uint32_t ironTemperature = 0;
     float refTemperature = 0;
 
     float getReferenceTemperature();
@@ -43,11 +43,11 @@ public:
 
     void setI2CHandle(FMPI2C_HandleTypeDef *handle);
 
-    void setSetPoint(float setPoint);
+    void setSetPoint(uint32_t setPoint);
+    void setOutput(uint32_t *output);
 
     float getIronTemperature();
     void processControl();
 };
-
 
 #endif //SOLDERINGIRON_H

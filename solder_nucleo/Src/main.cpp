@@ -22,7 +22,9 @@
 #include "main.h"
 
 SolderingIron solderingIron;
-uint16_t setPoint = 300;
+
+uint16_t setPoint = 350;
+uint32_t pwmOutput = 0;
 
 #ifdef __cplusplus
 extern "C" {
@@ -57,7 +59,7 @@ int main()
     MX_TIM7_Init();
 
     ssd1306_Init();
-    HAL_TIM_Encoder_Start_IT(&htim3, TIM_CHANNEL_1 | TIM_CHANNEL_2);
+    HAL_TIM_Encoder_Start_IT(&htim3, TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_2);
     HAL_TIM_OC_Start_IT(&htim5, TIM_CHANNEL_3);
@@ -65,6 +67,8 @@ int main()
     HAL_TIM_Base_Start_IT(&htim7);
 
     solderingIron.setI2CHandle(&hfmpi2c1);
+    solderingIron.setOutput(&pwmOutput);
+    solderingIron.setSetPoint(setPoint);
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
@@ -72,7 +76,6 @@ int main()
     {
         HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
         ssd1306_PrintValues(setPoint, static_cast<int>(solderingIron.getIronTemperature()));
-        HAL_Delay(25);
     }
 #pragma clang diagnostic pop
 }
@@ -142,6 +145,9 @@ void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
     {
         HAL_GPIO_TogglePin(CMP_GPIO_Port, CMP_Pin);
         solderingIron.processControl();
+        std::cout << pwmOutput << std::endl;
+        __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_2, pwmOutput );
+
     }
 }
 
@@ -149,7 +155,15 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
     if (htim->Instance == TIM3)
     {
-        solderingIron.setSetPoint(++setPoint);
+        if (__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3))
+        {
+            solderingIron.setSetPoint(--setPoint);
+        }
+        else
+        {
+            solderingIron.setSetPoint(++setPoint);
+        }
+//        std::cout << "CNT: " << htim3.Instance->CNT << " Setpoint: " << setPoint << std::endl;
     }
 }
 

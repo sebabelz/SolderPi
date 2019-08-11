@@ -66,8 +66,7 @@ void AD7995::countChannels()
     {
         --this->channelCount;
     }
-
-    std::cout << "Channels: " << static_cast<int>(this->channelCount) << "\n";
+//    std::cout << "Channels: " << static_cast<int>(this->channelCount) << "\n";
 }
 
 uint32_t AD7995::getRawData(Channel ch)
