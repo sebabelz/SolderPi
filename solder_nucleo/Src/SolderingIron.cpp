@@ -9,7 +9,7 @@
 
 SolderingIron::SolderingIron()
 {
-    control = PID<int, uint32_t>(1.8, 0.03, 1.2);
+    control = PID<int, uint32_t>(196, 38, 172.8);
     control.setInput(&ironTemperature);
     control.setOutputBounds(0, 9600);
 }
