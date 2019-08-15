@@ -1146,17 +1146,17 @@ package type OT</description>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device=""/>
 <part name="X1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="LUMBERG_KLB_4" device="" package3d_urn="urn:adsk.eagle:package:1437574/2"/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R1" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="20k 0,1%">
+<part name="R1" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1k">
 <spice>
 <pinmapping spiceprefix="R">
 <pinmap gate="G$1" pin="1" pinorder="1"/>
 <pinmap gate="G$1" pin="2" pinorder="2"/>
 </pinmapping>
 </spice>
-<attribute name="OC_DIGIKEY" value="P20KDBCT-ND"/>
+<attribute name="OC_DIGIKEY" value="P1.0KDBCT-ND"/>
 </part>
-<part name="R2" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="NTC" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="68k @25°C, 1%, ß=3985 K">
-<attribute name="OC_DIGIKEY" value="BC2555CT-ND"/>
+<part name="R2" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="NTC" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1k @25°C, 1%, ß=3650 K">
+<attribute name="OC_DIGIKEY" value="P123687CT-ND"/>
 </part>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -1166,14 +1166,14 @@ package type OT</description>
 <part name="R3" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="MVS0608.02" device="" package3d_urn="urn:adsk.eagle:package:1581952/2"/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
-<part name="R4" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="5,1M">
+<part name="R4" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="4M7">
 <spice>
 <pinmapping spiceprefix="R">
 <pinmap gate="G$1" pin="1" pinorder="1"/>
 <pinmap gate="G$1" pin="2" pinorder="2"/>
 </pinmapping>
 </spice>
-<attribute name="OC_MOUSER" value="71-CRCW08055M10FKEA"/>
+<attribute name="OC_DIGIKEY" value="311-4.70MHRCT-ND"/>
 </part>
 <part name="R5" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1k">
 <spice>
@@ -1184,14 +1184,14 @@ package type OT</description>
 </spice>
 <attribute name="OC_DIGIKEY" value=" RMCF0603FT1K00CT-ND"/>
 </part>
-<part name="R6" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1k">
+<part name="R6" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="100k">
 <spice>
 <pinmapping spiceprefix="R">
 <pinmap gate="G$1" pin="1" pinorder="1"/>
 <pinmap gate="G$1" pin="2" pinorder="2"/>
 </pinmapping>
 </spice>
-<attribute name="OC_DIGIKEY" value=" RMCF0603FT1K00CT-ND"/>
+<attribute name="OC_DIGIKEY" value="RMCF0603FT100KCT-ND"/>
 </part>
 <part name="C1" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="C-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241929/3" value="100pF">
 <spice>
@@ -1200,7 +1200,7 @@ package type OT</description>
 <pinmap gate="G$1" pin="2" pinorder="2"/>
 </pinmapping>
 </spice>
-<attribute name="OC_MOUSER" value="710-885012207080"/>
+<attribute name="OC_DIGIKEY" value="478-7926-1-ND"/>
 </part>
 <part name="C2" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="C-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241929/3" value="10nF">
 <spice>
@@ -1209,7 +1209,7 @@ package type OT</description>
 <pinmap gate="G$1" pin="2" pinorder="2"/>
 </pinmapping>
 </spice>
-<attribute name="OC_MOUSER" value="710-885012207092 "/>
+<attribute name="OC_DIGIKEY" value="478-6209-1-ND"/>
 </part>
 <part name="P+3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -1325,7 +1325,7 @@ package type OT</description>
 <attribute name="VALUE" x="180.34" y="48.26" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="R4" gate="G$1" x="22.86" y="66.04" smashed="yes" rot="R90">
-<attribute name="OC_MOUSER" x="22.86" y="66.04" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="OC_DIGIKEY" x="22.86" y="66.04" size="1.778" layer="96" rot="R90" display="off"/>
 <attribute name="NAME" x="21.3614" y="62.23" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="26.162" y="62.23" size="1.778" layer="96" rot="R90"/>
 </instance>
@@ -1340,12 +1340,12 @@ package type OT</description>
 <attribute name="VALUE" x="29.21" y="47.498" size="1.778" layer="96"/>
 </instance>
 <instance part="C1" gate="G$1" x="12.7" y="63.5" smashed="yes">
-<attribute name="OC_MOUSER" x="12.7" y="63.5" size="1.778" layer="96" display="off"/>
+<attribute name="OC_DIGIKEY" x="12.7" y="63.5" size="1.778" layer="96" display="off"/>
 <attribute name="NAME" x="14.224" y="63.881" size="1.778" layer="95"/>
 <attribute name="VALUE" x="14.224" y="58.801" size="1.778" layer="96"/>
 </instance>
 <instance part="C2" gate="G$1" x="60.96" y="111.76" smashed="yes">
-<attribute name="OC_MOUSER" x="60.96" y="111.76" size="1.778" layer="96" display="off"/>
+<attribute name="OC_DIGIKEY" x="60.96" y="111.76" size="1.778" layer="96" display="off"/>
 <attribute name="NAME" x="62.484" y="112.141" size="1.778" layer="95"/>
 <attribute name="VALUE" x="62.484" y="107.061" size="1.778" layer="96"/>
 </instance>
