@@ -26,6 +26,7 @@ SolderingIron solderingIron;
 uint16_t setPoint = 350;
 uint32_t pwmOutput = 0;
 
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -145,25 +146,7 @@ void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
     {
         HAL_GPIO_TogglePin(CMP_GPIO_Port, CMP_Pin);
         solderingIron.processControl();
-        std::cout << pwmOutput << std::endl;
         __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_2, pwmOutput );
-
-    }
-}
-
-void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
-{
-    if (htim->Instance == TIM3)
-    {
-        if (__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3))
-        {
-            solderingIron.setSetPoint(--setPoint);
-        }
-        else
-        {
-            solderingIron.setSetPoint(++setPoint);
-        }
-//        std::cout << "CNT: " << htim3.Instance->CNT << " Setpoint: " << setPoint << std::endl;
     }
 }
 
@@ -181,9 +164,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     {
         HAL_IncTick();
     }
-    if (htim->Instance == TIM7)
-    {
-    }
 }
 
 /**
@@ -193,9 +173,21 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-    if (GPIO_Pin == GPIO_PIN_5)
+    if (GPIO_Pin == BTN_Pin)
     {
-        printf("pressed");
+        std::cout << "pressed" << std::endl;
+    }
+    if (GPIO_Pin == ENC_CH_A_Pin)
+    {
+        if (HAL_GPIO_ReadPin(ENC_CH_A_GPIO_Port, ENC_CH_A_Pin) !=
+            HAL_GPIO_ReadPin(ENC_CH_B_GPIO_Port, ENC_CH_B_Pin))
+        {
+            ++setPoint;
+        }
+        else
+        {
+           --setPoint;
+        }
     }
 }
 

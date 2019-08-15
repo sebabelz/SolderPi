@@ -6,7 +6,6 @@
 #define PID_H
 
 #include <iostream>
-#include <cmath>
 #include <type_traits>
 
 template<typename T, typename S>
@@ -130,17 +129,15 @@ template<typename T, typename S>
 void PID<T, S>::processData(T actualTime)
 {
     auto timeDiff = actualTime - lastTime;
-//    std::cout << "Timediff: " << timeDiff << std::endl;
     error = setPoint - *input;
-
-    if (integralError > maxIntError) integralError = maxIntError;
-    if (integralError < -maxIntError) integralError = -maxIntError;
 
     proportionalError = proportionalGain * error;
     integralError += integralGain * (error + lastError) / 2 * timeDiff;
     derivativeError = derivativeGain * (error - lastError) / timeDiff;
 
-    std::cout << "Int Error: " << integralError << std::endl;
+    if (integralError > maxIntError) integralError = maxIntError;
+    if (integralError < -maxIntError) integralError = -maxIntError;
+
     auto controlOutput = proportionalError + integralError + derivativeError;
 
     if (outputBounded)
