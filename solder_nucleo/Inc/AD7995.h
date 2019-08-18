@@ -23,10 +23,13 @@ class AD7995 final
 {
 private:
     const uint16_t resolution = 1024;
+    bool connected = false;
+
+private:
     uint8_t address = (0x28 << 1); // NOLINT(hicpp-signed-bitwise)
     uint8_t config = 0x00;
     uint8_t channelCount = 0;
-    std::array<ADChannel, AD7995_MAXCHANNELS> channels;
+    std::array<uint16_t , 4> rawData;
     FMPI2C_HandleTypeDef *handle = nullptr;
 
     void setConfig(uint8_t position, uint8_t value);
@@ -41,9 +44,11 @@ public:
     void setChannels(Channel ch);
     void setExternalReference();
     void clearExternalReference();
-    uint32_t getRawData(Channel ch);
+    uint16_t getRawData(Channel ch);
     uint16_t getResolution() const;
+    bool isConnected() const;
 
-    void readData();
+    HAL_StatusTypeDef readAllChannels();
+    HAL_StatusTypeDef readChannel(Channel ch);
 };
 #endif //AD7995_H

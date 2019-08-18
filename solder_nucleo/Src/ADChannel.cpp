@@ -36,47 +36,5 @@ std::ostream &operator<<(std::ostream &os, const Channel &ch)
     return os;
 }
 
-ADChannel::ADChannel()
-{
-    this->channel = Channel::Inactive;
-    this->rawData = 0;
-}
-
-ADChannel::ADChannel(Channel ch)
-{
-    this->channel = ch;
-    this->rawData = 0;
-}
-
-ADChannel::~ADChannel()
-= default;
-
-Channel ADChannel::getChannel() const
-{
-    return channel;
-}
-
-uint32_t ADChannel::getRawData() const
-{
-    return rawData;
-}
-
-void ADChannel::setChannel(Channel channel)
-{
-    ADChannel::channel = channel;
-}
-
-void ADChannel::setRawData(uint32_t rawData)
-{
-    ADChannel::rawData = rawData;
-}
-
-std::ostream &operator<<(std::ostream &os, const ADChannel &channel)
-{
-    os << "channel: " << channel.channel << " rawData: " << channel.rawData << std::endl;
-    return os;
-}
-
-
 
 
