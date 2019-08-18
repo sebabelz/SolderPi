@@ -1,12 +1,5 @@
-//
-// Created by BelzS on 03.08.2019.
-//
-
 #ifndef PID_H
 #define PID_H
-
-#include <iostream>
-#include <type_traits>
 
 template<typename T, typename S>
 class PID
@@ -25,12 +18,14 @@ private:
     T derivativeError = 0;
     T lastError = 0;
     T setPoint = 0;
-    T lastTime = 0;
     T maxIntError = 2500;
+    S lastTime = 0;
 
     bool outputBounded = false;
     T outputLowerBound = 0;
     T outputUpperBound = 0;
+
+    bool enabled = false;
 
 public:
     PID();
@@ -41,7 +36,7 @@ public:
     PID(double Kp, double Ki, S *input, S *output);
     PID(double Kp, double Ki, float Kd, S *input, S *output);
     virtual ~PID();
-    void processData(T actualTime);
+    void processData(S actualTime);
 
     double getProportionalGain() const;
     double getIntegralGain() const;
@@ -57,6 +52,11 @@ public:
 
     T getSetPoint() const;
     void setSetPoint(T setPoint);
+
+    bool isEnabled() const;
+    bool enableControl();
+    bool disableControl();
+    bool toggleControl();
 
     void setOutputBounds(T lower, T upper);
     bool isOutputBounded() const;
@@ -126,8 +126,11 @@ PID<T, S>::~PID()
 }
 
 template<typename T, typename S>
-void PID<T, S>::processData(T actualTime)
+void PID<T, S>::processData(S actualTime)
 {
+    if (!enabled)
+        return;
+
     auto timeDiff = actualTime - lastTime;
     error = setPoint - *input;
 
@@ -228,6 +231,30 @@ template<typename T, typename S>
 void PID<T, S>::setSetPoint(T setPoint)
 {
     PID::setPoint = setPoint;
+}
+
+template<typename T, typename S>
+bool PID<T, S>::isEnabled() const
+{
+    return enabled;
+}
+
+template<typename T, typename S>
+bool PID<T, S>::enableControl()
+{
+    return enabled = true;
+}
+
+template<typename T, typename S>
+bool PID<T, S>::disableControl()
+{
+    return enabled = false;
+}
+
+template<typename T, typename S>
+bool PID<T, S>::toggleControl()
+{
+    return enabled = !enabled;
 }
 
 template<typename T, typename S>

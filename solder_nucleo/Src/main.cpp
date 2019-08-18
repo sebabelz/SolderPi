@@ -24,8 +24,10 @@
 SolderingIron solderingIron;
 
 uint16_t setPoint = 350;
+
 uint32_t pwmOutput = 0;
 
+AD7995 adConverter;
 
 #ifdef __cplusplus
 extern "C" {
@@ -77,6 +79,7 @@ int main()
     {
         HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
         ssd1306_PrintValues(setPoint, static_cast<int>(solderingIron.getIronTemperature()));
+        HAL_Delay(4);
     }
 #pragma clang diagnostic pop
 }
@@ -114,7 +117,7 @@ void SystemClock_Config(void)
     /** Initializes the CPU, AHB and APB busses clocks
     */
     RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK
-        | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
+                                  | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
     RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
     RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
     RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
@@ -144,9 +147,8 @@ void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
 {
     if (htim->Instance == TIM5)
     {
-        HAL_GPIO_TogglePin(CMP_GPIO_Port, CMP_Pin);
         solderingIron.processControl();
-        __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_2, pwmOutput );
+        __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_2, pwmOutput);
     }
 }
 
@@ -176,17 +178,17 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     if (GPIO_Pin == BTN_Pin)
     {
         std::cout << "pressed" << std::endl;
+        solderingIron.enableControl();
     }
     if (GPIO_Pin == ENC_CH_A_Pin)
     {
-        if (HAL_GPIO_ReadPin(ENC_CH_A_GPIO_Port, ENC_CH_A_Pin) !=
-            HAL_GPIO_ReadPin(ENC_CH_B_GPIO_Port, ENC_CH_B_Pin))
+        if (HAL_GPIO_ReadPin(ENC_CH_B_GPIO_Port, ENC_CH_B_Pin))
         {
-            ++setPoint;
+            setPoint = solderingIron.increaseSetPoint();
         }
         else
         {
-           --setPoint;
+            setPoint = solderingIron.decreaseSetPoint();
         }
     }
 }

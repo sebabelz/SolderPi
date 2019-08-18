@@ -7,7 +7,7 @@
 
 AD7995::AD7995()
 {
-    this->channels = std::array<ADChannel, AD7995_MAXCHANNELS>{ADChannel()};
+    this->rawData = std::array<uint16_t, 4>{};
 }
 
 void AD7995::setI2CHandle(FMPI2C_HandleTypeDef *handle)
@@ -57,7 +57,6 @@ void AD7995::countChannels()
         if ((tmp & 0x01) == 1)
         {
             ++this->channelCount;
-            this->channels[i].setChannel(static_cast<Channel>(1 << i));
         }
         tmp >>= 1;
     }
@@ -66,19 +65,23 @@ void AD7995::countChannels()
     {
         --this->channelCount;
     }
-//    std::cout << "Channels: " << static_cast<int>(this->channelCount) << "\n";
 }
 
-uint32_t AD7995::getRawData(Channel ch)
+uint16_t AD7995::getRawData(Channel ch)
 {
-    for (const auto &a : this->channels)
+    switch (ch)
     {
-        if (a.getChannel() == ch)
-        {
-            return a.getRawData();
-        }
+        case Channel::Zero:
+            return rawData[0];
+        case Channel::One:
+            return rawData[1];
+        case Channel::Two:
+            return rawData[2];
+        case Channel::Three:
+            return rawData[3];
+        default:
+            return 0;
     }
-    return 0;
 }
 
 uint16_t AD7995::getResolution() const
@@ -86,18 +89,42 @@ uint16_t AD7995::getResolution() const
     return resolution;
 }
 
-void AD7995::readData()
+bool AD7995::isConnected() const
 {
+    return connected;
+}
+
+HAL_StatusTypeDef AD7995::readAllChannels()
+{
+
     HAL_FMPI2C_Master_Transmit(this->handle, this->address, &this->config, sizeof(this->config), 1);
 
     uint8_t data[8] = {0};
-    HAL_FMPI2C_Master_Receive(this->handle, this->address, data, this->channelCount * 2 * sizeof(uint8_t), 1);
+    HAL_StatusTypeDef status = HAL_FMPI2C_Master_Receive(this->handle, this->address, data, this->channelCount * 2 * sizeof(uint8_t), 1);
 
     for (int i = 0, j = 0; i < channelCount; ++i, j += 2)
     {
         uint8_t pos = (data[j] >> 4) & 0x03;
-        this->channels[pos].setRawData(((data[j] << 6) & 0x3C0) | ((data[j + 1] >> 2) & 0x3F));
+        this->rawData[pos] = (((data[j] << 6) & 0x3C0) | ((data[j + 1] >> 2) & 0x3F));
 
-//        std::cout << this->channels[pos];
     }
+    connected = status == HAL_OK;
+    return status;
 }
+
+HAL_StatusTypeDef AD7995::readChannel(Channel ch)
+{
+    auto tmpConfig = config;
+    HAL_FMPI2C_Master_Transmit(this->handle, this->address, &tmpConfig, sizeof(tmpConfig), 1);
+
+    uint8_t data[2] = {0};
+    HAL_StatusTypeDef status = HAL_FMPI2C_Master_Receive(this->handle, this->address, data, 2 * sizeof(uint8_t), 1);
+
+
+    uint8_t pos = (data[0] >> 4) & 0x03;
+    this->rawData[pos] = (((data[0] << 6) & 0x3C0) | ((data[1] >> 2) & 0x3F));
+
+    connected = status == HAL_OK;
+    return status;
+}
+
