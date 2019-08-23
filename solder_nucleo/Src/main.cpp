@@ -69,7 +69,7 @@ int main()
 
     HAL_TIM_Base_Start_IT(&htim7);
 
-    solderingIron.setI2CHandle(&hfmpi2c1);
+    solderingIron.configADConverter(&hfmpi2c1);
     solderingIron.setOutput(&pwmOutput);
     solderingIron.setSetPoint(setPoint);
 
@@ -78,7 +78,7 @@ int main()
     while (true)
     {
         HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-        ssd1306_PrintValues(setPoint, static_cast<int>(solderingIron.getIronTemperature()));
+        ssd1306_PrintValues(setPoint, static_cast<int>(solderingIron.getTipTemperature()));
         HAL_Delay(4);
     }
 #pragma clang diagnostic pop
@@ -178,7 +178,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     if (GPIO_Pin == BTN_Pin)
     {
         std::cout << "pressed" << std::endl;
-        solderingIron.enableControl();
+        solderingIron.toggle();
     }
     if (GPIO_Pin == ENC_CH_A_Pin)
     {

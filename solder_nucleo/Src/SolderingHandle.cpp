@@ -23,79 +23,7 @@ float SolderingHandle::getReferenceTemperature(Channel ch)
     return refTemperature;
 }
 
-int SolderingHandle::increaseSetPoint()
-{
-    return increaseSetPoint(1);
-}
-
-int SolderingHandle::decreaseSetPoint()
-{
-    return decreaseSetPoint(1);
-}
-
-int SolderingHandle::increaseSetPoint(int value)
-{
-    int setPoint = 0;
-    for(auto control: controller)
-    {
-        setPoint = control.getSetPoint();
-        control.setSetPoint(limitSetPoint(setPoint += value));
-    }
-    return setPoint;
-}
-
-int SolderingHandle::decreaseSetPoint(int value)
-{
-    int setPoint = 0;
-    for(auto control: controller)
-    {
-        setPoint = control.getSetPoint();
-        control.setSetPoint(limitSetPoint(setPoint -= value));
-    }
-    return setPoint;
-}
-
 ConnectionStatus SolderingHandle::getStatus() const
 {
     return status;
 }
-
-void SolderingHandle::processControl()
-{
-    status = adConverter.readAllChannels() ==
-             HAL_OK ? ConnectionStatus::HandleConncected : ConnectionStatus::Disconnected;
-
-    calculateTipTemperature();
-
-    auto actualTime = HAL_GetTick();
-    for (auto control: controller)
-    {
-        control.processData(actualTime);
-    }
-
-}
-
-void SolderingHandle::enable()
-{
-    for (auto control: controller)
-    {
-        control.enableControl();
-    }
-}
-
-void SolderingHandle::disable()
-{
-    for (auto control: controller)
-    {
-        control.disableControl();
-    }
-}
-
-void SolderingHandle::toggle()
-{
-    for (auto control: controller)
-    {
-        control.toggleControl();
-    }
-}
-

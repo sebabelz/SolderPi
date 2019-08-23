@@ -129,8 +129,10 @@ template<typename T, typename S>
 void PID<T, S>::processData(S actualTime)
 {
     if (!enabled)
+    {
+        *output = 0;
         return;
-
+    }
     auto timeDiff = actualTime - lastTime;
     error = setPoint - *input;
 

@@ -36,7 +36,6 @@ protected:
     const float tipGain = 0.54;
 
     uint32_t refTemperature = 0;
-    std::vector<PID<int, uint32_t>> controller;
 
     ConnectionStatus status = ConnectionStatus::Disconnected;
     AD7995 adConverter;
@@ -47,17 +46,20 @@ public:
     SolderingHandle() = default;
     virtual ~SolderingHandle() = default;
 
-    int increaseSetPoint();
-    int decreaseSetPoint();
-    int increaseSetPoint(int value);
-    int decreaseSetPoint(int value);
-
     ConnectionStatus getStatus() const;
 
-    void processControl();
-    void enable();
-    void disable();
-    void toggle();
+    virtual int getSetPoint() = 0;
+    virtual void setSetPoint(int setPoint) = 0;
+    virtual int increaseSetPoint() = 0;
+    virtual int decreaseSetPoint() = 0;
+    virtual int increaseSetPoint(int value) = 0;
+    virtual int decreaseSetPoint(int value) = 0;
+
+    virtual void processControl() = 0;
+    virtual void setOutput(uint32_t *output) = 0;
+    virtual void enable() = 0;
+    virtual void disable() = 0;
+    virtual void toggle() = 0;
 
     virtual void configADConverter(FMPI2C_HandleTypeDef *handle) = 0;
     virtual void calculateTipTemperature() = 0;
