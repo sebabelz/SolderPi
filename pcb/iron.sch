@@ -320,6 +320,29 @@ package type OT</description>
 <text x="-0.762" y="1.016" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="0" y="0.6" size="0.0254" layer="27">&gt;VALUE</text>
 </package>
+<package name="SOD123-F" urn="urn:adsk.eagle:footprint:1609177/1" library_version="75">
+<description>&lt;b&gt;SMALL OUTLINE DIODE&lt;/b&gt;</description>
+<wire x1="-2.973" y1="0.983" x2="2.973" y2="0.983" width="0.0508" layer="39"/>
+<wire x1="2.973" y1="-0.983" x2="-2.973" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="-2.973" y1="-0.983" x2="-2.973" y2="0.983" width="0.0508" layer="39"/>
+<wire x1="2.973" y1="0.983" x2="2.973" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="-1.321" y1="0.787" x2="1.321" y2="0.787" width="0.1016" layer="51"/>
+<wire x1="-1.321" y1="-0.787" x2="1.321" y2="-0.787" width="0.1016" layer="51"/>
+<wire x1="-1.321" y1="-0.787" x2="-1.321" y2="0.787" width="0.1016" layer="51"/>
+<wire x1="1.321" y1="-0.787" x2="1.321" y2="0.787" width="0.1016" layer="51"/>
+<wire x1="-1" y1="0" x2="0" y2="0.5" width="0.2032" layer="51"/>
+<wire x1="0" y1="0.5" x2="0" y2="-0.5" width="0.2032" layer="51"/>
+<wire x1="0" y1="-0.5" x2="-1" y2="0" width="0.2032" layer="51"/>
+<wire x1="-1" y1="0.5" x2="-1" y2="0" width="0.2032" layer="51"/>
+<wire x1="-1" y1="0" x2="-1" y2="-0.5" width="0.2032" layer="51"/>
+<smd name="1" x="-1.43" y="0" dx="1.34" dy="1.8" layer="1"/>
+<smd name="2" x="1.43" y="0" dx="1.34" dy="1.8" layer="1"/>
+<text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-1.9558" y1="-0.3048" x2="-1.3716" y2="0.3048" layer="51"/>
+<rectangle x1="1.3716" y1="-0.3048" x2="1.9558" y2="0.3048" layer="51"/>
+<rectangle x1="-0.4001" y1="-0.7" x2="0.4001" y2="0.7" layer="35"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="3.5_MM_AUDIO_JACK" urn="urn:adsk.eagle:package:1437574/2" type="model" library_version="73" library_locally_modified="yes">
@@ -350,6 +373,12 @@ package type OT</description>
 <description>THROUGH-HOLE PAD</description>
 <packageinstances>
 <packageinstance name="1,6/0,8"/>
+</packageinstances>
+</package3d>
+<package3d name="SOD123-F" urn="urn:adsk.eagle:package:1609183/2" type="model" library_version="75">
+<description>SMALL OUTLINE DIODE</description>
+<packageinstances>
+<packageinstance name="SOD123-F"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -484,6 +513,21 @@ package type OT</description>
 <circle x="0" y="0" radius="0.254" width="0.254" layer="94"/>
 <circle x="0" y="-5.08" radius="0.254" width="0.254" layer="94"/>
 <circle x="0" y="5.08" radius="0.254" width="0.254" layer="94"/>
+</symbol>
+<symbol name="SCHOTTKY" urn="urn:adsk.eagle:symbol:1609176/1" library_version="75">
+<wire x1="-1.27" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.905" y1="1.27" x2="1.27" y2="1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.905" y1="1.27" x2="1.905" y2="1.016" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-1.27" x2="0.635" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="0.635" y1="-1.016" x2="0.635" y2="-1.27" width="0.254" layer="94"/>
+<text x="-2.286" y="1.905" size="1.778" layer="95">&gt;NAME</text>
+<text x="-2.286" y="-3.429" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="A" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+<pin name="C" x="2.54" y="0" visible="off" length="short" direction="pas" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -629,6 +673,25 @@ package type OT</description>
 </connects>
 <package3dinstances>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:1437676/7"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="BAT54H" urn="urn:adsk.eagle:component:1609190/16" prefix="D" library_version="75">
+<gates>
+<gate name="G$1" symbol="SCHOTTKY" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOD123-F">
+<connects>
+<connect gate="G$1" pin="A" pad="2"/>
+<connect gate="G$1" pin="C" pad="1"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:1609183/2"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -1275,6 +1338,29 @@ package type OT</description>
 </spice>
 <attribute name="OC_DIGIKEY" value="YAG4498CT-ND"/>
 </part>
+<part name="D1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="BAT54H" device="" package3d_urn="urn:adsk.eagle:package:1609183/2">
+<attribute name="OC_DIGIKEY" value="1727-3569-1-ND"/>
+</part>
+<part name="C3" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="C-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241929/3" value="1µF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="OC_DIGIKEY" value="1276-1034-1-ND"/>
+</part>
+<part name="GND11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="C4" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="C-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241929/3" value="1µF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="OC_DIGIKEY" value="1276-1034-1-ND"/>
+</part>
+<part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1446,6 +1532,27 @@ package type OT</description>
 <attribute name="NAME" x="107.7214" y="102.87" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="112.522" y="102.87" size="1.778" layer="96" rot="R90"/>
 </instance>
+<instance part="D1" gate="G$1" x="22.86" y="83.82" smashed="yes" rot="R270">
+<attribute name="NAME" x="24.765" y="86.106" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="19.431" y="86.106" size="1.778" layer="96" rot="R270"/>
+<attribute name="OC_DIGIKEY" x="22.86" y="83.82" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="C3" gate="G$1" x="35.56" y="83.82" smashed="yes">
+<attribute name="OC_DIGIKEY" x="35.56" y="83.82" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="37.084" y="84.201" size="1.778" layer="95"/>
+<attribute name="VALUE" x="37.084" y="79.121" size="1.778" layer="96"/>
+</instance>
+<instance part="GND11" gate="1" x="35.56" y="71.12" smashed="yes">
+<attribute name="VALUE" x="33.02" y="68.58" size="1.778" layer="96"/>
+</instance>
+<instance part="C4" gate="G$1" x="7.62" y="40.64" smashed="yes">
+<attribute name="OC_DIGIKEY" x="7.62" y="40.64" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="9.144" y="41.021" size="1.778" layer="95"/>
+<attribute name="VALUE" x="9.144" y="35.941" size="1.778" layer="96"/>
+</instance>
+<instance part="GND12" gate="1" x="7.62" y="27.94" smashed="yes">
+<attribute name="VALUE" x="5.08" y="25.4" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -1512,6 +1619,16 @@ package type OT</description>
 <pinref part="IC2" gate="G$1" pin="V-"/>
 <wire x1="91.44" y1="104.14" x2="91.44" y2="106.68" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="GND11" gate="1" pin="GND"/>
+<pinref part="C3" gate="G$1" pin="2"/>
+<wire x1="35.56" y1="73.66" x2="35.56" y2="78.74" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND12" gate="1" pin="GND"/>
+<pinref part="C4" gate="G$1" pin="2"/>
+<wire x1="7.62" y1="30.48" x2="7.62" y2="35.56" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="AD_COMP" class="0">
 <segment>
@@ -1540,16 +1657,6 @@ package type OT</description>
 <wire x1="198.12" y1="45.72" x2="182.88" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="182.88" y1="45.72" x2="182.88" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="P+2" gate="1" pin="+5V"/>
-</segment>
-<segment>
-<pinref part="C1" gate="G$1" pin="1"/>
-<wire x1="12.7" y1="66.04" x2="12.7" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="12.7" y1="73.66" x2="22.86" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="73.66" x2="22.86" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="P+3" gate="1" pin="+5V"/>
-<wire x1="22.86" y1="73.66" x2="22.86" y2="91.44" width="0.1524" layer="91"/>
-<junction x="22.86" y="73.66"/>
 </segment>
 <segment>
 <pinref part="IC3" gate="G$1" pin="VIN3/VREF"/>
@@ -1588,6 +1695,16 @@ package type OT</description>
 <pinref part="IC2" gate="G$1" pin="V+"/>
 <pinref part="P+6" gate="1" pin="+5V"/>
 <wire x1="91.44" y1="121.92" x2="91.44" y2="127" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="D1" gate="G$1" pin="A"/>
+<pinref part="P+3" gate="1" pin="+5V"/>
+<wire x1="22.86" y1="86.36" x2="22.86" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="C3" gate="G$1" pin="1"/>
+<wire x1="22.86" y1="88.9" x2="22.86" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="86.36" x2="35.56" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="88.9" x2="22.86" y2="88.9" width="0.1524" layer="91"/>
+<junction x="22.86" y="88.9"/>
 </segment>
 </net>
 <net name="SCL" class="0">
@@ -1728,6 +1845,22 @@ package type OT</description>
 <wire x1="210.82" y1="129.54" x2="208.28" y2="129.54" width="0.1524" layer="91"/>
 <label x="208.28" y="129.54" size="1.778" layer="95" rot="R180" xref="yes"/>
 <pinref part="PWR" gate="P" pin="P"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="C1" gate="G$1" pin="1"/>
+<wire x1="12.7" y1="66.04" x2="12.7" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="R4" gate="G$1" pin="2"/>
+<wire x1="12.7" y1="73.66" x2="22.86" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="73.66" x2="22.86" y2="71.12" width="0.1524" layer="91"/>
+<junction x="22.86" y="73.66"/>
+<pinref part="D1" gate="G$1" pin="C"/>
+<wire x1="22.86" y1="73.66" x2="22.86" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<wire x1="7.62" y1="43.18" x2="7.62" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="73.66" x2="12.7" y2="73.66" width="0.1524" layer="91"/>
+<junction x="12.7" y="73.66"/>
 </segment>
 </net>
 </nets>
