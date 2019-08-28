@@ -1207,7 +1207,9 @@ package type OT</description>
 </classes>
 <parts>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device=""/>
-<part name="X1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="LUMBERG_KLB_4" device="" package3d_urn="urn:adsk.eagle:package:1437574/2"/>
+<part name="X1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="LUMBERG_KLB_4" device="" package3d_urn="urn:adsk.eagle:package:1437574/2">
+<attribute name="OC_DIGIKEY" value="486-3419-ND"/>
+</part>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R1" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1k">
 <spice>
@@ -1297,7 +1299,7 @@ package type OT</description>
 </part>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="IC2" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="TS507CLT" device="" package3d_urn="urn:adsk.eagle:package:1437676/7">
-<attribute name="OC_DIGIKEY" value="TS507CLT"/>
+<attribute name="OC_DIGIKEY" value="497-6944-1-ND"/>
 </part>
 <part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
@@ -1375,6 +1377,7 @@ package type OT</description>
 <instance part="X1" gate="G$1" x="25.4" y="149.86" smashed="yes">
 <attribute name="NAME" x="22.86" y="153.67" size="1.778" layer="95"/>
 <attribute name="VALUE" x="22.86" y="143.51" size="1.778" layer="96"/>
+<attribute name="OC_DIGIKEY" x="25.4" y="149.86" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="GND1" gate="1" x="48.26" y="144.78" smashed="yes">
 <attribute name="VALUE" x="45.72" y="142.24" size="1.778" layer="96"/>
@@ -1534,7 +1537,6 @@ package type OT</description>
 </instance>
 <instance part="D1" gate="G$1" x="22.86" y="83.82" smashed="yes" rot="R270">
 <attribute name="NAME" x="24.765" y="86.106" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="19.431" y="86.106" size="1.778" layer="96" rot="R270"/>
 <attribute name="OC_DIGIKEY" x="22.86" y="83.82" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="C3" gate="G$1" x="35.56" y="83.82" smashed="yes">

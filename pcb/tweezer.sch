@@ -1196,14 +1196,24 @@ package type OT</description>
 <parts>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device=""/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R1" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1k"/>
-<part name="R2" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="NTC" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1k @25°C, 1%, ß=3985 K"/>
+<part name="R1" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1k">
+<attribute name="OC_DIGIKEY" value="P1.0KDBCT-ND"/>
+</part>
+<part name="R2" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="NTC" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1k @25°C, 1%, ß=3985 K">
+<attribute name="OC_DIGIKEY" value="P123687CT-ND"/>
+</part>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R3" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="MVS0608.02" device="" package3d_urn="urn:adsk.eagle:package:1581952/2"/>
-<part name="R4" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="4M7"/>
-<part name="R5" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="100k"/>
-<part name="R6" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1k"/>
+<part name="R4" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="4M7">
+<attribute name="OC_DIGIKEY" value="311-4.70MHRCT-ND"/>
+</part>
+<part name="R5" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="100k">
+<attribute name="OC_DIGIKEY" value="RMCF0603FT100KCT-ND"/>
+</part>
+<part name="R6" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1k">
+<attribute name="OC_DIGIKEY" value=" RMCF0603FT1K00CT-ND"/>
+</part>
 <part name="C1" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="C-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241929/3" value="100pF">
 <spice>
 <pinmapping spiceprefix="C">
@@ -1211,15 +1221,25 @@ package type OT</description>
 <pinmap gate="G$1" pin="2" pinorder="2"/>
 </pinmapping>
 </spice>
-<attribute name="OC_MOUSER" value="80-C0805C101J5RAUTO"/>
+<attribute name="OC_DIGIKEY" value="478-7926-1-ND"/>
 </part>
-<part name="C2" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="C-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241929/3" value="10nF"/>
+<part name="C2" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="C-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241929/3" value="10nF">
+<attribute name="OC_DIGIKEY" value="478-6209-1-ND"/>
+</part>
 <part name="P+3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R7" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="2k"/>
-<part name="R8" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1M"/>
-<part name="R9" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1M"/>
-<part name="R10" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="2k"/>
+<part name="R7" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="2k 0.1%">
+<attribute name="OC_DIGIKEY" value="TNP2.00KAACT-ND"/>
+</part>
+<part name="R8" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1M 0,1%">
+<attribute name="OC_DIGIKEY" value="YAG4498CT-ND"/>
+</part>
+<part name="R9" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1M 0,1%">
+<attribute name="OC_DIGIKEY" value="YAG4498CT-ND"/>
+</part>
+<part name="R10" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="2k 0.1%">
+<attribute name="OC_DIGIKEY" value="TNP2.00KAACT-ND"/>
+</part>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="IC2" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="TS507CLT" device="" package3d_urn="urn:adsk.eagle:package:1437676/7">
 <attribute name="OC_DIGIKEY" value="497-6944-1-ND"/>
@@ -1230,11 +1250,21 @@ package type OT</description>
 <part name="P+6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="GND9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
-<part name="C3" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="C-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241929/3" value="10nF"/>
-<part name="R11" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="2k"/>
-<part name="R12" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1M"/>
-<part name="R13" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1M"/>
-<part name="R14" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="2k"/>
+<part name="C3" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="C-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241929/3" value="10nF">
+<attribute name="OC_DIGIKEY" value="478-6209-1-ND"/>
+</part>
+<part name="R11" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="2k 0.1%">
+<attribute name="OC_DIGIKEY" value="TNP2.00KAACT-ND"/>
+</part>
+<part name="R12" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1M 0,1%">
+<attribute name="OC_DIGIKEY" value="YAG4498CT-ND"/>
+</part>
+<part name="R13" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="1M 0,1%">
+<attribute name="OC_DIGIKEY" value="YAG4498CT-ND"/>
+</part>
+<part name="R14" library="common" library_urn="urn:adsk.eagle:library:8241912" deviceset="R-EU" device="0603" package3d_urn="urn:adsk.eagle:package:8241925/3" value="2k 0.1%">
+<attribute name="OC_DIGIKEY" value="TNP2.00KAACT-ND"/>
+</part>
 <part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="IC3" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="TS507CLT" device="" package3d_urn="urn:adsk.eagle:package:1437676/7">
 <attribute name="OC_DIGIKEY" value="497-6944-1-ND"/>
@@ -1244,7 +1274,7 @@ package type OT</description>
 <part name="P+9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="P+10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="IC1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="AD7995" device="" package3d_urn="urn:adsk.eagle:package:1581956/2">
-<attribute name="OC_DIGIKEY" value=" AD7995YRJZ-0500RL7CT-ND"/>
+<attribute name="OC_DIGIKEY" value="AD7995YRJZ-1500RL7CT-ND"/>
 </part>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -1262,7 +1292,7 @@ package type OT</description>
 <part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="ß" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="WIREPAD" device="" package3d_urn="urn:adsk.eagle:package:1593774/7"/>
 <part name="IC5" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" deviceset="ESDA6V1SC5" device="" package3d_urn="urn:adsk.eagle:package:1437676/7">
-<attribute name="OC_DIGIKEY" value=" AD7995YRJZ-0500RL7CT-ND"/>
+<attribute name="OC_DIGIKEY" value="497-7748-1-ND"/>
 </part>
 <part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
@@ -1310,10 +1340,12 @@ package type OT</description>
 <instance part="R1" gate="G$1" x="134.62" y="68.58" smashed="yes" rot="R90">
 <attribute name="NAME" x="133.1214" y="64.77" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="137.922" y="64.77" size="1.778" layer="96" rot="R90"/>
+<attribute name="OC_DIGIKEY" x="134.62" y="68.58" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="R2" gate="G$1" x="134.62" y="45.72" smashed="yes">
 <attribute name="NAME" x="136.652" y="42.9006" size="1.778" layer="95"/>
 <attribute name="VALUE" x="136.652" y="40.513" size="1.778" layer="96"/>
+<attribute name="OC_DIGIKEY" x="134.62" y="45.72" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="P+1" gate="1" x="134.62" y="83.82" smashed="yes">
 <attribute name="VALUE" x="132.08" y="78.74" size="1.778" layer="96" rot="R90"/>
@@ -1328,23 +1360,27 @@ package type OT</description>
 <instance part="R4" gate="G$1" x="88.9" y="66.04" smashed="yes" rot="R90">
 <attribute name="NAME" x="87.4014" y="62.23" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="92.202" y="62.23" size="1.778" layer="96" rot="R90"/>
+<attribute name="OC_DIGIKEY" x="88.9" y="66.04" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="R5" gate="G$1" x="88.9" y="43.18" smashed="yes" rot="R90">
 <attribute name="NAME" x="87.4014" y="39.37" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="92.202" y="39.37" size="1.778" layer="96" rot="R90"/>
+<attribute name="OC_DIGIKEY" x="88.9" y="43.18" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="R6" gate="G$1" x="99.06" y="53.34" smashed="yes">
 <attribute name="NAME" x="95.25" y="54.8386" size="1.778" layer="95"/>
 <attribute name="VALUE" x="95.25" y="50.038" size="1.778" layer="96"/>
+<attribute name="OC_DIGIKEY" x="99.06" y="53.34" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="C1" gate="G$1" x="76.2" y="66.04" smashed="yes">
-<attribute name="OC_MOUSER" x="76.2" y="66.04" size="1.778" layer="96" display="off"/>
+<attribute name="OC_DIGIKEY" x="76.2" y="66.04" size="1.778" layer="96" display="off"/>
 <attribute name="NAME" x="77.724" y="66.421" size="1.778" layer="95"/>
 <attribute name="VALUE" x="77.724" y="61.341" size="1.778" layer="96"/>
 </instance>
 <instance part="C2" gate="G$1" x="177.8" y="144.78" smashed="yes">
 <attribute name="NAME" x="179.324" y="145.161" size="1.778" layer="95"/>
 <attribute name="VALUE" x="179.324" y="140.081" size="1.778" layer="96"/>
+<attribute name="OC_DIGIKEY" x="177.8" y="144.78" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="P+3" gate="1" x="88.9" y="91.44" smashed="yes">
 <attribute name="VALUE" x="86.36" y="86.36" size="1.778" layer="96" rot="R90"/>
@@ -1355,18 +1391,22 @@ package type OT</description>
 <instance part="R7" gate="G$1" x="187.96" y="149.86" smashed="yes" rot="R180">
 <attribute name="NAME" x="191.77" y="148.3614" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="191.77" y="153.162" size="1.778" layer="96" rot="R180"/>
+<attribute name="OC_DIGIKEY" x="187.96" y="149.86" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="R8" gate="G$1" x="226.06" y="139.7" smashed="yes" rot="R90">
 <attribute name="NAME" x="224.5614" y="135.89" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="229.362" y="135.89" size="1.778" layer="96" rot="R90"/>
+<attribute name="OC_DIGIKEY" x="226.06" y="139.7" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="R9" gate="G$1" x="177.8" y="157.48" smashed="yes" rot="R90">
 <attribute name="NAME" x="176.3014" y="153.67" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="181.102" y="153.67" size="1.778" layer="96" rot="R90"/>
+<attribute name="OC_DIGIKEY" x="177.8" y="157.48" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="R10" gate="G$1" x="226.06" y="124.46" smashed="yes" rot="R90">
 <attribute name="NAME" x="224.5614" y="120.65" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="229.362" y="120.65" size="1.778" layer="96" rot="R90"/>
+<attribute name="OC_DIGIKEY" x="226.06" y="124.46" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="GND6" gate="1" x="226.06" y="114.3" smashed="yes">
 <attribute name="VALUE" x="223.52" y="111.76" size="1.778" layer="96"/>
@@ -1388,31 +1428,36 @@ package type OT</description>
 <instance part="P+6" gate="1" x="208.28" y="167.64" smashed="yes">
 <attribute name="VALUE" x="205.74" y="162.56" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="GND9" gate="1" x="20.32" y="88.9" smashed="yes">
-<attribute name="VALUE" x="17.78" y="86.36" size="1.778" layer="96"/>
+<instance part="GND9" gate="1" x="10.16" y="93.98" smashed="yes">
+<attribute name="VALUE" x="7.62" y="91.44" size="1.778" layer="96"/>
 </instance>
-<instance part="P+8" gate="1" x="20.32" y="114.3" smashed="yes">
-<attribute name="VALUE" x="17.78" y="109.22" size="1.778" layer="96" rot="R90"/>
+<instance part="P+8" gate="1" x="10.16" y="119.38" smashed="yes">
+<attribute name="VALUE" x="7.62" y="114.3" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="C3" gate="G$1" x="177.8" y="99.06" smashed="yes">
 <attribute name="NAME" x="179.324" y="99.441" size="1.778" layer="95"/>
 <attribute name="VALUE" x="179.324" y="94.361" size="1.778" layer="96"/>
+<attribute name="OC_DIGIKEY" x="177.8" y="99.06" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R11" gate="G$1" x="187.96" y="104.14" smashed="yes" rot="R180">
 <attribute name="NAME" x="191.77" y="102.6414" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="191.77" y="107.442" size="1.778" layer="96" rot="R180"/>
+<attribute name="OC_DIGIKEY" x="187.96" y="104.14" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="R12" gate="G$1" x="226.06" y="93.98" smashed="yes" rot="R90">
 <attribute name="NAME" x="224.5614" y="90.17" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="229.362" y="90.17" size="1.778" layer="96" rot="R90"/>
+<attribute name="OC_DIGIKEY" x="226.06" y="93.98" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="R13" gate="G$1" x="177.8" y="111.76" smashed="yes" rot="R90">
 <attribute name="NAME" x="176.3014" y="107.95" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="181.102" y="107.95" size="1.778" layer="96" rot="R90"/>
+<attribute name="OC_DIGIKEY" x="177.8" y="111.76" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="R14" gate="G$1" x="226.06" y="78.74" smashed="yes" rot="R90">
 <attribute name="NAME" x="224.5614" y="74.93" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="229.362" y="74.93" size="1.778" layer="96" rot="R90"/>
+<attribute name="OC_DIGIKEY" x="226.06" y="78.74" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="GND10" gate="1" x="226.06" y="68.58" smashed="yes">
 <attribute name="VALUE" x="223.52" y="66.04" size="1.778" layer="96"/>
@@ -1434,22 +1479,22 @@ package type OT</description>
 <instance part="P+10" gate="1" x="208.28" y="121.92" smashed="yes">
 <attribute name="VALUE" x="205.74" y="116.84" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="IC1" gate="G$1" x="114.3" y="127" smashed="yes">
-<attribute name="NAME" x="104.14" y="137.922" size="1.778" layer="95"/>
-<attribute name="VALUE" x="104.14" y="114.3" size="1.778" layer="95"/>
-<attribute name="OC_DIGIKEY" x="114.3" y="127" size="1.778" layer="96" display="off"/>
+<instance part="IC1" gate="G$1" x="106.68" y="152.4" smashed="yes">
+<attribute name="NAME" x="96.52" y="163.322" size="1.778" layer="95"/>
+<attribute name="VALUE" x="96.52" y="139.7" size="1.778" layer="95"/>
+<attribute name="OC_DIGIKEY" x="106.68" y="152.4" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="P+2" gate="1" x="83.82" y="132.08" smashed="yes">
-<attribute name="VALUE" x="81.28" y="127" size="1.778" layer="96" rot="R90"/>
+<instance part="P+2" gate="1" x="76.2" y="157.48" smashed="yes">
+<attribute name="VALUE" x="73.66" y="152.4" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="GND2" gate="1" x="83.82" y="111.76" smashed="yes">
-<attribute name="VALUE" x="81.28" y="109.22" size="1.778" layer="96"/>
+<instance part="GND2" gate="1" x="76.2" y="137.16" smashed="yes">
+<attribute name="VALUE" x="73.66" y="134.62" size="1.778" layer="96"/>
 </instance>
-<instance part="U$7" gate="1" x="43.18" y="121.92" smashed="yes" rot="R180"/>
-<instance part="21" gate="1" x="43.18" y="116.84" smashed="yes" rot="R180"/>
-<instance part="U$9" gate="1" x="43.18" y="111.76" smashed="yes" rot="R180"/>
-<instance part="U$10" gate="1" x="43.18" y="104.14" smashed="yes" rot="R180"/>
-<instance part="U$11" gate="1" x="43.18" y="99.06" smashed="yes" rot="R180"/>
+<instance part="U$7" gate="1" x="33.02" y="127" smashed="yes" rot="R180"/>
+<instance part="21" gate="1" x="33.02" y="121.92" smashed="yes" rot="R180"/>
+<instance part="U$9" gate="1" x="33.02" y="116.84" smashed="yes" rot="R180"/>
+<instance part="U$10" gate="1" x="33.02" y="109.22" smashed="yes" rot="R180"/>
+<instance part="U$11" gate="1" x="33.02" y="104.14" smashed="yes" rot="R180"/>
 <instance part="TC1" gate="P" x="12.7" y="167.64" smashed="yes">
 <attribute name="NAME" x="11.557" y="169.4942" size="1.778" layer="95"/>
 <attribute name="VALUE" x="11.557" y="164.338" size="1.778" layer="96"/>
@@ -1476,17 +1521,17 @@ package type OT</description>
 <instance part="P+4" gate="1" x="60.96" y="83.82" smashed="yes">
 <attribute name="VALUE" x="58.42" y="78.74" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="ß" gate="1" x="43.18" y="127" smashed="yes" rot="R180"/>
-<instance part="IC5" gate="G$1" x="132.08" y="99.06" smashed="yes">
-<attribute name="NAME" x="124.46" y="107.315" size="1.778" layer="95"/>
-<attribute name="VALUE" x="124.46" y="89.027" size="1.778" layer="96"/>
-<attribute name="OC_DIGIKEY" x="132.08" y="99.06" size="1.778" layer="96" display="off"/>
+<instance part="ß" gate="1" x="33.02" y="132.08" smashed="yes" rot="R180"/>
+<instance part="IC5" gate="G$1" x="119.38" y="114.3" smashed="yes">
+<attribute name="NAME" x="111.76" y="122.555" size="1.778" layer="95"/>
+<attribute name="VALUE" x="111.76" y="104.267" size="1.778" layer="96"/>
+<attribute name="OC_DIGIKEY" x="119.38" y="114.3" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND13" gate="1" x="109.22" y="93.98" smashed="yes">
-<attribute name="VALUE" x="106.68" y="91.44" size="1.778" layer="96"/>
+<instance part="GND13" gate="1" x="96.52" y="109.22" smashed="yes">
+<attribute name="VALUE" x="93.98" y="106.68" size="1.778" layer="96"/>
 </instance>
-<instance part="P+11" gate="1" x="147.32" y="111.76" smashed="yes">
-<attribute name="VALUE" x="144.78" y="106.68" size="1.778" layer="96" rot="R90"/>
+<instance part="P+11" gate="1" x="134.62" y="127" smashed="yes">
+<attribute name="VALUE" x="132.08" y="121.92" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="IC6" gate="G$1" x="43.18" y="66.04" smashed="yes">
 <attribute name="NAME" x="35.56" y="74.422" size="1.778" layer="95"/>
@@ -1495,7 +1540,6 @@ package type OT</description>
 </instance>
 <instance part="D1" gate="G$1" x="88.9" y="81.28" smashed="yes" rot="R270">
 <attribute name="NAME" x="90.805" y="83.566" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="85.471" y="83.566" size="1.778" layer="96" rot="R270"/>
 <attribute name="OC_DIGIKEY" x="88.9" y="81.28" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="C4" gate="G$1" x="104.14" y="81.28" smashed="yes">
@@ -1514,7 +1558,7 @@ package type OT</description>
 <attribute name="NAME" x="70.104" y="61.341" size="1.778" layer="95"/>
 <attribute name="VALUE" x="70.104" y="56.261" size="1.778" layer="96"/>
 </instance>
-<instance part="U$1" gate="1" x="43.18" y="93.98" smashed="yes" rot="R180"/>
+<instance part="U$1" gate="1" x="33.02" y="99.06" smashed="yes" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -1568,19 +1612,19 @@ package type OT</description>
 </segment>
 <segment>
 <pinref part="GND9" gate="1" pin="GND"/>
-<wire x1="40.64" y1="99.06" x2="20.32" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="99.06" x2="20.32" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="104.14" x2="10.16" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="104.14" x2="10.16" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="U$11" gate="1" pin="1"/>
 <pinref part="U$1" gate="1" pin="1"/>
-<wire x1="20.32" y1="93.98" x2="20.32" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="93.98" x2="20.32" y2="93.98" width="0.1524" layer="91"/>
-<junction x="20.32" y="93.98"/>
+<wire x1="10.16" y1="99.06" x2="10.16" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="99.06" x2="10.16" y2="99.06" width="0.1524" layer="91"/>
+<junction x="10.16" y="99.06"/>
 </segment>
 <segment>
 <pinref part="GND2" gate="1" pin="GND"/>
 <pinref part="IC1" gate="G$1" pin="GND"/>
-<wire x1="83.82" y1="114.3" x2="83.82" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="119.38" x2="101.6" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="139.7" x2="76.2" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="144.78" x2="93.98" y2="144.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND4" gate="1" pin="GND"/>
@@ -1596,8 +1640,8 @@ package type OT</description>
 </segment>
 <segment>
 <pinref part="IC5" gate="G$1" pin="2"/>
-<wire x1="121.92" y1="99.06" x2="109.22" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="99.06" x2="109.22" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="114.3" x2="96.52" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="114.3" x2="96.52" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="GND13" gate="1" pin="GND"/>
 </segment>
 <segment>
@@ -1622,9 +1666,9 @@ package type OT</description>
 <label x="139.7" y="55.118" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<label x="129.54" y="134.62" size="1.778" layer="95" xref="yes"/>
+<label x="121.92" y="160.02" size="1.778" layer="95" xref="yes"/>
 <pinref part="IC1" gate="G$1" pin="VIN0"/>
-<wire x1="129.54" y1="134.62" x2="127" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="160.02" x2="119.38" y2="160.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -1645,8 +1689,8 @@ package type OT</description>
 </segment>
 <segment>
 <pinref part="P+8" gate="1" pin="+5V"/>
-<wire x1="40.64" y1="104.14" x2="20.32" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="104.14" x2="20.32" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="109.22" x2="10.16" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="109.22" x2="10.16" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="U$10" gate="1" pin="1"/>
 </segment>
 <segment>
@@ -1662,8 +1706,8 @@ package type OT</description>
 <segment>
 <pinref part="IC1" gate="G$1" pin="VDD"/>
 <pinref part="P+2" gate="1" pin="+5V"/>
-<wire x1="101.6" y1="124.46" x2="83.82" y2="124.46" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="124.46" x2="83.82" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="149.86" x2="76.2" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="149.86" x2="76.2" y2="154.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="P+4" gate="1" pin="+5V"/>
@@ -1673,13 +1717,13 @@ package type OT</description>
 </segment>
 <segment>
 <pinref part="IC5" gate="G$1" pin="5"/>
-<wire x1="142.24" y1="104.14" x2="147.32" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="119.38" x2="134.62" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="P+11" gate="1" pin="+5V"/>
-<wire x1="147.32" y1="104.14" x2="147.32" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="119.38" x2="134.62" y2="124.46" width="0.1524" layer="91"/>
 <pinref part="IC5" gate="G$1" pin="4"/>
-<wire x1="142.24" y1="93.98" x2="147.32" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="147.32" y1="93.98" x2="147.32" y2="104.14" width="0.1524" layer="91"/>
-<junction x="147.32" y="104.14"/>
+<wire x1="129.54" y1="109.22" x2="134.62" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="109.22" x2="134.62" y2="119.38" width="0.1524" layer="91"/>
+<junction x="134.62" y="119.38"/>
 </segment>
 <segment>
 <pinref part="P+3" gate="1" pin="+5V"/>
@@ -1694,14 +1738,14 @@ package type OT</description>
 </net>
 <net name="SCL" class="0">
 <segment>
-<label x="38.1" y="116.84" size="1.778" layer="95" rot="R180" xref="yes"/>
+<label x="27.94" y="121.92" size="1.778" layer="95" rot="R180" xref="yes"/>
 <pinref part="21" gate="1" pin="1"/>
-<wire x1="38.1" y1="116.84" x2="40.64" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="121.92" x2="30.48" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="SCL"/>
-<wire x1="101.6" y1="134.62" x2="99.06" y2="134.62" width="0.1524" layer="91"/>
-<label x="99.06" y="134.62" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="93.98" y1="160.02" x2="91.44" y2="160.02" width="0.1524" layer="91"/>
+<label x="91.44" y="160.02" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <label x="27.94" y="71.12" size="1.778" layer="95" rot="R180" xref="yes"/>
@@ -1710,20 +1754,20 @@ package type OT</description>
 </segment>
 <segment>
 <pinref part="IC5" gate="G$1" pin="1"/>
-<wire x1="121.92" y1="104.14" x2="119.38" y2="104.14" width="0.1524" layer="91"/>
-<label x="119.38" y="104.14" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="109.22" y1="119.38" x2="106.68" y2="119.38" width="0.1524" layer="91"/>
+<label x="106.68" y="119.38" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="SDA" class="0">
 <segment>
-<label x="38.1" y="111.76" size="1.778" layer="95" rot="R180" xref="yes"/>
+<label x="27.94" y="116.84" size="1.778" layer="95" rot="R180" xref="yes"/>
 <pinref part="U$9" gate="1" pin="1"/>
-<wire x1="38.1" y1="111.76" x2="40.64" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="116.84" x2="30.48" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="SDA"/>
-<wire x1="101.6" y1="129.54" x2="99.06" y2="129.54" width="0.1524" layer="91"/>
-<label x="99.06" y="129.54" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="93.98" y1="154.94" x2="91.44" y2="154.94" width="0.1524" layer="91"/>
+<label x="91.44" y="154.94" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <label x="27.94" y="60.96" size="1.778" layer="95" rot="R180" xref="yes"/>
@@ -1732,8 +1776,8 @@ package type OT</description>
 </segment>
 <segment>
 <pinref part="IC5" gate="G$1" pin="3"/>
-<wire x1="121.92" y1="93.98" x2="119.38" y2="93.98" width="0.1524" layer="91"/>
-<label x="119.38" y="93.98" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="109.22" y1="109.22" x2="106.68" y2="109.22" width="0.1524" layer="91"/>
+<label x="106.68" y="109.22" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="MOTION_FIL" class="0">
@@ -1764,9 +1808,9 @@ package type OT</description>
 <label x="106.68" y="53.34" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<label x="129.54" y="119.38" size="1.778" layer="95" xref="yes"/>
+<label x="121.92" y="144.78" size="1.778" layer="95" xref="yes"/>
 <pinref part="IC1" gate="G$1" pin="VIN3/VREF"/>
-<wire x1="129.54" y1="119.38" x2="127" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="144.78" x2="119.38" y2="144.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="FEEDBACK_TC_1" class="0">
@@ -1793,9 +1837,9 @@ package type OT</description>
 <label x="233.68" y="101.6" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<label x="129.54" y="124.46" size="1.778" layer="95" xref="yes"/>
+<label x="121.92" y="149.86" size="1.778" layer="95" xref="yes"/>
 <pinref part="IC1" gate="G$1" pin="VIN2"/>
-<wire x1="129.54" y1="124.46" x2="127" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="149.86" x2="119.38" y2="149.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="THERMO_FIL_TC_1" class="0">
@@ -1832,9 +1876,9 @@ package type OT</description>
 <wire x1="20.32" y1="152.4" x2="15.24" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<label x="38.1" y="121.92" size="1.778" layer="95" rot="R180" xref="yes"/>
+<label x="27.94" y="127" size="1.778" layer="95" rot="R180" xref="yes"/>
 <pinref part="U$7" gate="1" pin="1"/>
-<wire x1="38.1" y1="121.92" x2="40.64" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="127" x2="30.48" y2="127" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="HEATER_1" class="1">
@@ -1844,8 +1888,8 @@ package type OT</description>
 <wire x1="20.32" y1="157.48" x2="15.24" y2="157.48" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<label x="38.1" y="127" size="1.778" layer="95" rot="R180" xref="yes"/>
-<wire x1="38.1" y1="127" x2="40.64" y2="127" width="0.1524" layer="91"/>
+<label x="27.94" y="132.08" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="27.94" y1="132.08" x2="30.48" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="ß" gate="1" pin="1"/>
 </segment>
 </net>
@@ -1896,9 +1940,9 @@ package type OT</description>
 <label x="233.68" y="147.32" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<label x="129.54" y="129.54" size="1.778" layer="95" xref="yes"/>
+<label x="121.92" y="154.94" size="1.778" layer="95" xref="yes"/>
 <pinref part="IC1" gate="G$1" pin="VIN1"/>
-<wire x1="129.54" y1="129.54" x2="127" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="154.94" x2="119.38" y2="154.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
