@@ -31,9 +31,9 @@ protected:
     const float adcResolution = 1024;
     const float beta = 3940;
     const float refTemp = 298.15;
-    const float refVoltage = 5;
+    const float refVoltage = 3.3;
     const float kelvin = 273.15;
-    const float tipGain = 0.54;
+    const float tipGain = 0.48; //0.54
 
     uint32_t refTemperature = 0;
 

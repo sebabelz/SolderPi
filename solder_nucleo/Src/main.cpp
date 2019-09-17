@@ -79,7 +79,7 @@ int main()
     {
         HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
         ssd1306_PrintValues(setPoint, static_cast<int>(solderingIron.getTipTemperature()));
-        HAL_Delay(4);
+        HAL_Delay(25);
     }
 #pragma clang diagnostic pop
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.4.2">
+<eagle version="9.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -23,16 +23,16 @@
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
@@ -47,10 +47,10 @@
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
-<layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="yes" active="yes"/>
@@ -751,17 +751,17 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="8.521" y="9.555" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="D1" library="solderpi" library_urn="urn:adsk.eagle:library:1437534" package="SOD123-F" package3d_urn="urn:adsk.eagle:package:1609183/2" value="BAT54H" x="9.25" y="20.02" smashed="yes" rot="R270">
-<attribute name="NAME" x="11.155" y="21.925" size="1.27" layer="25" rot="R270"/>
+<attribute name="NAME" x="9.25" y="17.0216" size="0.8128" layer="25" rot="R90" align="center-right"/>
 <attribute name="OC_DIGIKEY" value="1727-3569-1-ND" x="9.25" y="20.02" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="6.075" y="21.925" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C4" library="common" library_urn="urn:adsk.eagle:library:8241912" package="C0603" package3d_urn="urn:adsk.eagle:package:8241929/3" value="1µF" x="5.9" y="6" smashed="yes" rot="MR90">
-<attribute name="NAME" x="7.035" y="5.365" size="1.27" layer="26" rot="MR90"/>
+<attribute name="NAME" x="5.9" y="4.5746" size="0.8128" layer="26" rot="MR90" align="center-right"/>
 <attribute name="OC_DIGIKEY" value="1276-1034-1-ND" x="5.9" y="6" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="VALUE" x="3.695" y="5.365" size="1.27" layer="28" rot="MR90"/>
 </element>
 <element name="C5" library="common" library_urn="urn:adsk.eagle:library:8241912" package="C0603" package3d_urn="urn:adsk.eagle:package:8241929/3" value="1µF" x="11.05" y="20.65" smashed="yes" rot="R270">
-<attribute name="NAME" x="12.185" y="21.285" size="1.27" layer="25" rot="R270"/>
+<attribute name="NAME" x="11.05" y="19.2246" size="0.8128" layer="25" rot="R90" align="center-right"/>
 <attribute name="OC_DIGIKEY" value="1276-1034-1-ND" x="11.05" y="20.65" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="8.845" y="21.285" size="1.27" layer="27" rot="R270"/>
 </element>
