@@ -1,0 +1,15 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Q_PMOS_SGD
+D P-MOSFET transistor, source/gate/drain
+K transistor PMOS P-MOS P-MOSFET
+F ~
+$ENDCMP
+#
+$CMP Q_PMOS_SGD_8
+D P-MOSFET transistor, source/gate/drain
+K transistor PMOS P-MOS P-MOSFET
+F ~
+$ENDCMP
+#
+#End Doc Library

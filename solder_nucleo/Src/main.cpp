@@ -75,6 +75,7 @@ int main()
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
+#pragma ide diagnostic ignored "EndlessLoop"
     while (true)
     {
         HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
