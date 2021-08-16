@@ -118,80 +118,16 @@ SWDCLK
 Text Label 4800 3300 2    39   ~ 0
 SWO
 $Comp
-L Connector_Generic:Conn_02x10_Odd_Even J201
-U 1 1 5FD3C4F2
-P 8650 4450
-F 0 "J201" H 8700 4950 50  0000 C CNN
-F 1 "JTAG" H 8700 3850 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x10_P2.54mm_Vertical" H 8650 4450 50  0001 C CNN
-F 3 "~" H 8650 4450 50  0001 C CNN
-	1    8650 4450
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR0211
-U 1 1 5FD3DEE1
-P 8300 3950
-F 0 "#PWR0211" H 8300 3800 50  0001 C CNN
-F 1 "+3V3" H 8315 4123 50  0000 C CNN
-F 2 "" H 8300 3950 50  0001 C CNN
-F 3 "" H 8300 3950 50  0001 C CNN
-	1    8300 3950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8300 3950 8300 4050
-Wire Wire Line
-	8300 4050 8450 4050
-$Comp
 L power:GND #PWR0214
 U 1 1 5FD3F720
-P 9100 5050
-F 0 "#PWR0214" H 9100 4800 50  0001 C CNN
-F 1 "GND" H 9105 4877 50  0000 C CNN
-F 2 "" H 9100 5050 50  0001 C CNN
-F 3 "" H 9100 5050 50  0001 C CNN
-	1    9100 5050
+P 8850 5450
+F 0 "#PWR0214" H 8850 5200 50  0001 C CNN
+F 1 "GND" H 8855 5277 50  0000 C CNN
+F 2 "" H 8850 5450 50  0001 C CNN
+F 3 "" H 8850 5450 50  0001 C CNN
+	1    8850 5450
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8950 4150 9100 4150
-Wire Wire Line
-	9100 4150 9100 4250
-Wire Wire Line
-	8950 4250 9100 4250
-Connection ~ 9100 4250
-Wire Wire Line
-	9100 4250 9100 4350
-Wire Wire Line
-	8950 4350 9100 4350
-Connection ~ 9100 4350
-Wire Wire Line
-	9100 4350 9100 4450
-Wire Wire Line
-	8950 4450 9100 4450
-Connection ~ 9100 4450
-Wire Wire Line
-	9100 4450 9100 4550
-Wire Wire Line
-	8950 4550 9100 4550
-Connection ~ 9100 4550
-Wire Wire Line
-	9100 4550 9100 5050
-Wire Wire Line
-	8450 4350 8200 4350
-Wire Wire Line
-	8450 4450 8200 4450
-Wire Wire Line
-	8450 4650 8200 4650
-Text Label 8200 4750 0    39   ~ 0
-~RESET~
-Text Label 8200 4650 0    39   ~ 0
-SWO
-Text Label 8200 4450 0    39   ~ 0
-SWDCLK
-Text Label 8200 4350 0    39   ~ 0
-SWDIO
 Text HLabel 2750 3200 0    39   Input ~ 0
 ANA0_VOL
 Text HLabel 2750 3300 0    39   Input ~ 0
@@ -232,18 +168,18 @@ Text HLabel 4900 2400 2    39   Output ~ 0
 CHA0_PWM_0
 Text HLabel 4900 2300 2    39   Output ~ 0
 CHA0_PWM_1
-Text HLabel 4900 2200 2    39   Output ~ 0
+Text HLabel 2750 3900 0    39   Output ~ 0
 CHA1_PWM_0
-Text HLabel 4900 2100 2    39   Output ~ 0
+Text HLabel 2750 3800 0    39   Output ~ 0
 CHA1_PWM_1
 Wire Wire Line
 	4900 2300 4400 2300
 Wire Wire Line
 	4400 2400 4900 2400
 Wire Wire Line
-	4900 2100 4400 2100
+	2750 3800 3100 3800
 Wire Wire Line
-	4400 2200 4900 2200
+	3100 3900 2750 3900
 Text HLabel 4800 3700 2    39   Input ~ 0
 CHA0_SDA
 Text HLabel 2750 4100 0    39   Input ~ 0
@@ -453,15 +389,6 @@ Wire Wire Line
 NoConn ~ 3500 1100
 NoConn ~ 4400 1700
 NoConn ~ 4400 2500
-NoConn ~ 8950 4050
-NoConn ~ 8450 4250
-NoConn ~ 8450 4550
-NoConn ~ 8950 4650
-NoConn ~ 8950 4750
-NoConn ~ 8950 4850
-NoConn ~ 8950 4950
-NoConn ~ 8450 4950
-NoConn ~ 8450 4850
 NoConn ~ 4400 3000
 NoConn ~ 4400 3100
 NoConn ~ 4400 3200
@@ -473,11 +400,7 @@ NoConn ~ 3100 4500
 NoConn ~ 3100 4400
 NoConn ~ 3100 4300
 NoConn ~ 3100 4200
-NoConn ~ 3100 3900
-NoConn ~ 3100 3800
 NoConn ~ 3100 3700
-NoConn ~ 3100 3500
-NoConn ~ 3100 3400
 NoConn ~ 3100 2800
 Text HLabel 4800 3600 2    39   Input ~ 0
 CHA0_SCL
@@ -635,7 +558,6 @@ Wire Wire Line
 	4900 1800 4400 1800
 Text HLabel 4900 1800 2    39   Input ~ 0
 ENC2_B
-NoConn ~ 8450 4150
 Text HLabel 2750 3000 0    39   Input ~ 0
 ANA1_VOL
 Text HLabel 2750 3100 0    39   Input ~ 0
@@ -653,19 +575,6 @@ ANA3_CUR
 Text HLabel 4900 1400 2    39   Input ~ 0
 ANA3_VOL
 Wire Wire Line
-	8200 4750 8450 4750
-$Comp
-L MCU_ST_STM32L4:STM32L496RGTx U201
-U 1 1 60006542
-P 3800 2900
-F 0 "U201" H 3300 4650 50  0000 C CNN
-F 1 "STM32L496RGTx" H 4250 1150 50  0000 C CNN
-F 2 "Package_QFP:LQFP-64_10x10mm_P0.5mm" H 3200 1200 50  0001 R CNN
-F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00284211.pdf" H 3800 2900 50  0001 C CNN
-	1    3800 2900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
 	3100 2600 2700 2600
 Wire Wire Line
 	2700 2600 2700 2700
@@ -680,27 +589,8 @@ F 3 "" H 2700 2700 50  0001 C CNN
 	1    2700 2700
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:Conn_ARM_JTAG_SWD_10 J?
-U 1 1 6041B07E
-P 7350 4300
-AR Path="/6041B07E" Ref="J?"  Part="1" 
-AR Path="/5FD1616A/6041B07E" Ref="J401"  Part="1" 
-F 0 "J401" H 6906 4346 50  0000 R CNN
-F 1 "Conn_ARM_JTAG_SWD_10" H 7200 3750 50  0000 R CNN
-F 2 "Connector:Tag-Connect_TC2050-IDC-FP_2x05_P1.27mm_Vertical" H 7350 4300 50  0001 C CNN
-F 3 "http://infocenter.arm.com/help/topic/com.arm.doc.ddi0314h/DDI0314H_coresight_components_trm.pdf" V 7000 3050 50  0001 C CNN
-	1    7350 4300
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
-	6600 4450 6250 4450
-Wire Wire Line
-	6600 4550 6250 4550
-Wire Wire Line
-	6600 4350 6250 4350
-Wire Wire Line
-	6600 4150 6250 4150
+	8350 4750 8000 4750
 Text Label 5200 6300 0    39   ~ 0
 OSC_OUT
 Text Label 4650 6300 0    39   ~ 0
@@ -775,4 +665,77 @@ F 4 "490-9652-1-ND" H 5050 6300 50  0001 C CNN "Digikey"
 	1    5050 6300
 	-1   0    0    1   
 $EndComp
+NoConn ~ 4400 2200
+NoConn ~ 4400 2100
+Wire Wire Line
+	8350 4350 8000 4350
+Wire Wire Line
+	8350 4650 8000 4650
+Wire Wire Line
+	8350 4550 8000 4550
+$Comp
+L solderpi-rescue:Conn_ARM_JTAG_SWD_10-solder_station J401
+U 1 1 611A9C60
+P 8850 4650
+AR Path="/611A9C60" Ref="J401"  Part="1" 
+AR Path="/5FD1616A/611A9C60" Ref="J401"  Part="1" 
+F 0 "J401" H 8420 4604 50  0000 R CNN
+F 1 "Conn_ARM_JTAG_SWD_10" H 8750 5200 50  0000 R CNN
+F 2 "Connector:Tag-Connect_TC2050-IDC-FP_2x05_P1.27mm_Vertical" H 8850 4650 50  0001 C CNN
+F 3 "http://infocenter.arm.com/help/topic/com.arm.doc.ddi0314h/DDI0314H_coresight_components_trm.pdf" V 8500 3400 50  0001 C CNN
+	1    8850 4650
+	-1   0    0    -1  
+$EndComp
+$Comp
+L MCU_ST_STM32L4:STM32L496RGTx U201
+U 1 1 60006542
+P 3800 2900
+F 0 "U201" H 3300 4650 50  0000 C CNN
+F 1 "STM32L496RGTx" H 4250 1150 50  0000 C CNN
+F 2 "Package_QFP:LQFP-64_10x10mm_P0.5mm" H 3200 1200 50  0001 R CNN
+F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00284211.pdf" H 3800 2900 50  0001 C CNN
+F 4 "497-17173-ND" H 3800 2900 50  0001 C CNN "Digikey"
+	1    3800 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3100 3400 2800 3400
+Wire Wire Line
+	3100 3500 2800 3500
+Text Label 2800 3400 0    39   ~ 0
+USART_TX
+Text Label 2800 3500 0    39   ~ 0
+USART_RX
+Wire Wire Line
+	8350 4950 8000 4950
+Wire Wire Line
+	8350 4850 8000 4850
+Text Label 8000 4950 0    39   ~ 0
+USART_TX
+Text Label 8000 4850 0    39   ~ 0
+USART_RX
+Text Label 8000 4350 0    39   ~ 0
+~RESET~
+Text Label 8000 4650 0    39   ~ 0
+SWDIO
+Text Label 8000 4550 0    39   ~ 0
+SWDCLK
+Text Label 8000 4750 0    39   ~ 0
+SWO
+$Comp
+L power:+3V3 #PWR0411
+U 1 1 611E98E4
+P 8850 3900
+F 0 "#PWR0411" H 8850 3750 50  0001 C CNN
+F 1 "+3V3" H 8865 4073 50  0000 C CNN
+F 2 "" H 8850 3900 50  0001 C CNN
+F 3 "" H 8850 3900 50  0001 C CNN
+	1    8850 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8850 4050 8850 3900
+Wire Wire Line
+	8850 5250 8850 5450
+NoConn ~ 8950 5250
 $EndSCHEMATC

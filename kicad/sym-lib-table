@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name solder_station)(type Legacy)(uri ${KIPRJMOD}/solder_station.lib)(options "")(descr ""))
+  (lib (name solderpi-rescue)(type Legacy)(uri ${KIPRJMOD}/solderpi-rescue.lib)(options "")(descr ""))
 )
